@@ -9,3 +9,4 @@ Se buscara que prediga si tiene cancer o no de piel y que tipo de cancer es.
 ## 6. Entrenamiento del modelo y comprobación del rendimiento
 ## 7. Aplicación web
 ## 8. Conclusiones
+Prueba - modificar
