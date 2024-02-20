@@ -2,14 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+from tensorflow.keras.saving import pickle_utils
+from keras.models import model_save
 from datetime import datetime, timedelta
 
 def main():
     st.title("DermaScan")
-    try:
-        clf = joblib.load("model/benigno_vs_maligno_modelo.pkl")
-    except Exception as e:
-        st.error(f"Error al cargar el modelo: {str(e)}")
+    
 
     # Crear un menú desplegable en la barra lateral
     categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Pagina principal", "Categoría 2", "Categoría 3"])
@@ -33,7 +32,10 @@ def pagina_categoria_1():
     # Verificar si se cargó una foto
     if imagen is not None:
         st.image(imagen, caption="Imagen cargada", use_column_width=True)
-
+        try:
+            clf = model_save("model/benigno_vs_maligno_modelo.pkl")
+        except Exception as e:
+            st.error(f"Error al cargar el modelo: {str(e)}")
         # Convertir la imagen a un formato adecuado para la predicción
         imagen_prueba = imagen.resize((150, 150))
         imagen_array = np.array(imagen_prueba)
