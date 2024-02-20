@@ -19,6 +19,7 @@ def main():
         pagina_categoria_3()
 
 def pagina_categoria_1():
+    clf = joblib.load("model/benigno_vs_maligno_modelo.pkl")
     st.header("Comprueba la salud de tu piel.")
     st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
 
@@ -28,20 +29,18 @@ def pagina_categoria_1():
     # Verificar si se cargó una foto
     if imagen is not None:
         st.image(imagen, caption="Imagen cargada", use_column_width=True)
-    
-    clf = joblib.load("model/benigno_vs_maligno_modelo.pkl")
-    imagen_prueba = imagen.resize((150, 150))  # Ajusta el tamaño según el modelo
 
-    # Convertir la imagen a un formato adecuado para la predicción
-    imagen_array = np.array(imagen_prueba)
-    imagen_array = imagen_array / 255.0  # Normalizar los valores de píxeles entre 0 y 1
-    imagen_array = np.expand_dims(imagen_array, axis=0)  # Agregar una dimensión de lote
+        # Convertir la imagen a un formato adecuado para la predicción
+        imagen_prueba = imagen.resize((150, 150))
+        imagen_array = np.array(imagen_prueba)
+        imagen_array = imagen_array / 255.0  # Normalizar los valores de píxeles entre 0 y 1
+        imagen_array = np.expand_dims(imagen_array, axis=0)  # Agregar una dimensión de lote
 
-    # Realizar la predicción
-    prediccion = clf.predict(imagen_array)
+        # Realizar la predicción
+        prediccion = clf.predict(imagen_array)
 
-    # Imprimir la predicción
-    st.write("La prediccion es benigna al : ",prediccion[0, 0])
+        # Imprimir la predicción
+        st.write("La prediccion es benigna al : ",prediccion[0, 0])
 
 def pagina_categoria_2():
     st.header("Página 2")
