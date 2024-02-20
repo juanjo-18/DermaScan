@@ -2,6 +2,6 @@ pandas
 joblib
 numpy
 scipy
-scikit-learn==1.2.2
+scikit-learn==1.3.2
 keras==2.4.3
-tensorflow==2.4.1
+tensorflow==2.5.1
