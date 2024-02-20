@@ -6,6 +6,10 @@ from datetime import datetime, timedelta
 
 def main():
     st.title("DermaScan")
+    try:
+        clf = joblib.load("model/benigno_vs_maligno_modelo.pkl")
+    except Exception as e:
+        st.error(f"Error al cargar el modelo: {str(e)}")
 
     # Crear un menú desplegable en la barra lateral
     categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Pagina principal", "Categoría 2", "Categoría 3"])
@@ -19,7 +23,7 @@ def main():
         pagina_categoria_3()
 
 def pagina_categoria_1():
-    clf = joblib.load("model/benigno_vs_maligno_modelo.pkl")
+   
     st.header("Comprueba la salud de tu piel.")
     st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
 
