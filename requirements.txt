@@ -3,3 +3,5 @@ joblib
 numpy
 scikit-learn==1.2.2
 keras
+scipy
+tensorflow
