@@ -4,4 +4,4 @@ numpy
 scikit-learn==1.2.2
 keras
 scipy
-tensorflow==12.10.0
+tensorflow
