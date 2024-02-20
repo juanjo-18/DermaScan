@@ -7,6 +7,7 @@ import keras
 from keras.models import load_model
 from PIL import Image
 from datetime import datetime, timedelta
+import os
 
 def main():
     st.title("DermaScan")
@@ -39,7 +40,7 @@ def pagina_categoria_1():
         except Exception as e:
             st.error(f"Error al cargar el modelo: {str(e)}")
         # Convertir la imagen a un formato adecuado para la predicción
-        imagen_prueba = Image.open(imagen)
+        imagen_prueba = Image.open(imagen).convert('RGB')
         imagen_prueba = imagen_prueba.resize((20, 20))# Igualar al modelo original
         imagen_array = np.array(imagen_prueba)
         imagen_array = imagen_array / 255.0  # Normalizar los valores de píxeles entre 0 y 1
