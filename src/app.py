@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-from keras.models import model_save
+from keras.models import load_model
 from datetime import datetime, timedelta
 
 def main():
@@ -32,7 +32,7 @@ def pagina_categoria_1():
     if imagen is not None:
         st.image(imagen, caption="Imagen cargada", use_column_width=True)
         try:
-            clf = model_save("model/benigno_vs_maligno_modelo.pkl")
+            clf = load_model("model/benigno_vs_maligno_modelo.pkl")
         except Exception as e:
             st.error(f"Error al cargar el modelo: {str(e)}")
         # Convertir la imagen a un formato adecuado para la predicción
