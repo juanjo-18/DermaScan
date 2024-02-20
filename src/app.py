@@ -46,11 +46,16 @@ def pagina_categoria_1():
         imagen_array = np.expand_dims(imagen_array, axis=0)  # Agregar una dimensión de lote
         imagen_prueba.close()
 
-        # Realizar la predicción
-        prediccion = clf.predict(imagen_array)
+        try:
+            # Realizar la predicción
+            prediccion = clf.predict(imagen_array)
+            # Imprimir la predicción
+            st.write("La prediccion es benigna al : ",prediccion[0, 0])
+        except Exception as e:
+            st.error(f"Error al hacer la prediccion: {str(e)}")
+        
 
-        # Imprimir la predicción
-        st.write("La prediccion es benigna al : ",prediccion[0, 0])
+       
 
 def pagina_categoria_2():
     st.header("Página 2")
