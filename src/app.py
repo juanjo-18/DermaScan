@@ -5,6 +5,7 @@ import joblib
 import tensorflow
 import keras
 from keras.models import load_model
+from PIL import Image
 from datetime import datetime, timedelta
 
 def main():
@@ -38,7 +39,8 @@ def pagina_categoria_1():
         except Exception as e:
             st.error(f"Error al cargar el modelo: {str(e)}")
         # Convertir la imagen a un formato adecuado para la predicción
-        imagen_prueba = imagen.resize((150, 150))
+        imagen_prueba = Image.open(imagen)
+        imagen_prueba = imagen_prueba.resize((150, 150))
         imagen_array = np.array(imagen_prueba)
         imagen_array = imagen_array / 255.0  # Normalizar los valores de píxeles entre 0 y 1
         imagen_array = np.expand_dims(imagen_array, axis=0)  # Agregar una dimensión de lote
