@@ -36,7 +36,7 @@ def pagina_categoria_1():
     if imagen is not None:
         st.image(imagen, caption="Imagen cargada", use_column_width=True)
         try:
-            clf = keras.models.load_model("model/prueba_modelo.h5", compile=False)
+            clf = keras.models.load_model("model/benigno_vs_maligno_modelo.h5", compile=False)
         except Exception as e:
             st.error(f"Error al cargar el modelo: {str(e)}")
         # Convertir la imagen a un formato adecuado para la predicción
@@ -52,6 +52,13 @@ def pagina_categoria_1():
             prediccion = clf.predict(imagen_array)
             # Imprimir la predicción
             st.write("La prediccion es benigna al : ",prediccion[0, 0])
+            st.write("La prediccion es maligna al : ",prediccion[0, 1])
+            clase_predicha = np.argmax(prediccion)
+            if clase_predicha == 0:
+                print("La imagen es benigna.")
+            else:
+                print("La imagen es maligna.")
+
         except Exception as e:
             st.error(f"Error al hacer la prediccion: {str(e)}")
         
