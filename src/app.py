@@ -62,7 +62,9 @@ def pagina_categoria_1():
         imagen_piel_sana_vs_cancer = imagen.resize((1500, 150))# Igualar al modelo original
         imagen_piel_sana_vs_cancer = np.array(imagen_piel_sana_vs_cancer)
         imagen_piel_sana_vs_cancer = imagen_piel_sana_vs_cancer / 255.0  
-        imagen_piel_sana_vs_cancer = np.expand_dims(imagen_piel_sana_vs_cancer, axis=0) 
+        #imagen_piel_sana_vs_cancer = np.expand_dims(imagen_piel_sana_vs_cancer, axis=0) 
+        imagen_piel_sana_vs_cancer = np.expand_dims(imagen_piel_sana_vs_cancer.astype(np.float32), axis=0)
+
 
         # Benigno vs maligno
         imagen_benigno_vs_maligno = imagen.resize((150, 150))# Igualar al modelo original
