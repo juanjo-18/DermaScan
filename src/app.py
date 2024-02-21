@@ -55,9 +55,9 @@ def pagina_categoria_1():
             st.write("La prediccion es maligna al : ",prediccion[0, 1])
             clase_predicha = np.argmax(prediccion)
             if clase_predicha == 0:
-                print("La imagen es benigna.")
+                st.write("La imagen es benigna.")
             else:
-                print("La imagen es maligna.")
+                st.write("La imagen es maligna.")
 
         except Exception as e:
             st.error(f"Error al hacer la prediccion: {str(e)}")
