@@ -74,13 +74,11 @@ def pagina_categoria_1():
             prediccion_clasificador_tipos_cancer = clasificador_tipos_cancer.predict(imagen_clasificador_tipos)
             
             # Imprimir la predicción de objeto o piel
-            st.write("La prediccion es objeto al : ",prediccion_objeto_piel_modelo[0, 0])
-            st.write("La prediccion es piel al : ",prediccion_objeto_piel_modelo[1, 1])
             clase_predicha = np.argmax(prediccion_objeto_piel_modelo)
             if clase_predicha == 0:
-                st.write("La imagen es objeto.")
-            else:
                 st.write("La imagen es piel.")
+            else:
+                st.write("La imagen es objeto.")
             
             # Imprimir la predicción de benigna o maligna
             st.write("La prediccion es benigna al : ",prediccion_benigno_vs_maligno[0, 0])
