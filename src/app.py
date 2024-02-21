@@ -74,6 +74,7 @@ def pagina_categoria_1():
             prediccion_clasificador_tipos_cancer = clasificador_tipos_cancer.predict(imagen_clasificador_tipos)
             
             # Imprimir la predicción de objeto o piel
+            st.write("La prediccion de objeto o piel es: ",prediccion_objeto_piel_modelo[0, 0])
             clase_predicha = np.argmax(prediccion_objeto_piel_modelo)
             if clase_predicha == 0:
                 st.write("La imagen es piel.")
