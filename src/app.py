@@ -75,7 +75,7 @@ def pagina_categoria_1():
             
             # Imprimir la predicción de objeto o piel
             st.write("La prediccion es objeto al : ",prediccion_objeto_piel_modelo[0, 0])
-            st.write("La prediccion es piel al : ",prediccion_objeto_piel_modelo[0, 1])
+            st.write("La prediccion es piel al : ",prediccion_objeto_piel_modelo[1, 1])
             clase_predicha = np.argmax(prediccion_objeto_piel_modelo)
             if clase_predicha == 0:
                 st.write("La imagen es objeto.")
