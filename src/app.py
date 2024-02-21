@@ -114,7 +114,7 @@ def pagina_categoria_1():
             st.write("La prediccion es piel sana al : ",resultados[0][0])
             st.write("La prediccion es piel cancer al : ",resultados[0][1])
 
-            clase_predicha = np.argmax(resultados[0][0])
+            clase_predicha = resultados[0][0]
             if clase_predicha >= 0.75:
                 st.write("La imagen es piel sana.")
             else:
