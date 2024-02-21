@@ -41,7 +41,7 @@ def pagina_categoria_1():
             st.error(f"Error al cargar el modelo: {str(e)}")
         # Convertir la imagen a un formato adecuado para la predicción
         imagen_prueba = Image.open(imagen).convert('RGB')
-        imagen_prueba = imagen_prueba.resize((20, 20))# Igualar al modelo original
+        imagen_prueba = imagen_prueba.resize((150, 150))# Igualar al modelo original
         imagen_array = np.array(imagen_prueba)
         imagen_array = imagen_array / 255.0  # Normalizar los valores de píxeles entre 0 y 1
         imagen_array = np.expand_dims(imagen_array, axis=0)  # Agregar una dimensión de lote
