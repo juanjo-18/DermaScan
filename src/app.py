@@ -8,6 +8,7 @@ from keras.models import load_model
 from PIL import Image
 from datetime import datetime, timedelta
 import os
+import tensorflow as tf
 
 def main():
     st.title("DermaScan")
@@ -36,6 +37,11 @@ def pagina_categoria_1():
     if imagen is not None:
         st.image(imagen, caption="Imagen cargada", use_column_width=True)
         try:
+            # Ruta al archivo .tflite
+            archivo_tflite = 'model/piel_vs_cancer.tflite'
+
+            # Cargar el modelo TensorFlow Lite
+            piel_vs_cancer = tf.lite.Interpreter(model_path=archivo_tflite)
             benigno_vs_maligno = keras.models.load_model("model/benigno_vs_maligno_modelo.h5", compile=False)
             clasificador_tipos_cancer = keras.models.load_model("model/clasificador_tipos_cancer.h5", compile=False)
             objeto_piel_modelo = keras.models.load_model("model/objeto_piel_modelo.h5", compile=False)
@@ -52,6 +58,11 @@ def pagina_categoria_1():
         imagen_objeto_vs_piel = imagen_objeto_vs_piel / 255.0  
         imagen_objeto_vs_piel = np.expand_dims(imagen_objeto_vs_piel, axis=0) 
 
+        # Piel sana y piel cancer
+        imagen_piel_sana_vs_cancer = imagen.resize((1500, 150))# Igualar al modelo original
+        imagen_piel_sana_vs_cancer = np.array(imagen_piel_sana_vs_cancer)
+        imagen_piel_sana_vs_cancer = imagen_piel_sana_vs_cancer / 255.0  
+        imagen_piel_sana_vs_cancer = np.expand_dims(imagen_piel_sana_vs_cancer, axis=0) 
 
         # Benigno vs maligno
         imagen_benigno_vs_maligno = imagen.resize((150, 150))# Igualar al modelo original
@@ -72,15 +83,28 @@ def pagina_categoria_1():
             prediccion_objeto_piel_modelo = objeto_piel_modelo.predict(imagen_objeto_vs_piel)
             prediccion_benigno_vs_maligno = benigno_vs_maligno.predict(imagen_benigno_vs_maligno)
             prediccion_clasificador_tipos_cancer = clasificador_tipos_cancer.predict(imagen_clasificador_tipos)
+            prediccion_piel_vs_cancer = piel_vs_cancer.predict(imagen_piel_sana_vs_cancer)
             
             # Imprimir la predicción de objeto o piel
             st.write("La prediccion de objeto o piel es: ",prediccion_objeto_piel_modelo[0, 0])
             valor_prediccion_objeto_piel_modelo=prediccion_objeto_piel_modelo[0, 0]
-            if valor_prediccion_objeto_piel_modelo >= 0.6:
+            if valor_prediccion_objeto_piel_modelo >= 0.75:
                 st.write("La imagen es piel.")
             else:
                 st.write("La imagen es objeto.")
             
+
+            # Imprimir la predicción de piel o piel cancer
+            st.write("La prediccion es piel sana al : ",prediccion_piel_vs_cancer[0, 0])
+            st.write("La prediccion es piel cancer al : ",prediccion_piel_vs_cancer[0, 1])
+            clase_predicha = np.argmax(prediccion_piel_vs_cancer)
+            if clase_predicha == 0:
+                st.write("La imagen es piel sana.")
+            else:
+                st.write("La imagen es piel cancer.")
+            
+
+
             # Imprimir la predicción de benigna o maligna
             st.write("La prediccion es benigna al : ",prediccion_benigno_vs_maligno[0, 0])
             st.write("La prediccion es maligna al : ",prediccion_benigno_vs_maligno[0, 1])
@@ -89,6 +113,9 @@ def pagina_categoria_1():
                 st.write("La imagen es benigna.")
             else:
                 st.write("La imagen es maligna.")
+            
+            
+           
             
            
 
