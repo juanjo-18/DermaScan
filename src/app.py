@@ -59,7 +59,7 @@ def pagina_categoria_1():
         imagen_objeto_vs_piel = np.expand_dims(imagen_objeto_vs_piel, axis=0) 
 
         # Piel sana y piel cancer
-        imagen_piel_sana_vs_cancer = imagen.resize((1500, 150))# Igualar al modelo original
+        imagen_piel_sana_vs_cancer = imagen.resize((150, 150))# Igualar al modelo original
         imagen_piel_sana_vs_cancer = np.array(imagen_piel_sana_vs_cancer)
         imagen_piel_sana_vs_cancer = imagen_piel_sana_vs_cancer / 255.0  
         #imagen_piel_sana_vs_cancer = np.expand_dims(imagen_piel_sana_vs_cancer, axis=0) 
@@ -89,6 +89,7 @@ def pagina_categoria_1():
             entrada_details = piel_vs_cancer.get_input_details()
             salida_details = piel_vs_cancer.get_output_details()
             # Establecer los datos de entrada en el modelo
+            
             piel_vs_cancer.set_tensor(entrada_details[0]['index'], imagen_piel_sana_vs_cancer)
 
             # Ejecutar la inferencia
