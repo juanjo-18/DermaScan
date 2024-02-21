@@ -36,28 +36,62 @@ def pagina_categoria_1():
     if imagen is not None:
         st.image(imagen, caption="Imagen cargada", use_column_width=True)
         try:
-            clf = keras.models.load_model("model/benigno_vs_maligno_modelo.h5", compile=False)
+            benigno_vs_maligno = keras.models.load_model("model/benigno_vs_maligno_modelo.h5", compile=False)
+            clasificador_tipos_cancer = keras.models.load_model("model/clasificador_tipos_cancer.h5", compile=False)
+            objeto_piel_modelo = keras.models.load_model("model/objeto_piel_modelo.h5", compile=False)
+        
         except Exception as e:
             st.error(f"Error al cargar el modelo: {str(e)}")
+        
         # Convertir la imagen a un formato adecuado para la predicción
-        imagen_prueba = Image.open(imagen).convert('RGB')
-        imagen_prueba = imagen_prueba.resize((150, 150))# Igualar al modelo original
-        imagen_array = np.array(imagen_prueba)
-        imagen_array = imagen_array / 255.0  # Normalizar los valores de píxeles entre 0 y 1
-        imagen_array = np.expand_dims(imagen_array, axis=0)  # Agregar una dimensión de lote
-        imagen_prueba.close()
+        imagen = Image.open(imagen).convert('RGB')
+        
+        # Objeto vs piel
+        imagen_objeto_vs_piel = imagen.resize((120, 120))# Igualar al modelo original
+        imagen_objeto_vs_piel = np.array(imagen_objeto_vs_piel)
+        imagen_objeto_vs_piel = imagen_objeto_vs_piel / 255.0  
+        imagen_objeto_vs_piel = np.expand_dims(imagen_objeto_vs_piel, axis=0) 
+
+
+        # Benigno vs maligno
+        imagen_benigno_vs_maligno = imagen.resize((150, 150))# Igualar al modelo original
+        imagen_benigno_vs_maligno = np.array(imagen_benigno_vs_maligno)
+        imagen_benigno_vs_maligno = imagen_benigno_vs_maligno / 255.0  
+        imagen_benigno_vs_maligno = np.expand_dims(imagen_benigno_vs_maligno, axis=0)  
+
+
+        # Clasificador tipos
+        imagen_clasificador_tipos= imagen.resize((28, 28))# Igualar al modelo original
+        imagen_clasificador_tipos = np.array(imagen_clasificador_tipos)
+        imagen_clasificador_tipos = imagen_clasificador_tipos / 255.0  
+        imagen_clasificador_tipos = np.expand_dims(imagen_clasificador_tipos, axis=0)  
+        
 
         try:
             # Realizar la predicción
-            prediccion = clf.predict(imagen_array)
-            # Imprimir la predicción
-            st.write("La prediccion es benigna al : ",prediccion[0, 0])
-            st.write("La prediccion es maligna al : ",prediccion[0, 1])
-            clase_predicha = np.argmax(prediccion)
+            prediccion_objeto_piel_modelo = objeto_piel_modelo.predict(imagen_objeto_vs_piel)
+            prediccion_benigno_vs_maligno = benigno_vs_maligno.predict(imagen_benigno_vs_maligno)
+            prediccion_clasificador_tipos_cancer = clasificador_tipos_cancer.predict(imagen_clasificador_tipos)
+            
+            # Imprimir la predicción de objeto o piel
+            st.write("La prediccion es objeto al : ",prediccion_objeto_piel_modelo[0, 0])
+            st.write("La prediccion es piel al : ",prediccion_objeto_piel_modelo[0, 1])
+            clase_predicha = np.argmax(prediccion_objeto_piel_modelo)
+            if clase_predicha == 0:
+                st.write("La imagen es objeto.")
+            else:
+                st.write("La imagen es piel.")
+            
+            # Imprimir la predicción de benigna o maligna
+            st.write("La prediccion es benigna al : ",prediccion_benigno_vs_maligno[0, 0])
+            st.write("La prediccion es maligna al : ",prediccion_benigno_vs_maligno[0, 1])
+            clase_predicha = np.argmax(prediccion_benigno_vs_maligno)
             if clase_predicha == 0:
                 st.write("La imagen es benigna.")
             else:
                 st.write("La imagen es maligna.")
+            
+           
 
         except Exception as e:
             st.error(f"Error al hacer la prediccion: {str(e)}")
