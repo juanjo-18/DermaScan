@@ -85,6 +85,9 @@ def pagina_categoria_1():
             prediccion_objeto_piel_modelo = objeto_piel_modelo.predict(imagen_objeto_vs_piel)
             prediccion_benigno_vs_maligno = benigno_vs_maligno.predict(imagen_benigno_vs_maligno)
             prediccion_clasificador_tipos_cancer = clasificador_tipos_cancer.predict(imagen_clasificador_tipos)
+            
+            # Asignar memoria para los tensores
+            piel_vs_cancer.allocate_tensors()
 
             entrada_details = piel_vs_cancer.get_input_details()
             salida_details = piel_vs_cancer.get_output_details()
