@@ -83,8 +83,18 @@ def pagina_categoria_1():
             prediccion_objeto_piel_modelo = objeto_piel_modelo.predict(imagen_objeto_vs_piel)
             prediccion_benigno_vs_maligno = benigno_vs_maligno.predict(imagen_benigno_vs_maligno)
             prediccion_clasificador_tipos_cancer = clasificador_tipos_cancer.predict(imagen_clasificador_tipos)
-            prediccion_piel_vs_cancer = piel_vs_cancer.predict(imagen_piel_sana_vs_cancer)
-            
+
+            entrada_details = piel_vs_cancer.get_input_details()
+            salida_details = piel_vs_cancer.get_output_details()
+            # Establecer los datos de entrada en el modelo
+            piel_vs_cancer.set_tensor(entrada_details[0]['index'], imagen_piel_sana_vs_cancer)
+
+            # Ejecutar la inferencia
+            piel_vs_cancer.invoke()
+
+            # Obtener los resultados de la inferencia
+            resultados = piel_vs_cancer.get_tensor(salida_details[0]['index'])
+
             # Imprimir la predicción de objeto o piel
             st.write("La prediccion de objeto o piel es: ",prediccion_objeto_piel_modelo[0, 0])
             valor_prediccion_objeto_piel_modelo=prediccion_objeto_piel_modelo[0, 0]
@@ -95,9 +105,9 @@ def pagina_categoria_1():
             
 
             # Imprimir la predicción de piel o piel cancer
-            st.write("La prediccion es piel sana al : ",prediccion_piel_vs_cancer[0, 0])
-            st.write("La prediccion es piel cancer al : ",prediccion_piel_vs_cancer[0, 1])
-            clase_predicha = np.argmax(prediccion_piel_vs_cancer)
+            st.write("La prediccion es piel sana al : ",resultados)
+            
+            clase_predicha = np.argmax(resultados)
             if clase_predicha == 0:
                 st.write("La imagen es piel sana.")
             else:
