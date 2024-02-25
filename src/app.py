@@ -150,15 +150,15 @@ def pagina_categoria_2():
         half_star = rating - full_stars
 
         # Crea las estrellas llenas
-        stars_html = f'<span style="color: {star_color};">&#9733;</span>' * full_stars
+        stars_html = f'<span style="color: {star_color}; font-size: 24px;">&#9733;</span>' * full_stars
 
         # Añade una estrella media si es necesario
         if half_star > 0:
-            stars_html += f'<span style="color: {star_color};">&#9733;&frac12;</span>'
+            stars_html += f'<span style="color: {star_color}; font-size: 24px;">&#9733;&frac12;</span>'
 
         # Añade las estrellas vacías necesarias
         empty_stars = max_rating - full_stars - 1
-        stars_html += f'<span style="color: {star_color};">&#9734;</span>' * empty_stars
+        stars_html += f'<span style="color: {star_color}; font-size: 24px;">&#9734;</span>' * empty_stars
 
         return stars_html
 
