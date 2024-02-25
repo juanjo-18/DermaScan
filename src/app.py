@@ -144,28 +144,23 @@ def pagina_categoria_1():
 
 def pagina_categoria_2():
     st.header("Página 2")
-    def st_stars(rating, max_rating=5, star_color="yellow"):
-        # Calcula el número de estrellas llenas y medias
-        full_stars = int(rating)
-        half_star = rating - full_stars
-
-        # Crea las estrellas llenas
-        stars_html = f'<span style="color: {star_color}; font-size: 24px;">&#9733;</span>' * full_stars
-
-        # Añade una estrella media si es necesario
-        if half_star > 0:
-            stars_html += f'<span style="color: {star_color}; font-size: 24px;">&#9733;&frac12;</span>'
-
-        # Añade las estrellas vacías necesarias
-        empty_stars = max_rating - full_stars - 1
-        stars_html += f'<span style="color: {star_color}; font-size: 24px;">&#9734;</span>' * empty_stars
-
-        return stars_html
+    def mostrar_imagen_segun_puntuacion(puntuacion):
+        if puntuacion == 0:
+            st.image("imagenes/estrellas_0.png", caption="Puntuación 0", use_column_width=True)
+        elif puntuacion == 1:
+            st.image("imagenes/estrellas_1.png", caption="Puntuación 1", use_column_width=True)
+        elif puntuacion == 2:
+            st.image("imagenes/estrellas_2.png", caption="Puntuación 2", use_column_width=True)
+        elif puntuacion == 3:
+            st.image("imagenes/estrellas_3.png", caption="Puntuación 3", use_column_width=True)
+        elif puntuacion == 4:
+            st.image("imagenes/estrellas_4.png", caption="Puntuación 4", use_column_width=True)
+        elif puntuacion == 5:
+            st.image("imagenes/estrellas_5.png", caption="Puntuación 5", use_column_width=True)
 
     # Ejemplo de uso
-    puntuacion = st.slider("Selecciona una puntuación", 0.0, 5.0, 3.5, 0.1)
-    st.markdown(f"Puntuación: {puntuacion}")
-    st.markdown(st_stars(puntuacion))
+    puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
+    mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
 
 def pagina_categoria_3():
     st.header("Página 3")
