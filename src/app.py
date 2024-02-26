@@ -166,7 +166,9 @@ def pagina_categoria_1():
         #texto_calificacion = st.text_input("Escribe tu comentario:")
         texto_calificacion = st.text_area("Escribe tu comentario:")
         
-        calificacion=0
+        if calificacion ==0:
+            calificacion=0
+            
         # Agrega un botón para borrar el contenido del área de texto
         if st.button("Añadir comentario"):
             calificacion=modelo.predict([texto_calificacion])[0]
