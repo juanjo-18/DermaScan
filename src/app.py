@@ -164,7 +164,13 @@ def pagina_categoria_1():
         puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
         # Casilla de entrada de texto
         texto_calificacion = st.text_input("Escribe tu comentario:")
-        calificacion=modelo.predict([texto_calificacion])[0]
+        if len(texto_calificacion.strip()) == 0:
+            calificacion=0
+        else:
+            calificacion=modelo.predict([texto_calificacion])[0]
+        
+        if st.session_state.enter_pressed:
+            texto_calificacion = ""    
         st.text(f"¡La puntuacion es de {calificacion}!")
         mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
     
