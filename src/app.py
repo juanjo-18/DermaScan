@@ -190,10 +190,7 @@ def pagina_categoria_1():
     
         conn = st.experimental_connection('s3', type=FilesConnection)
         df = conn.read("dermascan-streamlits3/pruebas3_streamlit.csv", input_format="csv", ttl=600)
-
-        # Print results.
-        for row in df.itertuples():
-            st.write(f"El comentario:{row.COMENTARIO} tiene una puntuación de :{row.PUNTUACION}:")
+        st.dataframe(df)
         
        
 
