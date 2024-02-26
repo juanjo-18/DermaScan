@@ -172,33 +172,12 @@ def pagina_categoria_1():
             calificacion=modelo.predict([texto_calificacion])[0]
             texto_calificacion = ""
         
-        # Agregar un script de JavaScript
-        script = """
-        <script>
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                // Enviar un mensaje a Streamlit cuando se presiona Enter
-                const textoCalificacion = document.querySelector(".stTextInput input");
-                textoCalificacion.value = "";
-                textoCalificacion.dispatchEvent(new Event("input"));
-            }
-        });
-        </script>
-        """
-        # Insertar el script en la aplicación Streamlit
-        st.markdown(script, unsafe_allow_html=True)
-        # Verificar si se presionó Enter
-        if st.session_state.enter_pressed:
-            st.text("Se presionó Enter. Borrando el texto del comentario.")
-            texto_calificacion = ""
         
         
         st.text(f"¡La puntuacion es de {calificacion}!")
         mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
     
     
-    
-        
 
        
 
