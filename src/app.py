@@ -163,6 +163,17 @@ def pagina_categoria_1():
         texto_calificacion = st.text_area("Escribe tu comentario:")
         
         
+        # Centra el botón utilizando st.button y estilo CSS
+        button_html = """
+            <style>
+                div.stButton > button {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+        """
+        st.markdown(button_html, unsafe_allow_html=True)
         # Agrega un botón para borrar el contenido del área de texto
         if st.button("Añadir comentario"):
             calificacion=modelo.predict([texto_calificacion])[0]
@@ -170,17 +181,7 @@ def pagina_categoria_1():
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
-        st.markdown(
-            """
-            <style>
-                div.Widget.row-widget.stButton>div {
-                    display: flex;
-                    justify-content: center;
-                }
-            </style>
-            """,
-            unsafe_allow_html=True,
-        )
+    
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de { round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
     
