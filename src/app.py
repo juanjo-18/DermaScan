@@ -43,6 +43,7 @@ def pagina_categoria_1():
         # Verificar si se cargó una foto
         if imagen is not None:
             st.image(imagen, caption="Imagen cargada", use_column_width=True)
+            
             try:
                 # Ruta al archivo .tflite
                 archivo_tflite = 'model/piel_vs_cancer.tflite'
@@ -86,7 +87,7 @@ def pagina_categoria_1():
             imagen_clasificador_tipos = imagen_clasificador_tipos / 255.0  
             imagen_clasificador_tipos = np.expand_dims(imagen_clasificador_tipos, axis=0)  
             
-
+            calificacion = 0
             try:
                 # Realizar la predicción
                 prediccion_objeto_piel_modelo = objeto_piel_modelo.predict(imagen_objeto_vs_piel)
@@ -184,15 +185,15 @@ def pagina_categoria_1():
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
-    
-        st.markdown(f"<p style='text-align:center;'>¡La puntuación es de { round(calificacion,2)}!</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
     
+        # Prueba conexión con S3.
+
         conn = st.experimental_connection('s3', type=FilesConnection)
         df = conn.read("dermascan-streamlits3/pruebas3_streamlit.csv", input_format="csv", ttl=600)
         st.dataframe(df)
-        
-       
+
 
 def pagina_categoria_2():
     st.header("Página 2")
