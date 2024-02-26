@@ -172,7 +172,7 @@ def pagina_categoria_1():
         
         
         st.text(f"¡La puntuacion es de {calificacion}!")
-        mostrar_imagen_segun_puntuacion(calificacion)
+        mostrar_imagen_segun_puntuacion(int(calificacion))
     
     
 
