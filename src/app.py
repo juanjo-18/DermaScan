@@ -160,7 +160,8 @@ def pagina_categoria_1():
                 st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
 
         # Casilla de entrada de texto
-        texto_calificacion = st.text_area("Escribe tu comentario:")
+        st.text("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
+        texto_calificacion = st.text_area("")
         
         
         # Centra el botón utilizando st.button y estilo CSS
@@ -174,6 +175,7 @@ def pagina_categoria_1():
             </style>
         """
         st.markdown(button_html, unsafe_allow_html=True)
+
         # Agrega un botón para borrar el contenido del área de texto
         if st.button("Añadir comentario"):
             calificacion=modelo.predict([texto_calificacion])[0]
