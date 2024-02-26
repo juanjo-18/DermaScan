@@ -9,6 +9,7 @@ from PIL import Image
 from datetime import datetime, timedelta
 import os
 import tensorflow as tf
+from st_files_connection import FilesConnection
 
 def main():
     st.set_page_config(
@@ -187,7 +188,12 @@ def pagina_categoria_1():
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de { round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
     
-    
+        conn = st.connection('s3', type=FilesConnection)
+        df = conn.read("dermascan-streamlit/pruebas3_streamlit.csv", input_format="csv", ttl=600)
+
+        # Print results.
+        for row in df.itertuples():
+            st.write(f"El comentario:{row.COMENTARIO} tiene una puntuación de :{row.PUNTUACION}:")
 
        
 
