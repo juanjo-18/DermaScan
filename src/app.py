@@ -32,7 +32,7 @@ def main():
 
 def pagina_categoria_1():
     # Set the layout to two columns
-    col1, col2 = st.beta_columns([6, 4])  # 60% and 40% width
+    col1, col2,col3 = st.beta_columns([6,1,3])  # 60% and 40% width
     with col1:
         st.header("Comprueba la salud de tu piel.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
@@ -144,7 +144,7 @@ def pagina_categoria_1():
    
 
     # Text in the right column (20%)
-    with col2:
+    with col3:
         def mostrar_imagen_segun_puntuacion(puntuacion):
             if puntuacion == 0:
                 st.image("imagenes/estrellas_0.png", caption="", use_column_width=True)
