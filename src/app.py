@@ -137,6 +137,10 @@ def pagina_categoria_1():
                 st.error(f"Error al hacer la prediccion: {str(e)}")
 
     st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
+    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
+    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
+    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
+    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
     
     # Text in the right column (20%)
     with col2:
