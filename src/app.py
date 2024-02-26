@@ -32,7 +32,7 @@ def main():
 
 def pagina_categoria_1():
     # Set the layout to two columns
-    col1, col2,col3 = st.beta_columns([6,1,3])  # 60% and 40% width
+    col1, col2,col3 = st.columns([6,1,3])  # 60% and 40% width
     with col1:
         st.header("Comprueba la salud de tu piel.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
