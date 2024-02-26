@@ -139,7 +139,23 @@ def pagina_categoria_1():
 
     # Text in the right column (20%)
     with col2:
-        st.write("Este es el otro 20%:")
+        def mostrar_imagen_segun_puntuacion(puntuacion):
+            if puntuacion == 0:
+                st.image("imagenes/estrellas_0.png", caption="Puntuación 0", use_column_width=True)
+            elif puntuacion == 1:
+                st.image("imagenes/estrellas_1.png", caption="Puntuación 1", use_column_width=True)
+            elif puntuacion == 2:
+                st.image("imagenes/estrellas_2.png", caption="Puntuación 2", use_column_width=True)
+            elif puntuacion == 3:
+                st.image("imagenes/estrellas_3.png", caption="Puntuación 3", use_column_width=True)
+            elif puntuacion == 4:
+                st.image("imagenes/estrellas_4.png", caption="Puntuación 4", use_column_width=True)
+            elif puntuacion == 5:
+                st.image("imagenes/estrellas_5.png", caption="Puntuación 5", use_column_width=True)
+
+        # Ejemplo de uso
+        puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
+        mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
     
     
     
@@ -149,23 +165,7 @@ def pagina_categoria_1():
 
 def pagina_categoria_2():
     st.header("Página 2")
-    def mostrar_imagen_segun_puntuacion(puntuacion):
-        if puntuacion == 0:
-            st.image("imagenes/estrellas_0.png", caption="Puntuación 0", use_column_width=True)
-        elif puntuacion == 1:
-            st.image("imagenes/estrellas_1.png", caption="Puntuación 1", use_column_width=True)
-        elif puntuacion == 2:
-            st.image("imagenes/estrellas_2.png", caption="Puntuación 2", use_column_width=True)
-        elif puntuacion == 3:
-            st.image("imagenes/estrellas_3.png", caption="Puntuación 3", use_column_width=True)
-        elif puntuacion == 4:
-            st.image("imagenes/estrellas_4.png", caption="Puntuación 4", use_column_width=True)
-        elif puntuacion == 5:
-            st.image("imagenes/estrellas_5.png", caption="Puntuación 5", use_column_width=True)
-
-    # Ejemplo de uso
-    puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
-    mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
+    
 
 def pagina_categoria_3():
     st.header("Página 3")
