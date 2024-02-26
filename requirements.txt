@@ -8,7 +8,7 @@ keras
 protobuf
 Pillow
 streamlit>=1.22
-plotly==4.14.3
+plotlY
 click==8.0.4
 s3fs
 st-files-connection
