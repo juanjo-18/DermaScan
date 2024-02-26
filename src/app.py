@@ -27,7 +27,7 @@ def main():
 
 def pagina_categoria_1():
     # Set the layout to two columns
-    col1, col2 = st.beta_columns([3, 2])  # 60% and 40% width
+    col1, col2 = st.beta_columns([6, 4])  # 60% and 40% width
     with col1:
         st.header("Comprueba la salud de tu piel.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
@@ -136,10 +136,7 @@ def pagina_categoria_1():
             except Exception as e:
                 st.error(f"Error al hacer la prediccion: {str(e)}")
 
-    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
-    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
-    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
-    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
+   
 
     # Text in the right column (20%)
     with col2:
