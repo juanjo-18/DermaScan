@@ -163,8 +163,8 @@ def pagina_categoria_1():
         # Ejemplo de uso
         puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
         # Casilla de entrada de texto
-        texto_calificacion = st.text_input("Escribe tu comentario:")
-
+        #texto_calificacion = st.text_input("Escribe tu comentario:")
+        texto_calificacion = st.text_area("Escribe tu comentario:")
 
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
