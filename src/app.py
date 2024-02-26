@@ -168,22 +168,9 @@ def pagina_categoria_1():
             calificacion=0
         else:
             calificacion=modelo.predict([texto_calificacion])[0]
+            texto_calificacion = ""
         
-        script = """
-        <script>
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "Enter") {
-                // Enviar un mensaje a Streamlit cuando se presiona Enter
-                Streamlit.setComponentValue("enter_pressed", true);
-            }
-        });
-        </script>
-        """
-
-        # Insertar el script en la aplicación Streamlit
-        st.write(script)
-        if st.session_state.enter_pressed:
-            texto_calificacion = ""    
+         
         
         
         st.text(f"¡La puntuacion es de {calificacion}!")
