@@ -11,6 +11,11 @@ import os
 import tensorflow as tf
 
 def main():
+    st.set_page_config(
+        page_title="DermaScan",
+        page_icon=":microscope:",
+        layout="wide",  # Ancho completo
+    )
     st.title("DermaScan")
     
 
