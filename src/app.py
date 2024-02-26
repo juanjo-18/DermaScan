@@ -168,7 +168,7 @@ def pagina_categoria_1():
         
         # Agrega un botón para borrar el contenido del área de texto
         if st.button("Añadir comentario"):
-            texto_calificacion = st.experimental_rerun()
+            texto_calificacion = st.empty()
             
         
         if len(texto_calificacion.strip()) == 0:
