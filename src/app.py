@@ -160,7 +160,7 @@ def pagina_categoria_1():
                 st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
 
         # Casilla de entrada de texto
-        st.text("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
+        st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
         texto_calificacion = st.text_area("")
         
         
