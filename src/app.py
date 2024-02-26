@@ -27,7 +27,7 @@ def main():
 
 def pagina_categoria_1():
     # Set the layout to two columns
-    col1, col2 = st.beta_columns([4, 1])  # 80% and 20% width
+    col1, col2 = st.beta_columns([3, 2])  # 60% and 40% width
     with col1:
         st.header("Comprueba la salud de tu piel.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
@@ -156,7 +156,7 @@ def pagina_categoria_1():
         # Ejemplo de uso
         puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
         # Casilla de entrada de texto
-        texto_calificacion = st.text_input("Escribe tu nombre:", "Nombre predeterminado")
+        texto_calificacion = st.text_input("Escribe tu comentario:")
         calificacion=2.5
         st.text(f"¡La puntuacion es de {calificacion}!")
         mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
