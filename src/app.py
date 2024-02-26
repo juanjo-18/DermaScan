@@ -170,9 +170,18 @@ def pagina_categoria_1():
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
-        
-        st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {calificacion}!</p>", unsafe_allow_html=True)
-        st.text(f"¡La puntuacion es de {calificacion}!")
+        st.markdown(
+            """
+            <style>
+                div.Widget.row-widget.stButton>div {
+                    display: flex;
+                    justify-content: center;
+                }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.markdown(f"<p style='text-align:center;'>¡La puntuación es de { round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
     
     
