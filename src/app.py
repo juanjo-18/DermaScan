@@ -102,7 +102,8 @@ def pagina_categoria_1():
             resultados = piel_vs_cancer.get_tensor(salida_details[0]['index'])
 
             # Imprimir la predicción de objeto o piel
-            st.write("La prediccion de objeto o piel es: ",prediccion_objeto_piel_modelo[0, 0])
+            st.write("La prediccion de  piel es: ",prediccion_objeto_piel_modelo[0, 0])
+            st.write("La prediccion de  objeto es: ",prediccion_objeto_piel_modelo[0, 1])
             valor_prediccion_objeto_piel_modelo=prediccion_objeto_piel_modelo[0, 0]
             if valor_prediccion_objeto_piel_modelo >= 0.75:
                 st.write("La imagen es piel.")
