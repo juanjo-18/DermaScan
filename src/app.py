@@ -136,12 +136,11 @@ def pagina_categoria_1():
             except Exception as e:
                 st.error(f"Error al hacer la prediccion: {str(e)}")
 
-    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
-    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
-    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
-    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
-    st.markdown("&nbsp;")  # Puedes usar "&nbsp;" en markdown para agregar un espacio en blanco
-    
+    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
+    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
+    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
+    st.markdown("""<div style="margin-left: 20px;"></div>""", unsafe_allow_html=True)
+
     # Text in the right column (20%)
     with col2:
         def mostrar_imagen_segun_puntuacion(puntuacion):
