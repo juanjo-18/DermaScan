@@ -188,7 +188,7 @@ def pagina_categoria_1():
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de { round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
     
-        conn = st.connection('s3', type=FilesConnection)
+        conn = st.experimental_connection('s3', type=FilesConnection)
         df = conn.read("dermascan-streamlit/pruebas3_streamlit.csv", input_format="csv", ttl=600)
 
         # Print results.
