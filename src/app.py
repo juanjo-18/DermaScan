@@ -145,6 +145,7 @@ def pagina_categoria_1():
 
     # Text in the right column (20%)
     with col3:
+        modelo=joblib.load("model/sentimientos_modelo.pkl")  
         def mostrar_imagen_segun_puntuacion(puntuacion):
             if puntuacion == 0:
                 st.image("imagenes/estrellas_0.png", caption="", use_column_width=True)
@@ -163,7 +164,7 @@ def pagina_categoria_1():
         puntuacion_seleccionada = st.selectbox("Selecciona una puntuación", [0, 1, 2, 3, 4, 5])
         # Casilla de entrada de texto
         texto_calificacion = st.text_input("Escribe tu comentario:")
-        calificacion=2.5
+        calificacion=modelo.predict([texto_calificacion])[0]
         st.text(f"¡La puntuacion es de {calificacion}!")
         mostrar_imagen_segun_puntuacion(puntuacion_seleccionada)
     
