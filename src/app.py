@@ -31,6 +31,7 @@ def main():
         pagina_categoria_3()
 
 def pagina_categoria_1():
+    calificacion = 0
     # Set the layout to two columns
     col1, col2,col3 = st.columns([6,1,3])  # 60% and 40% width
     with col1:
@@ -87,7 +88,6 @@ def pagina_categoria_1():
             imagen_clasificador_tipos = imagen_clasificador_tipos / 255.0  
             imagen_clasificador_tipos = np.expand_dims(imagen_clasificador_tipos, axis=0)  
             
-            calificacion = 0
             try:
                 # Realizar la predicción
                 prediccion_objeto_piel_modelo = objeto_piel_modelo.predict(imagen_objeto_vs_piel)
