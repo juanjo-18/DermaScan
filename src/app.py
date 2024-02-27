@@ -211,7 +211,8 @@ def pagina_categoria_1():
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
 
         # Llamar a la función para guardar los datos en S3
-        guardar_puntuacion_en_s3(texto_calificacion, calificacion)
+        if len(texto_calificacion.strip()) > 0:
+            guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 
         def mostrar_datos_desde_s3():
             try:
