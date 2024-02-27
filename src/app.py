@@ -231,9 +231,8 @@ def pagina_categoria_1():
             if len(texto_calificacion.strip()) > 0:
                 calificacion=modelo.predict([texto_calificacion])[0]
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
-                mostrar_datos_desde_s3()
-            # Elimina el contenedor existente y crea uno nuevo
-            texto_calificacion=""
+        mostrar_datos_desde_s3()
+            
             
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
