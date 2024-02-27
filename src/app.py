@@ -233,7 +233,7 @@ def pagina_categoria_1():
                 promedio = suma_puntuaciones / cantidad_registros
 
                 # Muestra el DataFrame en Streamlit
-                st.write(df)
+                #st.write(df)
                 return promedio  
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
