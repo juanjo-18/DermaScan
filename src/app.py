@@ -207,7 +207,7 @@ def pagina_categoria_1():
         
         # Casilla de entrada de texto
         st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
-        texto_calificacion = st.text_area("")
+        texto_calificacion = st.text_input("")
         
         
         # Centra el botón utilizando st.button y estilo CSS
@@ -229,8 +229,7 @@ def pagina_categoria_1():
                 calificacion=modelo.predict([texto_calificacion])[0]
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 mostrar_datos_desde_s3()
-                texto_calificacion=st.empty()
-                texto_calificacion = st.text_area("")
+            texto_calificacion = ""
                 
 
         if len(texto_calificacion.strip()) == 0:
