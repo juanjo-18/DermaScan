@@ -235,7 +235,8 @@ def pagina_categoria_1():
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 mostrar_datos_desde_s3()
             # Elimina el contenedor existente y crea uno nuevo
-            container.empty()
+            container.text_input("")
+            
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
