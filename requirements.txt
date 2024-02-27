@@ -12,3 +12,4 @@ plotly==5.16.0
 click==8.0.4
 s3fs
 st-files-connection
+boto3
