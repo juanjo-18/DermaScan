@@ -193,7 +193,9 @@ def pagina_categoria_1():
             calificacion=0
         
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
-        mostrar_imagen_segun_puntuacion(int(calificacion))
+        # Llamar a la función para mostrar los datos desde S3
+        puntuacion=mostrar_datos_desde_s3()
+        mostrar_imagen_segun_puntuacion(int(puntuacion))
         
 
         def guardar_puntuacion_en_s3(comentario, puntuacion):
@@ -232,12 +234,12 @@ def pagina_categoria_1():
 
                 # Muestra el DataFrame en Streamlit
                 st.write(df)
-                st.write(promedio)
+                return promedio  
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
-                
-        # Llamar a la función para mostrar los datos desde S3
-        mostrar_datos_desde_s3()
+            
+               
+        
 
 
 
