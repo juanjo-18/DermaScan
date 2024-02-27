@@ -234,6 +234,11 @@ def pagina_categoria_1():
         mostrar_datos_desde_s3()
             
         texto = "Este es el texto que quiero mostrar en el bloque en blanco."
+        texto1 = "Este es el texto que quiero mostrar en el bloque en blanco."
+        texto2 = "Este es el texto que quiero mostrar en el bloque en blanco."
+
+        # Concatenar los textos
+        textos_concatenados = f"{texto}<br>{texto1}<br>{texto2}"
 
         estilo_bloque = (
         "background-color: white; "
@@ -246,8 +251,7 @@ def pagina_categoria_1():
         # Mostrar el bloque en blanco con el texto encima
         st.write("Las 3 mejores reseñas:")
         with st.container():
-            st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, texto), unsafe_allow_html=True)
-            st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, texto), unsafe_allow_html=True)
+            st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, textos_concatenados), unsafe_allow_html=True)
 
 
        
