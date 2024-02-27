@@ -245,7 +245,7 @@ def pagina_categoria_1():
 
         # Mostrar el bloque en blanco con el texto encima
         with st.container():
-            st.write(texto)
+            st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, texto), unsafe_allow_html=True)
 
        
         
