@@ -237,7 +237,7 @@ def pagina_categoria_1():
             # Elimina el contenedor existente y crea uno nuevo
             container.empty()
             container = st.empty()
-                
+            texto_calificacion = container.text_area("")
 
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
