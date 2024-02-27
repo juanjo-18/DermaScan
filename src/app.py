@@ -202,6 +202,9 @@ def pagina_categoria_1():
                 mejor_texto3 = f"3 - {comentario3} {puntuacion3}"
 
                 crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3,"Las 3 mejores reseñas:")
+                # Crear un bloque vacío de 10px de altura usando HTML personalizado
+                bloque_vacio = '<div style="height: 10px;"></div>'
+                st.markdown(bloque_vacio, unsafe_allow_html=True)
                 crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3,"Las 3 peores reseñas:")
                 
             except NoCredentialsError:
