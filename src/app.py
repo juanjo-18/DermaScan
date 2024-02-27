@@ -184,6 +184,7 @@ def pagina_categoria_1():
                 # Calcula el promedio dividiendo la suma total por la cantidad de registros
                 promedio = suma_puntuaciones / cantidad_registros
                 mostrar_imagen_segun_puntuacion(int(promedio))
+                st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(promedio,2)}!</p>", unsafe_allow_html=True)
                 # Muestra el DataFrame en Streamlit
                 st.write(df)
                 
@@ -207,7 +208,7 @@ def pagina_categoria_1():
         
         # Casilla de entrada de texto
         st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
-        texto_calificacion = st.text_input("")
+        texto_calificacion = st.text_area("")
         
         
         # Centra el botón utilizando st.button y estilo CSS
@@ -229,14 +230,13 @@ def pagina_categoria_1():
                 calificacion=modelo.predict([texto_calificacion])[0]
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 mostrar_datos_desde_s3()
-            texto_calificacion = ""
+            texto_calificacion = st.text_area("", value="")
                 
 
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
-        st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
-        
+       
         
                
         
