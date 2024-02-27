@@ -212,7 +212,7 @@ def pagina_categoria_1():
         container = st.empty()
 
         # text_area para ingresar el comentario
-        texto_calificacion = container.text_area("")
+        texto_calificacion = container.text_input("")
         
         
         # Centra el botón utilizando st.button y estilo CSS
@@ -236,9 +236,6 @@ def pagina_categoria_1():
                 mostrar_datos_desde_s3()
             # Elimina el contenedor existente y crea uno nuevo
             container.empty()
-            container = st.empty()
-            texto_calificacion = container.text_area("")
-
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
