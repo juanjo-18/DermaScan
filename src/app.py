@@ -187,12 +187,12 @@ def pagina_categoria_1():
                 # Muestra el DataFrame en Streamlit
                 st.write(df)
                 # Ordenar el DataFrame por puntuación en orden descendente
-                df_ordenado = df.sort_values(by='puntuacion', ascending=False)
+                df_ordenado = df.sort_values(by='PUNTUACION', ascending=False)
 
                 # Extraer los tres mejores textos y asignarlos a variables separadas
-                mejor_texto1 = df_ordenado.iloc[0]['texto']
-                mejor_texto2 = df_ordenado.iloc[1]['texto']
-                mejor_texto3 = df_ordenado.iloc[2]['texto']
+                mejor_texto1 = df_ordenado.iloc[0]['COMENTARIO']
+                mejor_texto2 = df_ordenado.iloc[1]['COMENTARIO']
+                mejor_texto3 = df_ordenado.iloc[2]['COMENTARIO']
 
                 crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3)
                 
