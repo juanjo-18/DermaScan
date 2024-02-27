@@ -190,12 +190,16 @@ def pagina_categoria_1():
                 df_ordenado = df.sort_values(by='PUNTUACION', ascending=False)
 
                 # Extraer los tres mejores textos y asignarlos a variables separadas
-                mejor_texto1 = "",df_ordenado.iloc[0]['COMENTARIO'],"", round(df_ordenado.iloc[0]['PUNTUACION'],2)
+                comentario1 = df_ordenado.iloc[0]['COMENTARIO']
+                puntuacion1= round(df_ordenado.iloc[0]['PUNTUACION'],2)
                 comentario2 = df_ordenado.iloc[1]['COMENTARIO']
                 puntuacion2= round(df_ordenado.iloc[1]['PUNTUACION'],2)
+                comentario3 = df_ordenado.iloc[2]['COMENTARIO']
+                puntuacion3= round(df_ordenado.iloc[2]['PUNTUACION'],2)
+                
+                mejor_texto1 = f"{comentario1} {puntuacion1}"
                 mejor_texto2 = f"{comentario2} {puntuacion2}"
-
-                mejor_texto3 = df_ordenado.iloc[2]['COMENTARIO'],round(df_ordenado.iloc[2]['PUNTUACION'],2)
+                mejor_texto3 = f"{comentario3} {puntuacion3}"
 
                 crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3)
                 
