@@ -36,7 +36,7 @@ def main():
 def pagina_categoria_1():
     calificacion = 0
     # Set the layout to two columns
-    col1, col2,col3 = st.columns([6,1,3])  # 60% and 40% width
+    col1, col2,col3 = st.columns([4.5,1,3.5])  
     with col1:
         st.header("Comprueba la salud de tu piel.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
