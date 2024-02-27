@@ -244,7 +244,7 @@ def pagina_categoria_1():
         )
 
         # Mostrar el bloque en blanco con el texto encima
-        with st.container(**estilo_bloque):
+        with st.container():
             st.write(texto)
 
        
