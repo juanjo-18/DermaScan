@@ -234,10 +234,10 @@ def pagina_categoria_1():
                 mostrar_imagen_segun_puntuacion(int(promedio))
                 # Muestra el DataFrame en Streamlit
                 st.write(df)
-                return promedio  
+                
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
-                return None
+                
                
         
 
