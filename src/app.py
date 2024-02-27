@@ -244,8 +244,11 @@ def pagina_categoria_1():
         )
 
         # Mostrar el bloque en blanco con el texto encima
+        st.write("Las 3 mejores reseñas:")
         with st.container():
             st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, texto), unsafe_allow_html=True)
+            st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, texto), unsafe_allow_html=True)
+
 
        
         
