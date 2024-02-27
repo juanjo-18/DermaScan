@@ -149,6 +149,47 @@ def pagina_categoria_1():
 
     # Text in the right column (20%)
     with col3:
+        # Llamar a la función para mostrar los datos desde S3
+        def guardar_puntuacion_en_s3(comentario, puntuacion):
+            # Convierte el comentario y la puntuación en un DataFrame
+            df_nuevo = pd.DataFrame({"COMENTARIO": [comentario], "PUNTUACION": [puntuacion]})
+
+            try:
+                # Conecta con S3 y lee el archivo existente
+                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
+                obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
+                df_existente = pd.read_csv(obj['Body'])
+
+                # Concatena el nuevo DataFrame con el existente
+                df_final = pd.concat([df_existente, df_nuevo], ignore_index=True)
+
+                # Escribe el DataFrame final en S3
+                s3.put_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv', Body=df_final.to_csv(index=False), ContentType='text/csv')
+            except NoCredentialsError:
+                st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
+
+       
+                
+        def mostrar_datos_desde_s3():
+            try:
+                # Conecta con S3 y lee el archivo CSV
+                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
+                obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
+                df = pd.read_csv(obj['Body'])
+
+                suma_puntuaciones = df['PUNTUACION'].sum()
+                # Calcula la cantidad de registros en la columna 'puntuaciones'
+                cantidad_registros = len(df)
+
+                # Calcula el promedio dividiendo la suma total por la cantidad de registros
+                promedio = suma_puntuaciones / cantidad_registros
+                mostrar_imagen_segun_puntuacion(int(promedio))
+                # Muestra el DataFrame en Streamlit
+                st.write(df)
+                
+            except NoCredentialsError:
+                st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
+                
         modelo=joblib.load("model/sentimientos_modelo.pkl")  
         def mostrar_imagen_segun_puntuacion(puntuacion):
             if puntuacion == 0:
@@ -193,51 +234,8 @@ def pagina_categoria_1():
             calificacion=0
         
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
-        # Llamar a la función para mostrar los datos desde S3
         
-       
         
-
-        def guardar_puntuacion_en_s3(comentario, puntuacion):
-            # Convierte el comentario y la puntuación en un DataFrame
-            df_nuevo = pd.DataFrame({"COMENTARIO": [comentario], "PUNTUACION": [puntuacion]})
-
-            try:
-                # Conecta con S3 y lee el archivo existente
-                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
-                obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
-                df_existente = pd.read_csv(obj['Body'])
-
-                # Concatena el nuevo DataFrame con el existente
-                df_final = pd.concat([df_existente, df_nuevo], ignore_index=True)
-
-                # Escribe el DataFrame final en S3
-                s3.put_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv', Body=df_final.to_csv(index=False), ContentType='text/csv')
-            except NoCredentialsError:
-                st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
-
-       
-                
-        def mostrar_datos_desde_s3():
-            try:
-                # Conecta con S3 y lee el archivo CSV
-                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
-                obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
-                df = pd.read_csv(obj['Body'])
-
-                suma_puntuaciones = df['PUNTUACION'].sum()
-                # Calcula la cantidad de registros en la columna 'puntuaciones'
-                cantidad_registros = len(df)
-
-                # Calcula el promedio dividiendo la suma total por la cantidad de registros
-                promedio = suma_puntuaciones / cantidad_registros
-                mostrar_imagen_segun_puntuacion(int(promedio))
-                # Muestra el DataFrame en Streamlit
-                st.write(df)
-                
-            except NoCredentialsError:
-                st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
-                
                
         
 
