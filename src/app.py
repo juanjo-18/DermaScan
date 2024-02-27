@@ -187,15 +187,15 @@ def pagina_categoria_1():
             if len(texto_calificacion.strip()) > 0:
                 calificacion=modelo.predict([texto_calificacion])[0]
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
-                
+                mostrar_datos_desde_s3()
 
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
         # Llamar a la función para mostrar los datos desde S3
-        puntuacion=mostrar_datos_desde_s3()
-        mostrar_imagen_segun_puntuacion(int(puntuacion))
+        
+       
         
 
         def guardar_puntuacion_en_s3(comentario, puntuacion):
@@ -231,9 +231,9 @@ def pagina_categoria_1():
 
                 # Calcula el promedio dividiendo la suma total por la cantidad de registros
                 promedio = suma_puntuaciones / cantidad_registros
-
+                mostrar_imagen_segun_puntuacion(int(promedio))
                 # Muestra el DataFrame en Streamlit
-                #st.write(df)
+                st.write(df)
                 return promedio  
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
