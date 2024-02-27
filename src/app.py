@@ -213,7 +213,22 @@ def pagina_categoria_1():
         # Llamar a la función para guardar los datos en S3
         guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 
+        def mostrar_datos_desde_s3():
+            try:
+                # Conecta con S3 y lee el archivo CSV
+                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
+                obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
+                df = pd.read_csv(obj['Body'])
+
+                # Muestra el DataFrame en Streamlit
+                st.write(df)
+            except NoCredentialsError:
+                st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
                 
+        # Llamar a la función para mostrar los datos desde S3
+        mostrar_datos_desde_s3()
+
+
 
 def pagina_categoria_2():
     st.header("Página 2")
