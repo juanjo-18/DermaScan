@@ -201,13 +201,14 @@ def pagina_categoria_1():
                 mejor_texto2 = f"2 - {comentario2} {puntuacion2}"
                 mejor_texto3 = f"3 - {comentario3} {puntuacion3}"
 
-                crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3)
+                crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3,"Las 3 mejores reseñas:")
+                crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3,"Las 3 peores reseñas:")
                 
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
         
 
-        def crear_bloques_reseñas(texto,texto1,texto2):
+        def crear_bloques_reseñas(texto,texto1,texto2,frase):
             # Concatenar los textos
             textos_concatenados = f"{texto}<br>{texto1}<br>{texto2}"
 
@@ -219,7 +220,7 @@ def pagina_categoria_1():
             "box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"
             )
             # Mostrar el bloque en blanco con el texto encima
-            st.write("Las 3 mejores reseñas:")
+            st.write(frase)
             with st.container():
                 st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, textos_concatenados), unsafe_allow_html=True)
 
