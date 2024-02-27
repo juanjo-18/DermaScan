@@ -160,7 +160,7 @@ def pagina_categoria_1():
                 st.image("imagenes/estrellas_4.png", caption="", use_column_width=True)
             elif puntuacion == 5:
                 st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
-
+        
         # Casilla de entrada de texto
         st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
         texto_calificacion = st.text_area("")
@@ -185,11 +185,32 @@ def pagina_categoria_1():
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
+        # FUNCION PARA ESCRIBIR DATOS EN S3
+        def guardar_puntuacion_en_s3(comentario, puntuacion):
+            # Convierte el comentario y la puntuación en un DataFrame
+            df_nuevo = pd.DataFrame({"COMENTARIO": [comentario], "PUNTUACION": [puntuacion]})
+
+            # Conecta con S3
+            conn = st.experimental_connection("s3", type=FilesConnection)
+
+            # Lee el archivo CSV existente
+            df_existente = conn.read("dermascan-streamlits3/pruebas3_streamlit.csv", input_format="csv", ttl=600)
+
+            # Concatena el nuevo DataFrame con el existente
+            df_final = pd.concat([df_existente, df_nuevo], ignore_index=True)
+
+            # Guarda el DataFrame final en S3
+            conn.write("dermascan-streamlits3/pruebas3_streamlit.csv", df_final, format="csv")
+        
+        
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
     
-        # Prueba conexión con S3.
+        # Guardar la puntuación en un archivo CSV en S3
+        guardar_puntuacion_en_s3(texto_calificacion, calificacion)
 
+
+        # Prueba conexión con S3.
         conn = st.experimental_connection('s3', type=FilesConnection)
         df = conn.read("dermascan-streamlits3/pruebas3_streamlit.csv", input_format="csv", ttl=600)
         st.dataframe(df)
