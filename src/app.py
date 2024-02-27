@@ -233,11 +233,18 @@ def pagina_categoria_1():
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
         mostrar_datos_desde_s3()
             
-        # Crear un espacio en blanco
-        espacio_blanco = st.empty()
+        texto = "Este es el texto que quiero mostrar en el bloque en blanco."
 
-        # Definir el texto que quieres mostrar
-        texto = "Este es el texto que quiero mostrar en el espacio en blanco."
+        # Aplicar estilo CSS para el bloque en blanco
+        estilo_bloque = (
+            "background-color: white; "
+            "padding: 10px; "
+            "border-radius: 5px; "
+            "box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"
+        )
+
+        # Mostrar el bloque en blanco con el texto encima
+        st.markdown(f'<div style="{estilo_bloque}">{texto}</div>', unsafe_allow_html=True)
 
         # Llenar el espacio en blanco con el texto
         espacio_blanco.text(texto)
