@@ -168,8 +168,7 @@ def pagina_categoria_1():
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
 
-       
-                
+        
         def mostrar_datos_desde_s3():
             try:
                 # Conecta con S3 y lee el archivo CSV
@@ -187,10 +186,37 @@ def pagina_categoria_1():
                 st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(promedio,2)}!</p>", unsafe_allow_html=True)
                 # Muestra el DataFrame en Streamlit
                 st.write(df)
+                # Ordenar el DataFrame por puntuación en orden descendente
+                df_ordenado = df.sort_values(by='puntuacion', ascending=False)
+
+                # Extraer los tres mejores textos y asignarlos a variables separadas
+                mejor_texto1 = df_ordenado.iloc[0]['texto']
+                mejor_texto2 = df_ordenado.iloc[1]['texto']
+                mejor_texto3 = df_ordenado.iloc[2]['texto']
+
+                crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3)
                 
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
-                
+        
+
+        def crear_bloques_reseñas(texto,texto1,texto2):
+            # Concatenar los textos
+            textos_concatenados = f"{texto}<br>{texto1}<br>{texto2}"
+
+            estilo_bloque = (
+            "background-color: white; "
+            "color: black; "
+            "padding: 10px; "
+            "border-radius: 5px; "
+            "box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"
+            )
+            # Mostrar el bloque en blanco con el texto encima
+            st.write("Las 3 mejores reseñas:")
+            with st.container():
+                st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, textos_concatenados), unsafe_allow_html=True)
+
+
         modelo=joblib.load("model/sentimientos_modelo.pkl")  
         def mostrar_imagen_segun_puntuacion(puntuacion):
             if puntuacion == 0:
@@ -208,10 +234,8 @@ def pagina_categoria_1():
         
         # Casilla de entrada de texto
         st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
-        # Crear un contenedor para el text_area
         # text_area para ingresar el comentario
         texto_calificacion = st.text_input("")
-        
         
         # Centra el botón utilizando st.button y estilo CSS
         button_html = """
@@ -232,35 +256,11 @@ def pagina_categoria_1():
                 calificacion=modelo.predict([texto_calificacion])[0]
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
         mostrar_datos_desde_s3()
-            
-        texto = "Este es el texto que quiero mostrar en el bloque en blanco."
-        texto1 = "Este es el texto que quiero mostrar en el bloque en blanco."
-        texto2 = "Este es el texto que quiero mostrar en el bloque en blanco."
-
-        # Concatenar los textos
-        textos_concatenados = f"{texto}<br>{texto1}<br>{texto2}"
-
-        estilo_bloque = (
-        "background-color: white; "
-        "color: black; "
-        "padding: 10px; "
-        "border-radius: 5px; "
-        "box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"
-        )
-
-        # Mostrar el bloque en blanco con el texto encima
-        st.write("Las 3 mejores reseñas:")
-        with st.container():
-            st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, textos_concatenados), unsafe_allow_html=True)
-
-
-       
         
-               
         
 
 
-
+    
 def pagina_categoria_2():
     st.header("Página 2")
     
