@@ -198,7 +198,7 @@ def pagina_categoria_1():
 
             try:
                 # Conecta con S3 y lee el archivo existente
-                s3 = boto3.client('s3', aws_access_key_id='TU_ACCESS_KEY_ID', aws_secret_access_key='TU_SECRET_ACCESS_KEY')
+                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
                 obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
                 df_existente = pd.read_csv(obj['Body'])
 
