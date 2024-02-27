@@ -207,10 +207,12 @@ def pagina_categoria_1():
                 st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
         
         # Casilla de entrada de texto
-        # Genera una clave única para el text_area
-        widget_key = "text_area_" + str(hash("unique_key")) 
         st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
-        texto_calificacion = st.text_area("", key=widget_key)
+        # Crear un contenedor para el text_area
+        container = st.empty()
+
+        # text_area para ingresar el comentario
+        texto_calificacion = container.text_area("")
         
         
         # Centra el botón utilizando st.button y estilo CSS
@@ -232,8 +234,9 @@ def pagina_categoria_1():
                 calificacion=modelo.predict([texto_calificacion])[0]
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 mostrar_datos_desde_s3()
-            widget_key = "text_area_" + str(hash("new_unique_key"))
-            texto_calificacion = st.text_area("", value="", key=widget_key)
+            # Elimina el contenedor existente y crea uno nuevo
+            container.empty()
+            container = st.empty()
                 
 
         if len(texto_calificacion.strip()) == 0:
