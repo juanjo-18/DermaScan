@@ -237,7 +237,7 @@ def pagina_categoria_1():
                 return promedio  
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
-            
+                return None
                
         
 
