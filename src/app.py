@@ -233,10 +233,14 @@ def pagina_categoria_1():
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
         mostrar_datos_desde_s3()
             
-            
-        if len(texto_calificacion.strip()) == 0:
-            calificacion=0
-        
+        # Crear un espacio en blanco
+        espacio_blanco = st.empty()
+
+        # Definir el texto que quieres mostrar
+        texto = "Este es el texto que quiero mostrar en el espacio en blanco."
+
+        # Llenar el espacio en blanco con el texto
+        espacio_blanco.text(texto)
        
         
                
