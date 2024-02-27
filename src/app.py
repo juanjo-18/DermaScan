@@ -185,7 +185,7 @@ def pagina_categoria_1():
                 mostrar_imagen_segun_puntuacion(int(promedio))
                 st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(promedio,2)}!</p>", unsafe_allow_html=True)
                 # Muestra el DataFrame en Streamlit
-                st.write(df)
+                #st.write(df)
                 # Ordenar el DataFrame por puntuación en orden descendente
                 df_ordenado = df.sort_values(by='PUNTUACION', ascending=False)
 
