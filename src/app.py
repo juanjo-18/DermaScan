@@ -209,10 +209,8 @@ def pagina_categoria_1():
         # Casilla de entrada de texto
         st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
         # Crear un contenedor para el text_area
-        container = st.empty()
-
         # text_area para ingresar el comentario
-        texto_calificacion = container.text_input("")
+        texto_calificacion = st.text_input("")
         
         
         # Centra el botón utilizando st.button y estilo CSS
@@ -235,7 +233,7 @@ def pagina_categoria_1():
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 mostrar_datos_desde_s3()
             # Elimina el contenedor existente y crea uno nuevo
-            container.text_input("")
+            texto_calificacion=""
             
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
