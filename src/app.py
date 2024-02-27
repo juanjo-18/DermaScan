@@ -215,7 +215,7 @@ def pagina_categoria_1():
                 peor_texto1 = f"1 - {comentario1} {puntuacion1}"
                 peor_texto2 = f"2 - {comentario2} {puntuacion2}"
                 peor_texto3 = f"3 - {comentario3} {puntuacion3}"
-                
+
                 # Crear un bloque vacío de 10px de altura usando HTML personalizado
                 bloque_vacio = '<div style="height: 20px;"></div>'
                 st.markdown(bloque_vacio, unsafe_allow_html=True)
@@ -281,6 +281,7 @@ def pagina_categoria_1():
              # Llamar a la función para guardar los datos en S3
             if len(texto_calificacion.strip()) > 0:
                 calificacion=modelo.predict([texto_calificacion])[0]
+                st.write("Tu calificacion a sido de: ",calificacion)
                 guardar_puntuacion_en_s3(texto_calificacion, calificacion)
         mostrar_datos_desde_s3()
         
