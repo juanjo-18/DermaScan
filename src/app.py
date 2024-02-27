@@ -183,7 +183,11 @@ def pagina_categoria_1():
 
         # Agrega un botón para borrar el contenido del área de texto
         if st.button("Añadir comentario"):
-            calificacion=modelo.predict([texto_calificacion])[0]
+             # Llamar a la función para guardar los datos en S3
+            if len(texto_calificacion.strip()) > 0:
+                calificacion=modelo.predict([texto_calificacion])[0]
+                guardar_puntuacion_en_s3(texto_calificacion, calificacion)
+                
 
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
@@ -210,9 +214,7 @@ def pagina_categoria_1():
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
 
-        # Llamar a la función para guardar los datos en S3
-        if len(texto_calificacion.strip()) > 0:
-            guardar_puntuacion_en_s3(texto_calificacion, calificacion)
+       
                 
         def mostrar_datos_desde_s3():
             try:
@@ -221,8 +223,16 @@ def pagina_categoria_1():
                 obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
                 df = pd.read_csv(obj['Body'])
 
+                suma_puntuaciones = df['PUNTUACION'].sum()
+                # Calcula la cantidad de registros en la columna 'puntuaciones'
+                cantidad_registros = len(df)
+
+                # Calcula el promedio dividiendo la suma total por la cantidad de registros
+                promedio = suma_puntuaciones / cantidad_registros
+
                 # Muestra el DataFrame en Streamlit
                 st.write(df)
+                st.write(promedio)
             except NoCredentialsError:
                 st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
                 
