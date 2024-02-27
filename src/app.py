@@ -197,9 +197,9 @@ def pagina_categoria_1():
                 comentario3 = df_ordenado.iloc[2]['COMENTARIO']
                 puntuacion3= round(df_ordenado.iloc[2]['PUNTUACION'],2)
                 
-                mejor_texto1 = f"{comentario1} {puntuacion1}"
-                mejor_texto2 = f"{comentario2} {puntuacion2}"
-                mejor_texto3 = f"{comentario3} {puntuacion3}"
+                mejor_texto1 = f"1 - {comentario1} {puntuacion1}"
+                mejor_texto2 = f"2 - {comentario2} {puntuacion2}"
+                mejor_texto3 = f"3 - {comentario3} {puntuacion3}"
 
                 crear_bloques_reseñas(mejor_texto1,mejor_texto2,mejor_texto3)
                 
