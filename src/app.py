@@ -1,15 +1,18 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import tensorflow as tf
 import joblib
 import tensorflow
 import keras
+import boto3
+import os
+
 from keras.models import load_model
 from PIL import Image
 from datetime import datetime, timedelta
-import os
-import tensorflow as tf
 from st_files_connection import FilesConnection
+from botocore.exceptions import NoCredentialsError
 
 def main():
     st.set_page_config(
@@ -185,27 +188,24 @@ def pagina_categoria_1():
         if len(texto_calificacion.strip()) == 0:
             calificacion=0
         
+        
         # FUNCION PARA ESCRIBIR DATOS EN S3
         def guardar_puntuacion_en_s3(comentario, puntuacion):
             # Convierte el comentario y la puntuación en un DataFrame
             df_nuevo = pd.DataFrame({"COMENTARIO": [comentario], "PUNTUACION": [puntuacion]})
 
-            # Conecta con S3
-            conn = st.experimental_connection("s3", type=FilesConnection)
+            # Conecta con S3 y guarda el DataFrame en un archivo CSV
+            try:
+                s3 = boto3.client('s3', aws_access_key_id='AKIAZI2LIKTBAK3F2JEX', aws_secret_access_key='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')
+                s3.put_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv', Body=df_nuevo.to_csv(index=False), ContentType='text/csv')
+            except NoCredentialsError:
+                st.error("No se encontraron las credenciales de AWS. Por favor, configure sus credenciales correctamente.")
+                
+                
 
-            # Lee el archivo CSV existente
-            df_existente = conn.read("dermascan-streamlits3/pruebas3_streamlit.csv", input_format="csv", ttl=600)
-
-            # Concatena el nuevo DataFrame con el existente
-            df_final = pd.concat([df_existente, df_nuevo], ignore_index=True)
-
-            # Guarda el DataFrame final en S3
-            conn.write("dermascan-streamlits3/pruebas3_streamlit.csv", df_final, format="csv")
-        
-        
         st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(calificacion,2)}!</p>", unsafe_allow_html=True)
         mostrar_imagen_segun_puntuacion(int(calificacion))
-    
+            
         # Guardar la puntuación en un archivo CSV en S3
         guardar_puntuacion_en_s3(texto_calificacion, calificacion)
 
