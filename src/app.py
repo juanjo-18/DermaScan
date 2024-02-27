@@ -235,16 +235,17 @@ def pagina_categoria_1():
             
         texto = "Este es el texto que quiero mostrar en el bloque en blanco."
 
-        # Aplicar estilo CSS para el bloque en blanco
         estilo_bloque = (
-            "background-color: white; "
-            "padding: 10px; "
-            "border-radius: 5px; "
-            "box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"
+        "background-color: white; "
+        "color: black; "
+        "padding: 10px; "
+        "border-radius: 5px; "
+        "box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);"
         )
 
         # Mostrar el bloque en blanco con el texto encima
-        st.markdown(f'<div style="{estilo_bloque}">{texto}</div>', unsafe_allow_html=True)
+        st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, texto), unsafe_allow_html=True)
+
 
        
         
