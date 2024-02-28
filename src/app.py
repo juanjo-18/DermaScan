@@ -326,29 +326,32 @@ def pagina_categoria_2():
     # Sección de Protección Solar
     with col7:
         st.subheader("Protección Solar")
-        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        #st.image("ruta_imagen_proteccion_solar.jpg", use_column_width=True)
+        st.image("imagenes/sun_2.jpg", use_column_width=True)
+        st.write("Usa protector solar incluso en días nublados o cuando estés bajo la sombra, ya que los rayos UV pueden penetrar las nubes y reflejarse en superficies como la arena y el agua.")
+        st.write("Elige un protector solar que ofrezca protección de amplio espectro contra los rayos UVA y UVB, y asegúrate de aplicarlo generosamente en todas las áreas expuestas de la piel.")
+        st.write("No te olvides de proteger tus labios con un bálsamo labial con SPF y usar gafas de sol con protección UV para proteger tus ojos del daño solar.")
+        
 
     # Sección de otra recomendación
     with col8:
-        st.subheader("Otra Recomendación")
-        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        #st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
+        st.subheader("Visita al dermatólogo")
+        st.image("imagenes/zderm_1.jpg", use_column_width=True)
+        st.write("Programa revisiones periódicas con un dermatólogo para realizar un seguimiento de la salud de tu piel y detectar cualquier cambio o problema potencial de manera temprana.")
+        st.write("El dermatólogo puede ofrecerte consejos personalizados sobre cómo cuidar y proteger tu piel, así como recomendaciones específicas de productos y tratamientos adecuados para tus necesidades individuales.")
+        st.write("No subestimes la importancia de consultar regularmente a un dermatólogo, especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.")
 
     # Sección de otra recomendación
     with col9:
-        st.subheader("Otra Recomendación")
-        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        #st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
-
+        st.subheader("Estilo de vida saludable")
+        st.image("imagenes/ssport_1.jpg", use_column_width=True)
+        st.write("Adopta un estilo de vida saludable que incluya hábitos como una alimentación equilibrada, ejercicio regular y descanso adecuado para promover la salud general de tu piel.")
+        st.write("Evita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos pueden afectar negativamente la salud de la piel y aumentar el riesgo de problemas cutáneos como el envejecimiento prematuro y el cáncer de piel.")
+        st.write("Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés crónico puede contribuir a problemas cutáneos como el acné y la dermatitis.")
 
 
     # Apartado de Índice Solar UV
     st.subheader("Índice Solar UV")
     st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-
-
-
 
 
 
