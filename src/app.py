@@ -47,6 +47,7 @@ def pagina_categoria_1():
 
 
 
+
 def pagina_categoria_2():
     calificacion = 0
     # Set the layout to two columns
@@ -160,8 +161,7 @@ def pagina_categoria_2():
                 st.error(f"Error al hacer la prediccion: {str(e)}")
 
    
-
-    # Text in the right column (20%)
+    # COLUMNA DE RATINGS (20%)
     with col3:
         # Llamar a la función para mostrar los datos desde S3
         def guardar_puntuacion_en_s3(comentario, puntuacion):
@@ -197,9 +197,11 @@ def pagina_categoria_2():
                 # Calcula el promedio dividiendo la suma total por la cantidad de registros
                 promedio = suma_puntuaciones / cantidad_registros
                 mostrar_imagen_segun_puntuacion(int(promedio))
-                st.markdown(f"<p style='text-align:center;'>¡La puntuación es de {round(promedio,2)}!</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='text-align:center;'>¡La puntuación media es de {round(promedio,2)}!</p>", unsafe_allow_html=True)
+              
                 # Muestra el DataFrame en Streamlit
                 #st.write(df)
+
                 # Ordenar el DataFrame por puntuación en orden descendente
                 df_ordenado = df.sort_values(by='PUNTUACION', ascending=False)
 
@@ -273,8 +275,9 @@ def pagina_categoria_2():
             elif puntuacion == 5:
                 st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
         
+        st.header("Ratings")
         # Casilla de entrada de texto
-        st.write("Escribe tu comentario aqui de que te aparecido nuestra pagina: ")
+        st.write("Púntua nuestra pagina: ")
         # text_area para ingresar el comentario
         texto_calificacion = st.text_input("")
         
@@ -291,7 +294,7 @@ def pagina_categoria_2():
         st.markdown(button_html, unsafe_allow_html=True)
 
         # Agrega un botón para borrar el contenido del área de texto
-        if st.button("Añadir comentario"):
+        if st.button("Enviar"):
              # Llamar a la función para guardar los datos en S3
             if len(texto_calificacion.strip()) > 0:
                 calificacion=modelo.predict([texto_calificacion])[0]
