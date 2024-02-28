@@ -294,32 +294,55 @@ def pagina_categoria_2():
     st.subheader("Recomendaciones Generales")
     
     # División de la pantalla en columnas proporcionales
-    col1, col2, col3 = st.columns([1, 1, 1])
+    col4, col5, col6 = st.columns([1, 1, 1])
     
     # Sección de Tiempo de Exposición
-    with col1:
+    with col4:
         st.subheader("Tiempo de Exposición al Sol")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
         st.image("ruta_imagen_tiempo_exposicion.jpg", use_column_width=True)
 
     # Sección de Hidratación
-    with col2:
+    with col5:
         st.subheader("Hidratación")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
         st.image("ruta_imagen_hidratacion.jpg", use_column_width=True)
 
     # Sección de Dieta Saludable
-    with col3:
+    with col6:
         st.subheader("Dieta Saludable")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
         st.image("ruta_imagen_dieta.jpg", use_column_width=True)
 
+    
+    # División de la pantalla en columnas proporcionales
+    col7, col8, col9 = st.columns([1, 1, 1])
     # Sección de Protección Solar
-    col4, col5, col6 = st.columns([1, 1, 1])
-    with col4:
+    with col7:
         st.subheader("Protección Solar")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
         st.image("ruta_imagen_proteccion_solar.jpg", use_column_width=True)
+    # Sección de otra recomendación
+    with col8:
+        st.subheader("Otra Recomendación")
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+        st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
+
+    # Sección de otra recomendación
+    with col9:
+        st.subheader("Otra Recomendación")
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+        st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
+
+
+
+    # Apartado de Índice Solar UV
+    st.subheader("Índice Solar UV")
+    st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+
+
+
+
 
 
 
