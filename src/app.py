@@ -31,13 +31,13 @@ def pagina_categoria_1():
 if st.button("Home"):
     st.switch_page("src/app.py")
 if st.button("DermaScan App"):
-    st.switch_page("src/pages/page_1.py")
+    st.switch_page("src/pages/1_dermascan_app.py")
 if st.button("Cuidado y prevención"):
-    st.switch_page("src/pages/page_2.py")
+    st.switch_page("src/pages/2_prevencion.py")
 if st.button("About us"):
-    st.switch_page("src/pages/page_3.py")
+    st.switch_page("src/pages/3_indice_uv.py")
 if st.button("About us"):
-    st.switch_page("src/pages/page_4.py")
+    st.switch_page("src/pages/4_about_us.py.py")
 
 '''
     # Crear un menú desplegable en la barra lateral
