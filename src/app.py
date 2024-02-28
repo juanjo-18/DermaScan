@@ -288,26 +288,38 @@ def pagina_categoria_1():
         
         
 
-
-    
 def pagina_categoria_2():
-    st.title("Prevención y cuidado de la piel")
-    st.write("En esta sección encontrarás recomendaciones sobre cómo cuidar y prevenir enfermedades de la piel.")
-
-    st.header("Recomendaciones Generales:")
-    st.write("- Tiempo de exposición al sol: Limita la exposición al sol, especialmente entre las 10 a.m. y las 4 p.m.")
-    st.write("- Mantente hidratado: Bebe suficiente agua para mantener la piel hidratada.")
-    st.write("- Mantén una dieta saludable: Consumir alimentos ricos en vitaminas y antioxidantes puede ayudar a mantener la salud de la piel.")
-    st.write("- Uso de protección solar según el tipo de piel: Elige un protector solar con un SPF adecuado para tu tipo de piel y aplícalo generosamente.")
-
-    st.header("Índice Solar UV:")
-    st.write("El índice UV es una medida de la intensidad de la radiación ultravioleta del sol que alcanza la Tierra en un determinado momento y lugar.")
-    st.write("Es importante tener en cuenta el índice UV para tomar precauciones adecuadas al exponerse al sol.")
-    st.write("Aquí puedes encontrar información sobre el índice UV en tu ubicación actual.")
+    st.header("Cuidado y prevención de la piel")
     
+    st.subheader("Recomendaciones Generales")
+    
+    # División de la pantalla en columnas proporcionales
+    col1, col2, col3 = st.columns([1, 1, 1])
+    
+    # Sección de Tiempo de Exposición
+    with col1:
+        st.subheader("Tiempo de Exposición al Sol")
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+        st.image("ruta_imagen_tiempo_exposicion.jpg", use_column_width=True)
 
+    # Sección de Hidratación
+    with col2:
+        st.subheader("Hidratación")
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+        st.image("ruta_imagen_hidratacion.jpg", use_column_width=True)
 
+    # Sección de Dieta Saludable
+    with col3:
+        st.subheader("Dieta Saludable")
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+        st.image("ruta_imagen_dieta.jpg", use_column_width=True)
 
+    # Sección de Protección Solar
+    col4, col5, col6 = st.columns([1, 1, 1])
+    with col4:
+        st.subheader("Protección Solar")
+        st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
+        st.image("ruta_imagen_proteccion_solar.jpg", use_column_width=True)
 
 
 
