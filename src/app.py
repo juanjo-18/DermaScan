@@ -24,7 +24,7 @@ def main():
     st.title("DermaScan")
 
     # Crear un menú desplegable en la barra lateral
-    categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Inicio", "DermaScan App", "Prevención", "Categoría 4", "Categoría 5"])
+    categoria_seleccionada = st.sidebar.selectbox("MENÚ", ["Inicio", "DermaScan App", "Prevención", "Índice UV", "About US"])
 
     # Mostrar la página correspondiente según la categoría seleccionada
     if categoria_seleccionada == "Inicio":
@@ -33,9 +33,9 @@ def main():
         pagina_categoria_2()
     elif categoria_seleccionada == "Prevención":
         pagina_categoria_3()
-    elif categoria_seleccionada == "Categoría 4":
+    elif categoria_seleccionada == "Índice UV":
         pagina_categoria_4()
-    elif categoria_seleccionada == "Categoría 5":
+    elif categoria_seleccionada == "About US":
         pagina_categoria_5()
 
 
