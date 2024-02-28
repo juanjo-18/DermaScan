@@ -24,17 +24,30 @@ def main():
     st.title("DermaScan")
 
     # Crear un menú desplegable en la barra lateral
-    categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Inicio", "Prevención", "Categoría 3"])
+    categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Inicio", "DermaScan App", "Prevención", "Categoría 4", "Categoría 5"])
 
     # Mostrar la página correspondiente según la categoría seleccionada
     if categoria_seleccionada == "Inicio":
         pagina_categoria_1()
-    elif categoria_seleccionada == "Prevención":
+    elif categoria_seleccionada == "DermaScan App":
         pagina_categoria_2()
-    elif categoria_seleccionada == "Categoría 3":
+    elif categoria_seleccionada == "Prevención":
         pagina_categoria_3()
+    elif categoria_seleccionada == "Categoría 4":
+        pagina_categoria_4()
+    elif categoria_seleccionada == "Categoría 5":
+        pagina_categoria_5()
+
+
+
 
 def pagina_categoria_1():
+    st.header("Página 1")
+    st.write("Contenido pagina 1.")
+
+
+
+def pagina_categoria_2():
     calificacion = 0
     # Set the layout to two columns
     col1, col2,col3 = st.columns([6,1,3])  
@@ -288,7 +301,7 @@ def pagina_categoria_1():
         
         
 
-def pagina_categoria_2():
+def pagina_categoria_3():
     st.header("Cuidado y prevención de la piel")
     
     st.subheader("Recomendaciones Generales")
@@ -357,9 +370,13 @@ def pagina_categoria_2():
 
 
 
-def pagina_categoria_3():
+def pagina_categoria_4():
     st.header("Página 3")
     st.write("Contenido pagina 3.")
+
+def pagina_categoria_5():
+    st.header("Página 4")
+    st.write("Contenido pagina 4.")
 
 if __name__ == "__main__":
     main()
