@@ -74,7 +74,8 @@ def pagina_categoria_2():
     # Set the layout to two columns
     col5, col6,col7 = st.columns([6,1,3])  
     with col5:
-        st.header("Comprueba la salud de tu piel.")
+        st.subheader("DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel")
+        st.write("¡Bienvenido a DermaScan App! Aquí, en la vanguardia de la tecnología de cuidado de la piel, hemos desarrollado una aplicación revolucionaria que utiliza modelos de inteligencia artificial entrenados con una amplia variedad de imágenes de piel sana y afectada por lesiones cutáneas. Nuestra aplicación es capaz de analizar imágenes de piel en tiempo real y detectar la presencia de lesiones, determinar si son malignas y clasificarlas según su tipo. Con DermaScan App, puedes realizar evaluaciones rápidas y precisas de tu piel desde la comodidad de tu hogar, ayudando a detectar tempranamente posibles signos de cáncer de piel y promoviendo una piel más saludable y segura.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
 
         # Agregar un apartado para cargar una foto
@@ -326,9 +327,8 @@ def pagina_categoria_2():
         
 
 def pagina_categoria_3():
-    st.header("Prevención y cuidado de la piel")
-    
-    st.subheader("Recomendaciones Generales")
+    st.header("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
+    st.write("¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! Aquí encontrarás una completa guía para mantener tu piel saludable y protegida en todo momento. Desde consejos sobre rutinas de cuidado diario hasta recomendaciones sobre protección solar y hábitos alimenticios, estamos aquí para ayudarte a mantener una piel radiante y resistente a los daños solares. Explora nuestros recursos y descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.")
     
     # División de la pantalla en columnas proporcionales
     col8, col9, col10 = st.columns([1, 1, 1])
@@ -388,12 +388,21 @@ def pagina_categoria_3():
 
 
 def pagina_categoria_4():
-    st.header("Índice UV")
-    st.write("Contenido pagina 3.")
+
+    st.header("Índice Solar UV: Conoce el Impacto del Sol en tu Piel")
+    st.write("¡Descubre el impacto del sol en tu piel con nuestra sección de Incidencia Solar UV! Aquí te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Conoce cómo la radiación UV afecta tu piel en función de la época del año y la latitud en la que te encuentres, y aprende a tomar medidas preventivas para proteger tu piel contra los daños causados por la exposición al sol.")
+
+    
+
+
 
 def pagina_categoria_5():
-    st.header("Página 4")
-    st.write("Contenido pagina 4.")
+    
+    st.header("About Us: Conoce a los Creadores de DermaScan")
+    st.write("¡Bienvenido a nuestra sección 'About Us'! Aquí puedes conocer más sobre los creadores detrás de DermaScan: Juanjo Medina y Jesús Cánovas. Nos conocimos mientras realizábamos un Máster en inteligencia artificial y Big Data en el centro integrado de formación profesional Alan Turing, y desde entonces hemos estado trabajando juntos en proyectos innovadores. La idea de desarrollar DermaScan surgió de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana del cáncer de piel. Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la inteligencia artificial y la salud digital.")
+    
+
+
 
 if __name__ == "__main__":
     main()
