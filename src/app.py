@@ -343,7 +343,7 @@ def pagina_categoria_2():
     # Sección de otra recomendación
     with col9:
         st.subheader("Estilo de vida saludable")
-        st.image("imagenes/ssport_1.jpg", use_column_width=True)
+        st.image("imagenes/sport_1.jpg", use_column_width=True)
         st.write("Adopta un estilo de vida saludable que incluya hábitos como una alimentación equilibrada, ejercicio regular y descanso adecuado para promover la salud general de tu piel.")
         st.write("Evita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos pueden afectar negativamente la salud de la piel y aumentar el riesgo de problemas cutáneos como el envejecimiento prematuro y el cáncer de piel.")
         st.write("Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés crónico puede contribuir a problemas cutáneos como el acné y la dermatitis.")
