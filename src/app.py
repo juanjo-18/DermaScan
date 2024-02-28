@@ -156,7 +156,7 @@ def pagina_categoria_1():
 
             try:
                 # Conecta con S3 y lee el archivo existente
-                s3 = boto3.client('s3', aws_access_key_id='', aws_secret_access_key='')
+                s3 = boto3.client('s3', aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"], aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"])
                 obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
                 df_existente = pd.read_csv(obj['Body'])
 
@@ -172,7 +172,7 @@ def pagina_categoria_1():
         def mostrar_datos_desde_s3():
             try:
                 # Conecta con S3 y lee el archivo CSV
-                s3 = boto3.client('s3', aws_access_key_id='', aws_secret_access_key='')
+                s3 = boto3.client('s3', aws_access_key_id=st.secrets["AWS_ACCESS_KEY_ID"], aws_secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"])
                 obj = s3.get_object(Bucket='dermascan-streamlits3', Key='pruebas3_streamlit.csv')
                 df = pd.read_csv(obj['Body'])
 
