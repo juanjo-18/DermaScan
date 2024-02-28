@@ -300,39 +300,41 @@ def pagina_categoria_2():
     with col4:
         st.subheader("Tiempo de Exposición al Sol")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        st.image("ruta_imagen_tiempo_exposicion.jpg", use_column_width=True)
+        #st.image("ruta_imagen_tiempo_exposicion.jpg", use_column_width=True)
 
     # Sección de Hidratación
     with col5:
         st.subheader("Hidratación")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        st.image("ruta_imagen_hidratacion.jpg", use_column_width=True)
+        #st.image("ruta_imagen_hidratacion.jpg", use_column_width=True)
 
     # Sección de Dieta Saludable
     with col6:
         st.subheader("Dieta Saludable")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        st.image("ruta_imagen_dieta.jpg", use_column_width=True)
+        #st.image("ruta_imagen_dieta.jpg", use_column_width=True)
 
     
     # División de la pantalla en columnas proporcionales
     col7, col8, col9 = st.columns([1, 1, 1])
+
     # Sección de Protección Solar
     with col7:
         st.subheader("Protección Solar")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        st.image("ruta_imagen_proteccion_solar.jpg", use_column_width=True)
+        #st.image("ruta_imagen_proteccion_solar.jpg", use_column_width=True)
+
     # Sección de otra recomendación
     with col8:
         st.subheader("Otra Recomendación")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
+        #st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
 
     # Sección de otra recomendación
     with col9:
         st.subheader("Otra Recomendación")
         st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-        st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
+        #st.image("ruta_imagen_otra_recomendacion.jpg", use_column_width=True)
 
 
 
