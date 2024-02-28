@@ -28,15 +28,15 @@ def pagina_categoria_1():
     st.header("Página 1")
     st.write("Contenido pagina 1.")
 
-if st.button("Home"):
+if st.button("Home", key="home"):
     st.switch_page("src/app.py")
-if st.button("DermaScan App"):
+if st.button("DermaScan App", key="dsapp"):
     st.switch_page("src/pages/1_dermascan_app.py")
-if st.button("Cuidado y prevención"):
+if st.button("Cuidado y prevención", key="care"):
     st.switch_page("src/pages/2_prevencion.py")
-if st.button("About us"):
+if st.button("Índice UV", key="uv"):
     st.switch_page("src/pages/3_indice_uv.py")
-if st.button("About us"):
+if st.button("About us", key="about"):
     st.switch_page("src/pages/4_about_us.py.py")
 
 '''
