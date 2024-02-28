@@ -24,7 +24,7 @@ def main():
     st.title("DermaScan")
 
     # Crear un menú desplegable en la barra lateral
-    categoria_seleccionada = st.sidebar.selectbox("MENÚ", ["Inicio", "DermaScan App", "Prevención", "Índice UV", "About US"])
+    categoria_seleccionada = st.sidebar.selectbox("MENÚ", ["Inicio", "DermaScan App", "Prevención", "Índice UV", "About us"])
 
     # Mostrar la página correspondiente según la categoría seleccionada
     if categoria_seleccionada == "Inicio":
@@ -35,24 +35,45 @@ def main():
         pagina_categoria_3()
     elif categoria_seleccionada == "Índice UV":
         pagina_categoria_4()
-    elif categoria_seleccionada == "About US":
+    elif categoria_seleccionada == "About us":
         pagina_categoria_5()
 
 
 
-
 def pagina_categoria_1():
-    st.header("Página 1")
-    st.write("Contenido pagina 1.")
+# Encabezado principal
+    st.header("¡Bienvenidos a DermaScan!")
+    st.subheader("Descubre el Futuro del Cuidado de la Piel")
 
+    col1, col2 = st.columns([1, 1])
+    with col1:
+    # Sección: DermaScan App
+        st.subheader("DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel")
+        st.write("DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas. Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.")
+    
+    with col2:
+    # Sección: Prevención y cuidado de la piel
+        st.subheader("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
+        st.write("En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares. Desde prácticas diarias de cuidado de la piel hasta medidas preventivas contra el cáncer de piel, estamos aquí para ayudarte a mantener una piel radiante y saludable en todo momento.")
+
+    col3, col4 = st.columns([1, 1])
+    with col3:
+    # Sección: Incidencia Solar UV
+        st.subheader("Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel")
+        st.write("Descubre la importancia de estar conscienciado del índice UV y su impacto en tu piel. En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Mantente informado y protege tu piel contra los daños causados por la radiación solar.")
+
+    with col4:
+    # Sección: About us
+        st.subheader("About us: Conoce a los Creadores de DermaScan")
+        st.write("Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos. Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo de inteligencia artificial para la detección temprana de enfermedades de la piel. Como residentes de Málaga, somos conscientes de la importancia de proteger la piel contra la radiación solar UV, lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la precvención del cáncer de piel.")
 
 
 
 def pagina_categoria_2():
     calificacion = 0
     # Set the layout to two columns
-    col1, col2,col3 = st.columns([6,1,3])  
-    with col1:
+    col5, col6,col7 = st.columns([6,1,3])  
+    with col5:
         st.header("Comprueba la salud de tu piel.")
         st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
 
@@ -162,7 +183,7 @@ def pagina_categoria_2():
 
    
     # COLUMNA DE RATINGS (20%)
-    with col3:
+    with col7:
         # Llamar a la función para mostrar los datos desde S3
         def guardar_puntuacion_en_s3(comentario, puntuacion):
             # Convierte el comentario y la puntuación en un DataFrame
@@ -305,15 +326,15 @@ def pagina_categoria_2():
         
 
 def pagina_categoria_3():
-    st.header("Cuidado y prevención de la piel")
+    st.header("Prevención y cuidado de la piel")
     
     st.subheader("Recomendaciones Generales")
     
     # División de la pantalla en columnas proporcionales
-    col4, col5, col6 = st.columns([1, 1, 1])
+    col8, col9, col10 = st.columns([1, 1, 1])
     
     # Sección de Tiempo de Exposición
-    with col4:
+    with col8:
         st.subheader("Tiempo de Exposición al Sol")
         st.image("imagenes/sun_1.jpg", use_column_width=True) 
         st.write("Limita tu tiempo de exposición al sol, especialmente durante las horas pico de radiación solar.")
@@ -321,7 +342,7 @@ def pagina_categoria_3():
         st.write("Aplica protector solar de amplio espectro con factor de protección solar (FPS) 30 o superior cada dos horas, o más frecuentemente si sudas o te mojas.")
 
     # Sección de Hidratación
-    with col5:
+    with col9:
         st.subheader("Hidratación")
         st.image("imagenes/water_1.jpg", use_column_width=True)
         st.write("Mantente bien hidratado bebiendo suficiente agua a lo largo del día, especialmente en climas cálidos o cuando haces ejercicio.")
@@ -329,7 +350,7 @@ def pagina_categoria_3():
         st.write("Evita el exceso de cafeína y alcohol, ya que pueden tener un efecto deshidratante en el cuerpo.")
 
     # Sección de Dieta Saludable
-    with col6:
+    with col10:
         st.subheader("Dieta Saludable")
         st.image("imagenes/food_1.jpg", use_column_width=True)
         st.write("Prioriza una dieta rica en frutas, verduras, granos enteros y proteínas magras para obtener los nutrientes necesarios para una piel saludable.")
@@ -337,10 +358,10 @@ def pagina_categoria_3():
         st.write("Evita los alimentos procesados, altos en azúcares añadidos y grasas saturadas, ya que pueden contribuir a problemas cutáneos como el acné y la inflamación.")
     
     # División de la pantalla en columnas proporcionales
-    col7, col8, col9 = st.columns([1, 1, 1])
+    col11, col12, col13 = st.columns([1, 1, 1])
 
     # Sección de Protección Solar
-    with col7:
+    with col11:
         st.subheader("Protección Solar")
         st.image("imagenes/sun_2.jpg", use_column_width=True)
         st.write("Usa protector solar incluso en días nublados o cuando estés bajo la sombra, ya que los rayos UV pueden penetrar las nubes y reflejarse en superficies como la arena y el agua.")
@@ -349,7 +370,7 @@ def pagina_categoria_3():
         
 
     # Sección de otra recomendación
-    with col8:
+    with col12:
         st.subheader("Visita al dermatólogo")
         st.image("imagenes/zderm_1.jpg", use_column_width=True)
         st.write("Programa revisiones periódicas con un dermatólogo para realizar un seguimiento de la salud de tu piel y detectar cualquier cambio o problema potencial de manera temprana.")
@@ -357,7 +378,7 @@ def pagina_categoria_3():
         st.write("No subestimes la importancia de consultar regularmente a un dermatólogo, especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.")
 
     # Sección de otra recomendación
-    with col9:
+    with col13:
         st.subheader("Estilo de vida saludable")
         st.image("imagenes/sport_1.jpg", use_column_width=True)
         st.write("Adopta un estilo de vida saludable que incluya hábitos como una alimentación equilibrada, ejercicio regular y descanso adecuado para promover la salud general de tu piel.")
@@ -365,13 +386,9 @@ def pagina_categoria_3():
         st.write("Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés crónico puede contribuir a problemas cutáneos como el acné y la dermatitis.")
 
 
-    # Apartado de Índice Solar UV
-    st.subheader("Índice Solar UV")
-    st.write("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ac nisi vel nunc feugiat suscipit. Integer non lorem metus.")
-
 
 def pagina_categoria_4():
-    st.header("Página 3")
+    st.header("Índice UV")
     st.write("Contenido pagina 3.")
 
 def pagina_categoria_5():
