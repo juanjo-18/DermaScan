@@ -14,6 +14,7 @@ from datetime import datetime, timedelta
 from st_files_connection import FilesConnection
 from botocore.exceptions import NoCredentialsError
 
+
 def main():
     st.set_page_config(
         page_title="DermaScan",
@@ -23,12 +24,12 @@ def main():
     st.title("DermaScan")
 
     # Crear un menú desplegable en la barra lateral
-    categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Pagina principal", "Categoría 2", "Categoría 3"])
+    categoria_seleccionada = st.sidebar.selectbox("Categorías", ["Inicio", "Prevención", "Categoría 3"])
 
     # Mostrar la página correspondiente según la categoría seleccionada
-    if categoria_seleccionada == "Pagina principal":
+    if categoria_seleccionada == "Inicio":
         pagina_categoria_1()
-    elif categoria_seleccionada == "Categoría 2":
+    elif categoria_seleccionada == "Prevención":
         pagina_categoria_2()
     elif categoria_seleccionada == "Categoría 3":
         pagina_categoria_3()
@@ -290,8 +291,27 @@ def pagina_categoria_1():
 
     
 def pagina_categoria_2():
-    st.header("Página 2")
+    st.title("Prevención y cuidado de la piel")
+    st.write("En esta sección encontrarás recomendaciones sobre cómo cuidar y prevenir enfermedades de la piel.")
+
+    st.header("Recomendaciones Generales:")
+    st.write("- Tiempo de exposición al sol: Limita la exposición al sol, especialmente entre las 10 a.m. y las 4 p.m.")
+    st.write("- Mantente hidratado: Bebe suficiente agua para mantener la piel hidratada.")
+    st.write("- Mantén una dieta saludable: Consumir alimentos ricos en vitaminas y antioxidantes puede ayudar a mantener la salud de la piel.")
+    st.write("- Uso de protección solar según el tipo de piel: Elige un protector solar con un SPF adecuado para tu tipo de piel y aplícalo generosamente.")
+
+    st.header("Índice Solar UV:")
+    st.write("El índice UV es una medida de la intensidad de la radiación ultravioleta del sol que alcanza la Tierra en un determinado momento y lugar.")
+    st.write("Es importante tener en cuenta el índice UV para tomar precauciones adecuadas al exponerse al sol.")
+    st.write("Aquí puedes encontrar información sobre el índice UV en tu ubicación actual.")
     
+
+
+
+
+
+
+
 def pagina_categoria_3():
     st.header("Página 3")
     st.write("Contenido pagina 3.")
