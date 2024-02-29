@@ -15,8 +15,6 @@ from st_files_connection import FilesConnection
 from botocore.exceptions import NoCredentialsError
 
 
-
-
 st.set_page_config(
     page_title="DermaScan",
     page_icon=":microscope:",
