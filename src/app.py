@@ -14,30 +14,32 @@ from datetime import datetime, timedelta
 from st_files_connection import FilesConnection
 from botocore.exceptions import NoCredentialsError
 
+#st.markdown(f"<p style='text-align:center;'></p>", unsafe_allow_html=True)
 
 st.set_page_config(
     page_title="DermaScan",
     page_icon=":microscope:",
     layout="wide",  # Ancho completo
 )
-st.title("DermaScan")
+st.title.markdown(f"<p style='text-align:center;'>DermaScan</p>", unsafe_allow_html=True)
 
-    
 # Encabezado principal
-st.header("¡Bienvenidos a DermaScan!")
-st.subheader("Descubre el Futuro del Cuidado de la Piel")
+st.markdown.header(f"<p style='text-align:center;'>¡Bienvenidos a DermaScan!</p>", unsafe_allow_html=True)
+st.markdown.subheader(f"<p style='text-align:center;'>Descubre el Futuro del Cuidado de la Piel</p>", unsafe_allow_html=True)
 
 col1, col2 = st.columns([1, 1])
 with col1:
 # Sección: DermaScan App
     st.subheader("DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel")
-    st.write("DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas. Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.")
+    
     st.markdown(f"<p style='text-align:center;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
 with col2:
 # Sección: Prevención y cuidado de la piel
     st.subheader("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
-    st.write("En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares. Desde prácticas diarias de cuidado de la piel hasta medidas preventivas contra el cáncer de piel, estamos aquí para ayudarte a mantener una piel radiante y saludable en todo momento.")
+    st.markdown(f"<p style='text-align:center;'>En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='text-align:center;'>Desde prácticas diarias de cuidado de la piel hasta medidas preventivas contra el cáncer de piel, estamos aquí para ayudarte a mantener una piel radiante y saludable en todo momento.</p>", unsafe_allow_html=True)
+    
 
 col3, col4 = st.columns([1, 1])
 with col3:
