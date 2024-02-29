@@ -24,8 +24,8 @@ st.set_page_config(
 st.markdown(f"<h1 style='text-align:center;'>DermaScan</h1>", unsafe_allow_html=True)
 
 # Encabezado principal
-st.markdown.header(f"<p style='text-align:center;'>¡Bienvenidos a DermaScan!</p>", unsafe_allow_html=True)
-st.markdown.subheader(f"<p style='text-align:center;'>Descubre el Futuro del Cuidado de la Piel</p>", unsafe_allow_html=True)
+st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos a DermaScan! </h2>", unsafe_allow_html=True)
+st.markdown(f"<h3 style='text-align:center;'> Descubre el Futuro del Cuidado de la Piel </h3>", unsafe_allow_html=True)
 
 col1, col2 = st.columns([1, 1])
 with col1:
