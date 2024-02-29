@@ -27,6 +27,8 @@ st.markdown(f"<h1 style='text-align:center;'>DermaScan</h1>", unsafe_allow_html=
 st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos a DermaScan!  -  Descubre el Futuro del Cuidado de la Piel</h2>", unsafe_allow_html=True)
 #st.markdown(f"<h3 style='text-align:center;'> Descubre el Futuro del Cuidado de la Piel </h3>", unsafe_allow_html=True)
 
+st.divider()
+
 col1, col2 = st.columns([1, 1])
 with col1:
 # Sección: DermaScan App
