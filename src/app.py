@@ -21,7 +21,7 @@ st.set_page_config(
     page_icon=":microscope:",
     layout="wide",  # Ancho completo
 )
-st.title.markdown(f"<p style='text-align:center;'>DermaScan</p>", unsafe_allow_html=True)
+st.markdown.title(f"<p style='text-align:center;'>DermaScan</p>", unsafe_allow_html=True)
 
 # Encabezado principal
 st.markdown.header(f"<p style='text-align:center;'>¡Bienvenidos a DermaScan!</p>", unsafe_allow_html=True)
@@ -31,7 +31,6 @@ col1, col2 = st.columns([1, 1])
 with col1:
 # Sección: DermaScan App
     st.subheader("DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel")
-    
     st.markdown(f"<p style='text-align:center;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
 with col2:
@@ -51,4 +50,3 @@ with col4:
 # Sección: About us
     st.subheader("About us: Conoce a los Creadores de DermaScan")
     st.write("Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos. Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo de inteligencia artificial para la detección temprana de enfermedades de la piel. Como residentes de Málaga, somos conscientes de la importancia de proteger la piel contra la radiación solar UV, lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la precvención del cáncer de piel.")
-
