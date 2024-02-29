@@ -16,6 +16,12 @@ from botocore.exceptions import NoCredentialsError
 
 
 
-def pagina_categoria_4():
-    st.header("Página 3")
-    st.write("Contenido pagina 3.")
+st.set_page_config(
+    page_title="DermaScan",
+    page_icon=":microscope:",
+    layout="wide",  # Ancho completo
+)
+st.title("DermaScan")
+
+st.header("Índice Solar UV: Conoce el Impacto del Sol en tu Piel")
+st.write("¡Descubre el impacto del sol en tu piel con nuestra sección de Incidencia Solar UV! Aquí te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Conoce cómo la radiación UV afecta tu piel en función de la época del año y la latitud en la que te encuentres, y aprende a tomar medidas preventivas para proteger tu piel contra los daños causados por la exposición al sol.")
