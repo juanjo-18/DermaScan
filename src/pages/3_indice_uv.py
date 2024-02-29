@@ -18,7 +18,7 @@ from botocore.exceptions import NoCredentialsError
 
 st.set_page_config(
     page_title="DermaScan",
-    page_icon=":laser:",
+    page_icon=":☀️:",
     layout="wide",  # Ancho completo
 )
 st.title("DermaScan")
