@@ -21,7 +21,7 @@ st.set_page_config(
     page_icon=":microscope:",
     layout="wide",  # Ancho completo
 )
-st.markdown.title(f"<p style='text-align:center;'>DermaScan</p>", unsafe_allow_html=True)
+st.markdown(f"<h1 style='text-align:center;'>DermaScan</h1>", unsafe_allow_html=True)
 
 # Encabezado principal
 st.markdown.header(f"<p style='text-align:center;'>¡Bienvenidos a DermaScan!</p>", unsafe_allow_html=True)
