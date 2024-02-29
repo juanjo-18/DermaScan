@@ -126,7 +126,7 @@ def pagina_categoria_2():
             except Exception as e:
                 st.error(f"Error al hacer la prediccion: {str(e)}")
 
-   
+
     # COLUMNA DE RATINGS (20%)
     with col3:
         # Llamar a la función para mostrar los datos desde S3
@@ -164,7 +164,7 @@ def pagina_categoria_2():
                 promedio = suma_puntuaciones / cantidad_registros
                 mostrar_imagen_segun_puntuacion(int(promedio))
                 st.markdown(f"<p style='text-align:center;'>¡La puntuación media es de {round(promedio,2)}!</p>", unsafe_allow_html=True)
-              
+                
                 # Muestra el DataFrame en Streamlit
                 #st.write(df)
 
@@ -261,7 +261,7 @@ def pagina_categoria_2():
 
         # Agrega un botón para borrar el contenido del área de texto
         if st.button("Enviar"):
-             # Llamar a la función para guardar los datos en S3
+                # Llamar a la función para guardar los datos en S3
             if len(texto_calificacion.strip()) > 0:
                 calificacion=modelo.predict([texto_calificacion])[0]
                 st.write("Tu calificacion a sido de: ",calificacion)
