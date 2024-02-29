@@ -16,18 +16,19 @@ from botocore.exceptions import NoCredentialsError
 
 
 st.set_page_config(
-    page_title="DermaScan",
+    page_title="DermaScan App",
     page_icon=":camera:",
     layout="wide",  # Ancho completo
 )
-st.title("DermaScan")
+st.title("DermaScan App")
 
 calificacion = 0
 # Set the layout to two columns
-col5, col6,col7 = st.columns([6,1,3])  
+col5, col6,col7 = st.columns([6,1,3])
 with col5:
-    st.subheader("DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel")
-    st.write("¡Bienvenido a DermaScan App! Aquí, en la vanguardia de la tecnología de cuidado de la piel, hemos desarrollado una aplicación revolucionaria que utiliza modelos de inteligencia artificial entrenados con una amplia variedad de imágenes de piel sana y afectada por lesiones cutáneas. Nuestra aplicación es capaz de analizar imágenes de piel en tiempo real y detectar la presencia de lesiones, determinar si son malignas y clasificarlas según su tipo. Con DermaScan App, puedes realizar evaluaciones rápidas y precisas de tu piel desde la comodidad de tu hogar, ayudando a detectar tempranamente posibles signos de cáncer de piel y promoviendo una piel más saludable y segura.")
+    st.header("¡Tu Aliado en la Lucha Contra el Cáncer de Piel!")
+    st.subheader("¡Bienvenido a DermaScan App!")
+    st.write("Nos situamos en la vanguardia de la tecnología de cuidado de la piel desarrollado una aplicación revolucionaria que utiliza modelos de Inteligencia Artificial entrenados con una amplia variedad de imágenes de piel sana y afectada por diversas lesiones cutáneas. Nuestra aplicación es capaz de analizar imágenes y detectar la presencia de lesiones, determinar si son malignas y clasificarlas según su tipo. Con DermaScan App, puedes realizar evaluaciones rápidas y precisas de tu piel desde la comodidad de tu hogar, ayudando a detectar tempranamente posibles signos de cáncer de piel y promoviendo una piel más saludable y segura.")
     st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
 
     # Agregar un apartado para cargar una foto
