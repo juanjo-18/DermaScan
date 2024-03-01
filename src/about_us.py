@@ -16,11 +16,9 @@ from botocore.exceptions import NoCredentialsError
 from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
-st.set_page_config(
-            page_title="DermaScan",
-            page_icon=":👥:",
-            layout="wide",  # Ancho completo
-        )
+
+
+
 class About_US(HydraHeadApp):
 
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
@@ -31,3 +29,4 @@ class About_US(HydraHeadApp):
         st.header("Sobre nosotros: Conoce a los Creadores de DermaScan")
         st.write("¡Bienvenido a nuestra sección 'About Us'! Aquí puedes conocer más sobre los creadores detrás de DermaScan: Juanjo Medina y Jesús Cánovas. Nos conocimos mientras realizábamos un Máster en inteligencia artificial y Big Data en el centro integrado de formación profesional Alan Turing, y desde entonces hemos estado trabajando juntos en proyectos innovadores. La idea de desarrollar DermaScan surgió de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana del cáncer de piel. Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la inteligencia artificial y la salud digital.")
             
+

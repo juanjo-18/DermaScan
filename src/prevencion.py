@@ -18,12 +18,6 @@ from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
 
-st.set_page_config(
-            page_title="DermaScan",
-            page_icon=":😎:",
-            layout="wide",  # Ancho completo
-        )
-
 # CREMOS UNA CLASE PARA LA PAGINA
 class Prevencion(HydraHeadApp):
 
