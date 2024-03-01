@@ -38,10 +38,11 @@ if __name__ == '__main__':
    
     css = """
     <style>
-    .stApp {
-    width: 100%;
-    margin: 0;
-    }
+        #custom-app {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
     </style>
     """
 
