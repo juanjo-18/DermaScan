@@ -36,5 +36,16 @@ if __name__ == '__main__':
     app.add_app("Indice UV", icon="☀️", app=Indice_UV())
     app.add_app("Sobre nosotros", icon="👥", app=About_US())
    
+    css = """
+    <style>
+    .stApp {
+    width: 100%;
+    margin: 0;
+    }
+    </style>
+    """
+
+    app.markdown(css, unsafe_allow_html=True)
+    
     # EJECUTA EL MAIN
     app.run()
