@@ -45,7 +45,7 @@ if __name__ == '__main__':
     </style>
     """
 
-    app.markdown(css, unsafe_allow_html=True)
-    
+    st.markdown(css, unsafe_allow_html=True)
+
     # EJECUTA EL MAIN
     app.run()
