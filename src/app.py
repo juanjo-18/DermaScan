@@ -21,18 +21,25 @@ from dermascan_app import DermascanApp
 from prevencion import Prevencion
 from indice_uv import Indice_UV
 from about_us import About_US
+
 import streamlit.components.v1 as components
 from hydralit_components import IS_RELEASE
 
-
+PINNED_NAV_STYLE = """
+                    <style>
+                    .reportview-container .sidebar-content {
+                        padding-top: 0rem;
+                    }
+                    .reportview-container .main .block-container {
+                        padding-top: 1rem;
+                        padding-right: 1rem;
+                        padding-left: 1rem;
+                        padding-bottom: 0rem;
+                    }
+                    </style>
+                """
 
 if __name__ == '__main__':
-
-    st.set_page_config(
-        page_title="Inicio",
-        page_icon=":🔬:",
-        layout="wide",  # Ancho completo
-    )
 
     # ESTA ES LA PAGINA HOST A LA QUE LE AÑADIMOS LAS HIJAS
     app = HydraApp(title='DermaScan',favicon="🔬")
@@ -44,26 +51,6 @@ if __name__ == '__main__':
     app.add_app("Indice UV", icon="☀️", app=Indice_UV())
     app.add_app("Sobre nosotros", icon="👥", app=About_US())
    
-    css = """
-    <style>
-        #custom-app {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-    </style>
-    """
-    css_2 = """
-    <style>
-        body {
-            width: 100%;
-            height: 100%
-        }
-    </style>
-    """
-
-    st.markdown(css, unsafe_allow_html=True)
-    st.markdown(css_2, unsafe_allow_html=True)
-
+    st.markdown(PINNED_NAV_STYLE,unsafe_allow_html=True)
     # EJECUTA EL MAIN
     app.run()
