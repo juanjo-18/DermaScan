@@ -52,7 +52,7 @@ col3, col4 = st.columns([1, 1])
 with col3:
 # Sección: Incidencia Solar UV
     st.subheader("Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel")
-    st.image("imagenes/sun_1.jpg", use_column_width=True)
+    st.image("imagenes/uv_index.jpg", use_column_width=True)
     st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar conscienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
 
