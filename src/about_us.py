@@ -21,7 +21,7 @@ from hydralit import HydraHeadApp
 
 class About_US(HydraHeadApp):
 
-# PEGAMOS NUESTRO CODIGO DE PAGINA 
+# PEGAMOS NUESTRO CODIGO DE PAGINA
     def run(self):
         
         st.title("DermaScan")

@@ -25,7 +25,14 @@ import streamlit.components.v1 as components
 from hydralit_components import IS_RELEASE
 
 
+
 if __name__ == '__main__':
+
+    st.set_page_config(
+        page_title="Inicio",
+        page_icon=":🔬:",
+        layout="wide",  # Ancho completo
+    )
 
     # ESTA ES LA PAGINA HOST A LA QUE LE AÑADIMOS LAS HIJAS
     app = HydraApp(title='DermaScan',favicon="🔬")
