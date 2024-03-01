@@ -26,7 +26,7 @@ from about_us import About_US
 if __name__ == '__main__':
 
     # ESTA ES LA PAGINA HOST A LA QUE LE AÑADIMOS LAS HIJAS
-    app = HydraApp(title='DermaScan',favicon="🔬", hide_streamlit_markers=False, sticky_mode = 'pinned')
+    app = HydraApp(title='DermaScan',favicon="🔬", hide_streamlit_markers=False)
   
     # AÑADIMOS LAAS CLASES
     app.add_app("Inicio", icon="🔬", app=Home())
