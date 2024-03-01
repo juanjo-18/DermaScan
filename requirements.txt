@@ -13,3 +13,4 @@ click==8.0.4
 s3fs
 st-files-connection
 boto3
+hydralit
