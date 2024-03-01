@@ -21,7 +21,8 @@ from dermascan_app import DermascanApp
 from prevencion import Prevencion
 from indice_uv import Indice_UV
 from about_us import About_US
-
+import streamlit.components.v1 as components
+from hydralit_components import IS_RELEASE
 
 
 if __name__ == '__main__':
@@ -45,8 +46,17 @@ if __name__ == '__main__':
         }
     </style>
     """
+    css_2 = """
+    <style>
+        body {
+            width: 100%;
+            height: 100%
+        }
+    </style>
+    """
 
     st.markdown(css, unsafe_allow_html=True)
+    st.markdown(css_2, unsafe_allow_html=True)
 
     # EJECUTA EL MAIN
     app.run()
