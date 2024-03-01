@@ -16,16 +16,16 @@ from botocore.exceptions import NoCredentialsError
 from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
-
-class About_US(HydraHeadApp):
-
-# PEGAMOS NUESTRO CODIGO DE PAGINA 
-    def run(self):
-        st.set_page_config(
+st.set_page_config(
             page_title="DermaScan",
             page_icon=":👥:",
             layout="wide",  # Ancho completo
         )
+class About_US(HydraHeadApp):
+
+# PEGAMOS NUESTRO CODIGO DE PAGINA 
+    def run(self):
+        
         st.title("DermaScan")
 
         st.header("Sobre nosotros: Conoce a los Creadores de DermaScan")

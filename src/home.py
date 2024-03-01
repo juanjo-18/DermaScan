@@ -17,16 +17,18 @@ from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
 
+st.set_page_config(
+            page_title="DermaScan",
+            page_icon=":microscope:",
+            layout="wide",  # Ancho completo
+        )
+
 # CREMOS UNA CLASE PARA LA PAGINA
 class Home(HydraHeadApp):
 
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
-        st.set_page_config(
-            page_title="DermaScan",
-            page_icon=":microscope:",
-            layout="wide",  # Ancho completo
-        )
+        
 
         st.markdown(f"<h1 style='text-align:center;'>DermaScan</h1>", unsafe_allow_html=True)
 

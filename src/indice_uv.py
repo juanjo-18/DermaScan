@@ -17,15 +17,17 @@ from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
 
-class Indice_UV(HydraHeadApp):
-
-# PEGAMOS NUESTRO CODIGO DE PAGINA 
-    def run(self):
-        st.set_page_config(
+st.set_page_config(
             page_title="DermaScan",
             page_icon=":☀️:",
             layout="wide",  # Ancho completo
         )
+
+class Indice_UV(HydraHeadApp):
+
+# PEGAMOS NUESTRO CODIGO DE PAGINA 
+    def run(self):
+        
         st.title("DermaScan")
 
         st.header("Índice Solar UV: Conoce el Impacto del Sol en tu Piel")
