@@ -16,11 +16,25 @@ from botocore.exceptions import NoCredentialsError
 
 #st.markdown(f"<p style='text-align:center;'></p>", unsafe_allow_html=True)
 
+
 st.set_page_config(
-    page_title="DermaScan",
-    page_icon=":microscope:",
-    layout="wide",  # Ancho completo
+    page_title="Ex-stream-ly Cool App",
+    page_icon="🧊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
 )
+
+#st.set_page_config(
+#    page_title="DermaScan",
+#    page_icon=":microscope:",
+#    layout="wide",  # Ancho completo
+#)
+
 st.markdown(f"<h1 style='text-align:center;'>DermaScan</h1>", unsafe_allow_html=True)
 
 # Encabezado principal
@@ -33,7 +47,7 @@ col1, col2 = st.columns([1, 1])
 with col1:
 # Sección: DermaScan App
     st.subheader("DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel")
-    st.markdown(f"<p style='text-align:center; font-size:50px; color:purple;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
+    st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
     st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
 with col2:
 # Sección: Prevención y cuidado de la piel
