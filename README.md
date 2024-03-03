@@ -54,7 +54,9 @@ Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts 
 - Enlace: https://huggingface.co/datasets/pysentimiento/spanish-tweets
 
 ### Web Scrapping.
-
+A traves de este enlace del tiempo he creado una tabla para mostrarla en la web haciendo web scrapping.
+- Enlace: https://www.tutiempo.net/malaga.html?datos=detallados
+  
 ## 3. Limpieza de datos (Preprocesado)
 
 
