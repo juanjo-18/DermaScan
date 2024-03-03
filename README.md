@@ -4,7 +4,7 @@ Enlaces sobre nuestro trabajo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
 - Modelo de objeto y piel:
 - Modelo de piel sana y piel con lesion:
-- Modelo de benigno y maligno:
+- Modelo de benigno y maligno: https://github.com/juanjo-18/DermaScan/blob/main/colabs/benigno_vs_maligno.ipynb
 - Web:
 - PDF:
 - Video:
@@ -32,6 +32,26 @@ Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sob
 
 Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
 ## 2. Obtención de los datos
+
+### Modelo de objeto o imagen piel.
+Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: uno que contenía objetos, otro que contenía imágenes de piel con cáncer y otro con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
+- Objetos y imagenes variadas: https://www.kaggle.com/datasets/greg115/various-tagged-images
+- Benignos o malignos: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
+- Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
+
+### Modelo de piel sana o piel con lesión.
+Para el modelo de piel sana o piel con lesión, hemos hecho una combinación de dos conjuntos de imágenes: uno que contenía imagenes de pieles con cancer y otro que contenía imágenes de pieles sanas. Los dos han sido obtenidos de Kaggle.
+- Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
+- Piel con cancer: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
+
+### Modelo de benigno o maligno.
+Para el modelo de benigno o maligno, hemos utilizado este dataset que ya contenia las imagenes benignas y malignas separadas ademas lo hemos juntado con otro conjunto de imagenes mas. Los dos han sido obtenidos de kaggle.
+- Benignos o malignos1: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
+- Benignos o malignos2: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
+
+### Modelo de sentimientos.
+### Web Scrapping.
+
 ## 3. Limpieza de datos (Preprocesado)
 
 
