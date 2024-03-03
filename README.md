@@ -1,10 +1,13 @@
 
 # DermaScan
-Enlaces a colabs donde esta todo mas detallado.
+Enlaces sobre nuestro trabajo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
 - Modelo de objeto y piel:
 - Modelo de piel sana y piel con lesion:
 - Modelo de benigno y maligno:
+- Web:
+- PDF:
+- Video:
 
 # Índice
 
