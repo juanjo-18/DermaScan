@@ -79,4 +79,4 @@ class Indice_UV(HydraHeadApp):
 
         # Mostrar la tabla en Streamlit
         #st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
-        st.table(df.style.hide_index())
+        st.dataframe(df, index=False, width=700, height=400)
