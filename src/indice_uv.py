@@ -88,16 +88,13 @@ class Indice_UV(HydraHeadApp):
         # Centrar la imagen mediante HTML y estilo CSS
         imagen_html = """
             <style>
-                div.stImage > img {{
-                    width: 100%;
+                div.stImage > img {
+                    width: 750;
                     display: flex;
-                justify-content: center;
-                }}
+                    justify-content: center;
+                }
             </style>
-            <div class="stImage">
-                <img src="{ruta_imagen}" alt="imagen" width="750"/>
-            </div>
         """
 
-        st.markdown(imagen_html, unsafe_allow_html=True)
+        st.markdown(imagen_html,ruta_imagen, unsafe_allow_html=True)
         
