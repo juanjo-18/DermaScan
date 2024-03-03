@@ -1,4 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 # DermaScan
 Enlaces sobre nuestro trabajo.
@@ -81,6 +80,76 @@ Aqui estamos eliminado de las frases las stopwords para despues pasarselo al mod
 
 ### El resto de modelos.
 Como estamos trabajando con imagenes necesitamos hacer varias comprobaciones y arreglos antes de poder utilizarla, ahora vamos a contar algunas cosas realizadas.
+<pre>
+   <code class="language-python" id="codigo-ejemplo">
+def cargar_imagen(ruta):
+    img = image.load_img(ruta, target_size=(224, 224))
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array = preprocess_input(img_array)
+    return img_array
+
+def extraer_caracteristicas(modelo, ruta):
+    img_array = cargar_imagen(ruta)
+    caracteristicas = modelo.predict(img_array)
+    return caracteristicas.flatten()
+
+def encontrar_duplicados(carpeta_origen, carpeta_destino):
+    modelo_vgg16 = VGG16(weights='imagenet', include_top=False)
+
+    imagenes = []
+    caracteristicas = []
+
+    for root, _, files in os.walk(carpeta_origen):
+        for file in files:
+            ruta_imagen = os.path.join(root, file)
+            imagenes.append(file)
+            caracteristicas.append(extraer_caracteristicas(modelo_vgg16, ruta_imagen))
+
+    caracteristicas = np.array(caracteristicas)
+    similitud = cosine_similarity(caracteristicas)
+
+    umbral_similitud = 0.75  # Puedes ajustar este umbral según tus necesidades
+
+    imagenes_no_duplicadas = []
+    conteo_duplicadas = 0
+
+    for i in range(len(imagenes)):
+        duplicada = False
+        for j in range(i + 1, len(imagenes)):
+            if similitud[i, j] > umbral_similitud:
+                print(f"Imágenes duplicadas: {imagenes[i]} y {imagenes[j]}")
+                duplicada = True
+                conteo_duplicadas += 1
+                break
+
+        if not duplicada:
+            imagenes_no_duplicadas.append(imagenes[i])
+            shutil.copy(os.path.join(carpeta_origen, imagenes[i]), os.path.join(carpeta_destino, imagenes[i]))
+
+    print(f"Total de imágenes duplicadas: {conteo_duplicadas}")
+    print("Imágenes no duplicadas guardadas en la carpeta:", carpeta_destino)
+
+# Carpeta de origen con las imágenes
+carpeta_origen_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/benign'  # Cambiar a la ruta en tu caso
+# Carpeta de origen con las imágenes
+carpeta_origen_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/malignant'  # Cambiar a la ruta en tu caso
+
+# Carpeta donde se guardarán las imágenes no duplicadas
+carpeta_destino_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/bening'  # Cambiar a la ruta en tu caso
+# Carpeta donde se guardarán las imágenes no duplicadas
+carpeta_destino_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/malignant'  # Cambiar a la ruta en tu caso
+
+# Asegurarse de que el directorio de destino exista, o créalo si no existe
+if not os.path.exists(carpeta_destino):
+    os.makedirs(carpeta_destino)
+
+encontrar_duplicados(carpeta_origen, carpeta_destino)
+</code>
+</pre>
+<button class="btn" data-clipboard-target="#codigo-ejemplo">
+    Copiar al portapapeles
+</button>
 
 ## 4. Exploración y visualización de los datos.
 ## 5. Preparación de los datos para Machine Learning.
@@ -132,3 +201,7 @@ Alfinal nos quedmaos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 ## 8. Aplicación web
 ## 9. Conclusiones
+
+<script>
+    new ClipboardJS('.btn');
+</script>
