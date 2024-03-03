@@ -84,11 +84,20 @@ class Indice_UV(HydraHeadApp):
         ruta_imagen = "imagenes/imagen_radiacion_uva.png"  
 
         # Mostrar la imagen en Streamlit
-        st.image(ruta_imagen, caption='', use_column_width=False, width=750)
-        st.markdown(
-            f'<div style="display: flex; justify-content: center;">'
-            f'<img src="{ruta_imagen}" style="object-fit: contain;" width="750"/>'
-            f'</div>',
-            unsafe_allow_html=True
-        )
+        #st.image(ruta_imagen, caption='', use_column_width=False, width=750)
+        # Centrar la imagen mediante HTML y estilo CSS
+        imagen_html = f"""
+            <style>
+                div.stImage > img {{
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }}
+            </style>
+            <div class="stImage">
+                <img src="{ruta_imagen}" alt="imagen" width="750"/>
+            </div>
+        """
+
+        st.markdown(imagen_html, unsafe_allow_html=True)
         
