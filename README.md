@@ -1,4 +1,11 @@
+
 # DermaScan
+# Índice
+
+1. [Justificación y descripción del proyecto](#Justificación y descripción del proyecto)
+2. [Configuración](#configuración)
+3. [Uso](#uso)
+4. [Conclusión](#conclusión)
 ## 1. Justificación y descripción del proyecto
 Nuestro innovador proyecto es una plataforma web dedicada a la detección de tumores de piel a través de la carga de imágenes. En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
 
