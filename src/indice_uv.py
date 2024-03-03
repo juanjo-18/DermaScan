@@ -78,4 +78,4 @@ class Indice_UV(HydraHeadApp):
         df = pd.DataFrame(datos_productos)
 
         # Mostrar la tabla en Streamlit
-        st.table(df)
+        st.table(df.set_index('Dia'))
