@@ -34,5 +34,11 @@ Este servicio va más allá al proporcionar detalles específicos sobre el tipo 
 ## 5. Preparación de los datos para Machine Learning
 ## 6. Entrenamiento del modelo y comprobación del rendimiento
 ## 7. Procesamiento de Lenguaje Natural
+En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
+- Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
+
+En el ámbito del Procesamiento de Lenguaje Natural, hemos desarrollado un modelo diseñado para detectar sentimientos en texto. Este modelo se integra en nuestra plataforma web, específicamente en un sistema de reseñas con calificación estelar. Al introducir un texto en el modelo, obtendrás una puntuación en una escala del 0 al 5. Una puntuación de 0 indica una valoración muy negativa, 2.5 representa una valoración neutra, y 5 refleja una valoración muy positiva.
+
+
 ## 8. Aplicación web
 ## 9. Conclusiones
