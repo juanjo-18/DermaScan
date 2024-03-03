@@ -147,9 +147,7 @@ if not os.path.exists(carpeta_destino):
 encontrar_duplicados(carpeta_origen, carpeta_destino)
 </code>
 </pre>
-<button class="btn" data-clipboard-target="#codigo-ejemplo">
-    Copiar al portapapeles
-</button>
+
 
 ## 4. Exploración y visualización de los datos.
 ## 5. Preparación de los datos para Machine Learning.
@@ -202,6 +200,3 @@ Alfinal nos quedmaos con el que  mayor coerencia tiene pensamos que es el de Lin
 ## 8. Aplicación web
 ## 9. Conclusiones
 
-<script>
-    new ClipboardJS('.btn');
-</script>
