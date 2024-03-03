@@ -365,7 +365,6 @@ Este modelo nos ha dado una precisión con los datos de entremiento del 0.95%
 
 base_model = VGG16(weights='imagenet', include_top=False, input_shape=(150, 150, 3), pooling='max')
 
-
 # Agregar capas personalizadas
 x = base_model.output
 x = Dense(256, activation='relu')(x)
@@ -387,7 +386,9 @@ history=model4.fit(train_generator, validation_data=test_generator, epochs=20, c
 </pre>
 
 Aquí mostramos una grafica de los modelos provados y el que mejor resultados nos dio es el mostrado anteriormente.
-![Descripción de la imagen]()
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/varos_modelo_grafica.png)
+
+
 
 ## 7. Procesamiento de Lenguaje Natural.
 
