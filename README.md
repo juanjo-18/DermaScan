@@ -1,5 +1,7 @@
 
 # DermaScan
+Enlaces a colabs donde esta todo mas detallado.
+
 # Índice
 
 1. [Justificación y descripción del proyecto](#Justificación-y-descripción-del-proyecto)
