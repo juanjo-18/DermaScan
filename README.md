@@ -58,6 +58,7 @@ En este codigo estamos haciendo una puntuacion a una frase comprobando si tiene 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/funcion_puntualizar_frases.png)
 
 Vamos a comrobarlas individualmente haber si tiene un resultado optimo.
+
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/comprobacion%20individual.png)
 
 Hemos creado una funcion para puntualizar un array completo de textos y que me los muestre puntualizados.
