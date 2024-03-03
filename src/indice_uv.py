@@ -78,4 +78,5 @@ class Indice_UV(HydraHeadApp):
         df = pd.DataFrame(datos_productos)
 
         # Mostrar la tabla en Streamlit
-        st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
+        #st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
+        st.table(df.style.hide_index())
