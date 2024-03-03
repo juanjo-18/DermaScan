@@ -232,7 +232,127 @@ encontrar_duplicados(carpeta_origen_benigno, carpeta_origen_maligno, carpeta_des
 
 
 ## 4. Exploración y visualización de los datos.
+
+
 ## 5. Preparación de los datos para Machine Learning.
+
+En todos nuestros modelos de clasificación de imagenes hemos realizado estos pasos:
+- Redimensionamiento de las imagenes a 150 x 150 pixeles, despues concatenamos todos los datos en arrays, ya que al tenerlos en numerico el modelo puede trabajar mejor con ellos y mejorar muchisimo la velocidad de entrenamiento.
+<pre>
+   <code class="language-python" id="codigo-ejemplo2">
+def redimensionar_imagen(ruta, nuevo_tamano):
+    imagen = Image.open(ruta)
+    imagen_redimensionada = imagen.resize(nuevo_tamano)
+    arreglo_pixeles_redimensionado = np.array(imagen_redimensionada)
+    return arreglo_pixeles_redimensionado
+
+# Definir el nuevo tamaño deseado
+nuevo_tamano = (150, 150)
+
+# Redimensionar las imágenes de entrenamiento benignas
+datos_train_piel_redimensionados = [redimensionar_imagen(os.path.join(train_dir, 'benign', nombre_imagen), nuevo_tamano) for nombre_imagen in os.listdir(os.path.join(train_dir, 'benign'))]
+
+# Redimensionar las imágenes de entrenamiento malignas
+datos_train_objeto_redimensionados = [redimensionar_imagen(os.path.join(train_dir, 'malignant', nombre_imagen), nuevo_tamano) for nombre_imagen in os.listdir(os.path.join(train_dir, 'malignant'))]
+
+# Asegurarse de que todas las imágenes tengan el mismo tamaño
+datos_train_piel_redimensionados = np.array([img for img in datos_train_piel_redimensionados if img.shape == (150, 150, 3)])
+datos_train_objeto_redimensionados = np.array([img for img in datos_train_objeto_redimensionados if img.shape == (150, 150, 3)])
+
+# Concatenar los datos de ambas clases
+datos_train_redimensionados = np.concatenate([datos_train_piel_redimensionados, datos_train_objeto_redimensionados], axis=0)
+
+# Crear etiquetas correspondientes
+etiquetas_train_redimensionadas = np.concatenate([np.zeros(len(datos_train_piel_redimensionados)), np.ones(len(datos_train_objeto_redimensionados))], axis=0)
+</code>
+</pre>
+
+- Aqui estamos dividiendo los datos para tener los datos de entrenamiento y test y sus etiquetas correspondientes, tambien normalizamos los pixeles diviendo entre 255 y convertimos la etiquetas a un formato one-hot.
+<pre>
+   <code class="language-python" id="codigo-ejemplo">
+# Dividir los datos en conjuntos de entrenamiento y prueba
+X_train, X_test, y_train, y_test = train_test_split(datos_train_redimensionados, etiquetas_train_redimensionadas, test_size=0.2, random_state=42)
+
+# Normalizar los píxeles dividiendo por 255
+X_train = X_train.astype('float32') / 255.0
+X_test = X_test.astype('float32') / 255.0
+
+# Convertir etiquetas a formato one-hot
+y_train_one_hot = to_categorical(y_train, num_classes=2)
+y_test_one_hot = to_categorical(y_test, num_classes=2)
+</code>
+</pre>
+
+- En el siguiente bloque de codigo lo que tenemos es una clase CustomLearningRateScheduler que lo que hace es a la hora del callback llama a esta clase para ajustar dinámicamente la tasa de aprendizaje durante el entrenamiento de un modelo, la metrica que se esta monitoreando es el Val_accuracy con una paciencia de 1 epoca. Eso significa que si el val_accuracy de una epoca a otra a desminuido se ejecuta la clase disminuyendo el learning rate dividiendolo entre /2 eso significa que si antes teniamos 0.0001 ahora tendriamos 0.0005.
+- Tambien tenemos un checkpoint que va guardando el modelo cada vez que mejora el val_accuracy porque muchas veces pasa que durante el entrenamiento ha habido alguna epoca mejor que la ultima donde ha terminado el modelo su entrenamiento.
+- Por ultimo se esta haciendo un ImageDataGenerator que se encarga de realizar aumento de datos y preprocesamiento para conjuntos de entrenamiento y prueba en un problema de clasificación de imágenes. Esto es especialmente útil para mejorar la capacidad de generalización del modelo al exponerlo a variaciones en los datos durante el entrenamiento. El aumento de datos ayuda a prevenir el sobreajuste al proporcionar más variabilidad en el conjunto de entrenamiento.
+
+<pre>
+   <code class="language-python" id="1">
+class CustomLearningRateScheduler(Callback):
+    def __init__(self, factor=0.5, patience=1, min_lr=1e-12):
+        super(CustomLearningRateScheduler, self).__init__()
+        self.factor = factor
+        self.patience = patience
+        self.min_lr = min_lr
+        self.best_val_accuracy = float('-inf')
+        self.wait = 0
+        self.current_lr = None
+
+    def on_epoch_begin(self, epoch, logs=None):
+        if self.current_lr is None:
+            self.current_lr = float(tf.keras.backend.get_value(self.model.optimizer.lr))
+
+    def on_epoch_end(self, epoch, logs=None):
+        val_accuracy = logs.get('val_accuracy', 0)
+
+        if val_accuracy > self.best_val_accuracy:
+            self.best_val_accuracy = val_accuracy
+            self.wait = 0
+            # Guardar el modelo cuando la precisión en el conjunto de validación mejora
+        else:
+            self.wait += 1
+            if self.wait >= self.patience:
+                new_lr = max(self.current_lr * self.factor, self.min_lr)
+                tf.keras.backend.set_value(self.model.optimizer.lr, new_lr)
+                self.current_lr = new_lr  # Actualizar el valor actual de la tasa de aprendizaje
+                print(f'Reverting learning rate to {new_lr}')
+                self.wait = 0
+
+# Crear el callback CustomLearningRateScheduler
+custom_lr_scheduler = CustomLearningRateScheduler(factor=0.5, patience=1, min_lr=1e-12)
+
+# Callback para guardar el modelo con la mejor precisión en el conjunto de validación
+model_checkpoint = ModelCheckpoint('best_model_checkpoint.h5', save_best_only=True, monitor='val_accuracy', mode='max')
+
+# Aumento de datos para el conjunto de entrenamiento y prueba
+datagen_train = ImageDataGenerator(
+    rotation_range=40,
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    fill_mode='nearest'
+)
+
+datagen_test = ImageDataGenerator()
+
+datagen_train.fit(X_train)
+datagen_test.fit(X_test)
+
+# Convertir etiquetas a one-hot encoding
+y_train_one_hot = to_categorical(y_train, num_classes=2)
+y_test_one_hot = to_categorical(y_test, num_classes=2)
+
+# Generador de imágenes aumentadas para el conjunto de entrenamiento
+train_generator = datagen_train.flow(X_train, y_train_one_hot, batch_size=32)
+
+# Generador de imágenes para el conjunto de prueba
+test_generator = datagen_test.flow(X_test, y_test_one_hot, batch_size=32)
+</code>
+</pre>
+
 ## 6. Entrenamiento del modelo y comprobación del rendimiento.
 ## 7. Procesamiento de Lenguaje Natural.
 
