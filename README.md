@@ -33,7 +33,7 @@ Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sob
 Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
 
 
-## 2. Obtención de los datos
+## 2. Obtención de los datos.
 
 ### Modelo de objeto o imagen piel.
 Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: uno que contenía objetos, otro que contenía imágenes de piel con cáncer y otro con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
@@ -69,19 +69,21 @@ Aqui muestro en la web la tabla que hemos scrapeado.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/web_scrapin_resultado.png)
 
 
-## 3. Limpieza de datos (Preprocesado)
+## 3. Limpieza de datos (Preprocesado).
 
-
+### Modelo de sentimientos.
 Para el modelo de sentimientos primero los twits que tenemos les estamos eliminadon valores y caracteres que no son necesarios, como los iconos, eliminar los @ y el texto asociado, eliminar # y su texto, eliminar urls y convertir todo a minusculas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/Limpiar%20textos.png)
 
 Aqui estamos eliminado de las frases las stopwords para despues pasarselo al modelo.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/quitamos_stopword.png)
 
-## 4. Exploración y visualización de los datos
-## 5. Preparación de los datos para Machine Learning
-## 6. Entrenamiento del modelo y comprobación del rendimiento
-## 7. Procesamiento de Lenguaje Natural
+### El resto de modelos.
+
+## 4. Exploración y visualización de los datos.
+## 5. Preparación de los datos para Machine Learning.
+## 6. Entrenamiento del modelo y comprobación del rendimiento.
+## 7. Procesamiento de Lenguaje Natural.
 
 
 En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
