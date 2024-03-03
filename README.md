@@ -399,6 +399,9 @@ history=model4.fit(train_generator, validation_data=test_generator, epochs=20, c
 - En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fallos_modelo_benigno_maligno.png)
 
+### Modelo objeto o piel.
+### Modelo piel sana o piel con lesión.
+
 ## 7. Procesamiento de Lenguaje Natural.
 
 En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
