@@ -30,6 +30,9 @@ Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sob
 Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
 ## 2. Obtención de los datos
 ## 3. Limpieza de datos (Preprocesado)
+<img src="[URL_de_la_imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/Limpiar%20textos.png
+)" alt="Descripción de la imagen" width="400"/>
+
 ## 4. Exploración y visualización de los datos
 ## 5. Preparación de los datos para Machine Learning
 ## 6. Entrenamiento del modelo y comprobación del rendimiento
