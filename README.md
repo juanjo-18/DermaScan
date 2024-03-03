@@ -1,3 +1,4 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
 # DermaScan
 Enlaces sobre nuestro trabajo.
@@ -79,6 +80,7 @@ Aqui estamos eliminado de las frases las stopwords para despues pasarselo al mod
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/quitamos_stopword.png)
 
 ### El resto de modelos.
+Como estamos trabajando con imagenes necesitamos hacer varias comprobaciones y arreglos antes de poder utilizarla, ahora vamos a contar algunas cosas realizadas.
 
 ## 4. Exploración y visualización de los datos.
 ## 5. Preparación de los datos para Machine Learning.
