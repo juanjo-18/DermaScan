@@ -2,7 +2,7 @@
 # DermaScan
 # Índice
 
-1. [Justificación y descripción del proyecto](#Justificación y descripción del proyecto)
+1. [Justificación y descripción del proyecto](#justificación-y-descripción-del-proyecto)
 2. [Configuración](#configuración)
 3. [Uso](#uso)
 4. [Conclusión](#conclusión)
