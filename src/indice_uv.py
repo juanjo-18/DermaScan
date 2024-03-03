@@ -89,9 +89,9 @@ class Indice_UV(HydraHeadApp):
         imagen_html = f"""
             <style>
                 div.stImage > img {{
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
+                    width: 100%;
+                    display: flex;
+                justify-content: center;
                 }}
             </style>
             <div class="stImage">
