@@ -86,7 +86,7 @@ class Indice_UV(HydraHeadApp):
         # Mostrar la imagen en Streamlit
         #st.image(ruta_imagen, caption='', use_column_width=False, width=750)
         # Centrar la imagen mediante HTML y estilo CSS
-        imagen_html = f"""
+        imagen_html = """
             <style>
                 div.stImage > img {{
                     width: 100%;
