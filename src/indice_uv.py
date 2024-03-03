@@ -78,5 +78,10 @@ class Indice_UV(HydraHeadApp):
         df = pd.DataFrame(datos_productos)
 
         # Mostrar la tabla en Streamlit
-        #st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
-        st.dataframe(df, index=False, width=700, height=400)
+        st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
+       
+        # Puedes proporcionar la ruta de la imagen localmente o una URL
+        ruta_imagen = "imagenes/imagen_radiacion_uva.png"  
+
+        # Mostrar la imagen en Streamlit
+        st.image(ruta_imagen, caption='', use_column_width=True)
