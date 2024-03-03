@@ -3,10 +3,14 @@
 # Índice
 
 1. [Justificación y descripción del proyecto](#Justificación-y-descripción-del-proyecto)
-2. [Configuración](#configuración)
-3. [Uso](#uso)
-4. [Conclusión](#conclusión)
-
+2. [Obtención de los datos](#2-obtención-de-los-datos)
+3. [Limpieza de datos (Preprocesado)](#3-limpieza-de-datos-preprocesado)
+4. [Exploración y visualización de los datos](#4-exploración-y-visualización-de-los-datos)
+5. [Preparación de los datos para Machine Learning](#5-preparación-de-los-datos-para-machine-learning)
+6. [Entrenamiento del modelo y comprobación del rendimiento](#6-entrenamiento-del-modelo-y-comprobación-del-rendimiento)
+7. [Procesamiento de Lenguaje Natural](#7-procesamiento-de-lenguaje-natural)
+8. [Aplicación web](#8-aplicación-web)
+9. [Conclusiones](#9-conclusiones)
 
 
 
