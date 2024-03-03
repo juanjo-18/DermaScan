@@ -50,6 +50,9 @@ Para el modelo de benigno o maligno, hemos utilizado este dataset que ya conteni
 - Benignos o malignos2: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
 
 ### Modelo de sentimientos.
+Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts en español y despues lo hemos procesado.
+- Enlace: https://huggingface.co/datasets/pysentimiento/spanish-tweets
+
 ### Web Scrapping.
 
 ## 3. Limpieza de datos (Preprocesado)
