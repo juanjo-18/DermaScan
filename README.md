@@ -390,11 +390,11 @@ history=model4.fit(train_generator, validation_data=test_generator, epochs=20, c
 
 - Aquí podemos ver la grafica durante el entrenamiento del modelo, podemos ver que el val_accuraccy va un poco peor que el accuracy.
   
-![](https://github.com/juanjo18/DermaScan/blob/main/imagenes/imagenes_readmi/grafica_entrenamiento_benigno_maligno.png)
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/grafica_entrenamiento_benigno_maligno.png)
 
 - Podemos ver aqui los valores resultantes de nuestro modelo con la clase de test, sus aciertos, fallos, val_accuracy, la confusion matrix y el classification report. Podemos ver que falla un poco mas en la segunda prediccion que serian fotos malignas con un resultado de 125 frente a las 90 fallos de prediccion de la clase benigna.
   
-![](https://github.com/juanjo18/DermaScan/blob/main/imagenes/imagenes_readmi/comprobacion_del_modelo_benigno_maligno_test.png)
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/comprobacion_del_modelo_benigno_maligno_test.png)
 
 - En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fallos_modelo_benigno_maligno.png)
