@@ -354,6 +354,41 @@ test_generator = datagen_test.flow(X_test, y_test_one_hot, batch_size=32)
 </pre>
 
 ## 6. Entrenamiento del modelo y comprobación del rendimiento.
+Para el entrenamiento de nuestros modelos hemos utilizado modelos preentrenados hemos utilizado varios que se pueden ver en los colab aquí voy a mostrar el mejor de cada modelo.
+
+### Modelo benigno o maligno
+En este modelo se ha utilizado un modelo preentrenado VGG16.
+Este modelo nos ha dado una precisión con los datos de entremiento del 0.95%
+
+<pre>
+   <code class="language-python" id="codigo-ejemplo">
+
+base_model = VGG16(weights='imagenet', include_top=False, input_shape=(150, 150, 3), pooling='max')
+
+
+# Agregar capas personalizadas
+x = base_model.output
+x = Dense(256, activation='relu')(x)
+x = Dropout(0.5)(x)
+predictions = Dense(2, activation='softmax')(x)
+
+# Crear el modelo
+model4 = Model(inputs=base_model.input, outputs=predictions)
+
+for layer in base_model.layers[-10:]:
+    layer.trainable = True
+
+# Compilar el modelo con el optimizador Adam y el callback ReduceLROnPlateau
+model4.compile(optimizer=keras.optimizers.Adam(learning_rate=0.00005), loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Entrenar el modelo utilizando el generador de datos aumentados para el conjunto de entrenamiento
+history=model4.fit(train_generator, validation_data=test_generator, epochs=20, callbacks=[custom_lr_scheduler, model_checkpoint])
+</code>
+</pre>
+
+Aquí mostramos una grafica de los modelos provados y el que mejor resultados nos dio es el mostrado anteriormente.
+![Descripción de la imagen]()
+
 ## 7. Procesamiento de Lenguaje Natural.
 
 
