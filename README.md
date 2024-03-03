@@ -1,7 +1,8 @@
 
 # DermaScan
 Enlaces a colabs donde esta todo mas detallado.
-Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
+- Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
+
 # Índice
 
 1. [Justificación y descripción del proyecto](#Justificación-y-descripción-del-proyecto)
