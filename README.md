@@ -31,7 +31,9 @@ Nuestro innovador proyecto es una plataforma web dedicada a la detección de tum
 Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
 
 Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
-## 2. Obtención de los datos
+
+
+## 2. Obtención de los datos.
 
 ### Modelo de objeto o imagen piel.
 Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: uno que contenía objetos, otro que contenía imágenes de piel con cáncer y otro con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
@@ -54,20 +56,102 @@ Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts 
 - Enlace: https://huggingface.co/datasets/pysentimiento/spanish-tweets
 
 ### Web Scrapping.
+A traves de este enlace del tiempo he creado una tabla para mostrarla en la web haciendo web scrapping.
+- Enlace: https://www.tutiempo.net/malaga.html?datos=detallados
+Primero saco todo el html de la web y lo guardo en una variable.
 
-## 3. Limpieza de datos (Preprocesado)
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/web_scrapin_guardar_url.png)
+
+Aqui estoy creando un dataframe que me guarde el dia, la temperatura maxima, la temperatura minima y el indice UV.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/codigo_web_scrapping.png)
+
+Aqui muestro en la web la tabla que hemos scrapeado.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/web_scrapin_resultado.png)
 
 
+## 3. Limpieza de datos (Preprocesado).
+
+### Modelo de sentimientos.
 Para el modelo de sentimientos primero los twits que tenemos les estamos eliminadon valores y caracteres que no son necesarios, como los iconos, eliminar los @ y el texto asociado, eliminar # y su texto, eliminar urls y convertir todo a minusculas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/Limpiar%20textos.png)
 
 Aqui estamos eliminado de las frases las stopwords para despues pasarselo al modelo.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/quitamos_stopword.png)
 
-## 4. Exploración y visualización de los datos
-## 5. Preparación de los datos para Machine Learning
-## 6. Entrenamiento del modelo y comprobación del rendimiento
-## 7. Procesamiento de Lenguaje Natural
+### El resto de modelos.
+Como estamos trabajando con imagenes necesitamos hacer varias comprobaciones y arreglos antes de poder utilizarla, ahora vamos a contar algunas cosas realizadas.
+<pre>
+   <code class="language-python" id="codigo-ejemplo">
+def cargar_imagen(ruta):
+    img = image.load_img(ruta, target_size=(224, 224))
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array = preprocess_input(img_array)
+    return img_array
+
+def extraer_caracteristicas(modelo, ruta):
+    img_array = cargar_imagen(ruta)
+    caracteristicas = modelo.predict(img_array)
+    return caracteristicas.flatten()
+
+def encontrar_duplicados(carpeta_origen, carpeta_destino):
+    modelo_vgg16 = VGG16(weights='imagenet', include_top=False)
+
+    imagenes = []
+    caracteristicas = []
+
+    for root, _, files in os.walk(carpeta_origen):
+        for file in files:
+            ruta_imagen = os.path.join(root, file)
+            imagenes.append(file)
+            caracteristicas.append(extraer_caracteristicas(modelo_vgg16, ruta_imagen))
+
+    caracteristicas = np.array(caracteristicas)
+    similitud = cosine_similarity(caracteristicas)
+
+    umbral_similitud = 0.75  # Puedes ajustar este umbral según tus necesidades
+
+    imagenes_no_duplicadas = []
+    conteo_duplicadas = 0
+
+    for i in range(len(imagenes)):
+        duplicada = False
+        for j in range(i + 1, len(imagenes)):
+            if similitud[i, j] > umbral_similitud:
+                print(f"Imágenes duplicadas: {imagenes[i]} y {imagenes[j]}")
+                duplicada = True
+                conteo_duplicadas += 1
+                break
+
+        if not duplicada:
+            imagenes_no_duplicadas.append(imagenes[i])
+            shutil.copy(os.path.join(carpeta_origen, imagenes[i]), os.path.join(carpeta_destino, imagenes[i]))
+
+    print(f"Total de imágenes duplicadas: {conteo_duplicadas}")
+    print("Imágenes no duplicadas guardadas en la carpeta:", carpeta_destino)
+
+# Carpeta de origen con las imágenes
+carpeta_origen_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/benign'  
+# Carpeta de origen con las imágenes
+carpeta_origen_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/malignant'  
+
+# Carpeta donde se guardarán las imágenes no duplicadas
+carpeta_destino_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/bening'
+# Carpeta donde se guardarán las imágenes no duplicadas
+carpeta_destino_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/malignant'
+
+if not os.path.exists(carpeta_destino):
+    os.makedirs(carpeta_destino)
+
+encontrar_duplicados(carpeta_origen, carpeta_destino)
+</code>
+</pre>
+
+
+## 4. Exploración y visualización de los datos.
+## 5. Preparación de los datos para Machine Learning.
+## 6. Entrenamiento del modelo y comprobación del rendimiento.
+## 7. Procesamiento de Lenguaje Natural.
 
 
 En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
@@ -114,3 +198,4 @@ Alfinal nos quedmaos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 ## 8. Aplicación web
 ## 9. Conclusiones
+
