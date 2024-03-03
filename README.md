@@ -385,13 +385,19 @@ history=model4.fit(train_generator, validation_data=test_generator, epochs=20, c
 </code>
 </pre>
 
-Aquí mostramos una grafica de los modelos provados y el que mejor resultados nos dio es el mostrado anteriormente.
+- Aquí mostramos una grafica de los modelos provados y el que mejor resultados nos dio es el mostrado anteriormente.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/varos_modelo_grafica.png)
 
+- Aquí podemos ver la grafica durante el entrenamiento del modelo, podemos ver que el val_accuraccy va un poco peor que el accuracy.
+![Descripción de la imagen](https://github.com/juanjo18/DermaScan/blob/main/imagenes/imagenes_readmi/grafica_entrenamiento_benigno_maligno.png)
 
+- Podemos ver aqui los valores resultantes de nuestro modelo con la clase de test, sus aciertos, fallos, val_accuracy, la confusion matrix y el classification report. Podemos ver que falla un poco mas en la segunda prediccion que serian fotos malignas con un resultado de 125 frente a las 90 fallos de prediccion de la clase benigna.
+![Descripción de la imagen](https://github.com/juanjo18/DermaScan/blob/main/imagenes/imagenes_readmi/comprobacion_del_modelo_benigno_maligno_test.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fallos_modelo_benigno_maligno.png)
 
 ## 7. Procesamiento de Lenguaje Natural.
-
 
 En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
