@@ -2,7 +2,7 @@
 # DermaScan
 # Índice
 
-1. [Justificación y descripción del proyecto](#justificación-y-descripción-del-proyecto)
+[Justificación y descripción del proyecto](#1.Justificación-y-descripción-del-proyecto)
 2. [Configuración](#configuración)
 3. [Uso](#uso)
 4. [Conclusión](#conclusión)
@@ -17,6 +17,6 @@ Este servicio va más allá al proporcionar detalles específicos sobre el tipo 
 ## 4. Exploración y visualización de los datos
 ## 5. Preparación de los datos para Machine Learning
 ## 6. Entrenamiento del modelo y comprobación del rendimiento
-## 7. Aplicación web
-## 8. Conclusiones
-Prueba - modificar
+## 7. Procesamiento de Lenguaje Natural
+## 8. Aplicación web
+## 9. Conclusiones
