@@ -80,6 +80,14 @@ Aqui estamos eliminado de las frases las stopwords para despues pasarselo al mod
 
 ### El resto de modelos.
 Como estamos trabajando con imagenes necesitamos hacer varias comprobaciones y arreglos antes de poder utilizarla, ahora vamos a contar algunas cosas realizadas.
+
+Primero guardamos todas las imagenes en una variable.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/renombrar_imagenes_declararlo.png)
+
+Ahora vamos ha modificar el nombre de todas las imagenes a un nombre mas corto, ya que al tener un nombre mas corto el entrenamiento se realiza mas rapido.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/codigo_renombrar_imagenes.png)
+
+En este bloque de codigo estamos buscando dentro de la misma carpeta si hay alguna imagen repetida, ya qu eso nos perjudicaria en el rendimiento del modelo.
 <pre>
    <code class="language-python" id="codigo-ejemplo">
 def cargar_imagen(ruta):
@@ -144,6 +152,81 @@ if not os.path.exists(carpeta_destino):
     os.makedirs(carpeta_destino)
 
 encontrar_duplicados(carpeta_origen, carpeta_destino)
+</code>
+</pre>
+
+En este otro codigo estamos comprobando que no haya ninguna imagen en otra carpeta ya que eso significaria que esta mal etiquetada si esta en las dos categorias, por lo que si encuentra alguna las borra en los dos lados ya que no sabemos cual es la correcta.
+<pre>
+   <code class="language-python" id="codigo-ejemplo2">
+def encontrar_duplicados(carpeta_origen1, carpeta_origen2, carpeta_destino1, carpeta_destino2):
+    modelo_vgg16 = VGG16(weights='imagenet', include_top=False)
+
+    imagenes1 = os.listdir(carpeta_origen1)
+    imagenes2 = os.listdir(carpeta_origen2)
+
+    caracteristicas1 = []
+    caracteristicas2 = []
+
+    duplicadas = []  # Almacena información sobre imágenes duplicadas
+
+    for i, imagen in enumerate(imagenes1):
+        ruta_imagen = os.path.join(carpeta_origen1, imagen)
+        caracteristicas1.append(extraer_caracteristicas(modelo_vgg16, ruta_imagen))
+
+    for j, imagen in enumerate(imagenes2):
+        ruta_imagen = os.path.join(carpeta_origen2, imagen)
+        caracteristicas2.append(extraer_caracteristicas(modelo_vgg16, ruta_imagen))
+
+    caracteristicas1 = np.array(caracteristicas1)
+    caracteristicas2 = np.array(caracteristicas2)
+
+    similitud = cosine_similarity(caracteristicas1, caracteristicas2)
+
+    umbral_similitud = 0.75  # Puedes ajustar este umbral según tus necesidades
+
+    for i in range(len(imagenes1)):
+        for j in range(len(imagenes2)):
+            if similitud[i, j] > umbral_similitud:
+                print(f"Imágenes duplicadas: {imagenes1[i]} y {imagenes2[j]}")
+                duplicadas.append((imagenes1[i], imagenes2[j]))
+
+    conteo_duplicadas = len(duplicadas)
+
+    for imagen1, imagen2 in duplicadas:
+        # Borrar imágenes duplicadas de ambas carpetas
+        os.remove(os.path.join(carpeta_origen1, imagen1))
+        os.remove(os.path.join(carpeta_origen2, imagen2))
+
+    for i in range(len(imagenes1)):
+        if imagenes1[i] not in [imagen1 for imagen1, _ in duplicadas]:
+            shutil.copy(os.path.join(carpeta_origen1, imagenes1[i]), os.path.join(carpeta_destino1, imagenes1[i]))
+
+    for j in range(len(imagenes2)):
+        if imagenes2[j] not in [imagen2 for _, imagen2 in duplicadas]:
+            shutil.copy(os.path.join(carpeta_origen2, imagenes2[j]), os.path.join(carpeta_destino2, imagenes2[j]))
+
+    print(f"Total de imágenes duplicadas: {conteo_duplicadas}")
+    print("Imágenes no duplicadas guardadas en las carpetas:", carpeta_destino1, carpeta_destino2)
+
+# Carpeta de origen con las imágenes
+carpeta_origen_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/benign'  
+# Carpeta de origen con las imágenes
+carpeta_origen_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/malignant' 
+
+# Carpeta donde se guardarán las imágenes no duplicadas benignas
+carpeta_destino_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/benign' 
+# Carpeta donde se guardarán las imágenes no duplicadas malignas
+carpeta_destino_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/malignant'  
+
+# Asegurarse de que los directorios de destino existan, o créalos si no existen
+if not os.path.exists(carpeta_destino_benigno):
+    os.makedirs(carpeta_destino_benigno)
+
+if not os.path.exists(carpeta_destino_maligno):
+    os.makedirs(carpeta_destino_maligno)
+
+# Encontrar duplicados en la carpeta benigna y copiar las no duplicadas
+encontrar_duplicados(carpeta_origen_benigno, carpeta_origen_maligno, carpeta_destino_benigno, carpeta_destino_maligno)
 </code>
 </pre>
 
