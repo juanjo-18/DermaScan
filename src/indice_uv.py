@@ -38,3 +38,44 @@ class Indice_UV(HydraHeadApp):
         if response.status_code == 200:
             # Obtén el contenido HTML como texto
             contenido_html = response.text
+
+        # Lista para almacenar los datos
+        datos_productos = []
+        soup = BeautifulSoup(contenido_html, 'html.parser')
+
+        # Busco los contenedores donde se encuentran los datos que busco
+        contenedores_productos =  soup.find_all('div', id='ColumnaIzquierda')
+
+        # Recorro la lista completa
+        for contenedor_producto in contenedores_productos:
+            # Busca el dia texto
+            dia_texto = contenedor_producto.find_all('span', class_='day')
+            # Busca el dia numero
+            dia_numero = contenedor_producto.find_all('h3')
+            # Busca la temperatura maxima
+            temperatura_maxima = contenedor_producto.find_all('span', class_='t max')
+            # Busca la temperatura minima
+            temperatura_minima = contenedor_producto.find_all('span', class_='t min')
+            # Busca la radiacion uva
+            radiacion_uva = contenedor_producto.find_all('span', class_='c2')
+
+            for indice, salida in enumerate(dia_texto):
+                for indice2, salida2 in enumerate(dia_numero):
+                    for indice3, salida3 in enumerate(temperatura_maxima):
+                        for indice4, salida4 in enumerate(temperatura_minima):
+                            for indice5, salida5 in enumerate(radiacion_uva):
+                                if indice==indice2==indice3==indice4==indice5:
+                                    datos_productos.append({
+                                        'Dia': salida.get_text(),
+                                        'Dia de la semana': salida2.get_text(),
+                                        'Temperatura MAX': salida3.get_text(),
+                                        'Temperatura MIN': salida4.get_text(),
+                                        'Radiación UVA': salida5.get_text()
+                                        })
+
+
+        # Convierte la lista de datos a un DataFrame
+        df = pd.DataFrame(datos_productos)
+
+        # Mostrar la tabla en Streamlit
+        st.table(df)
