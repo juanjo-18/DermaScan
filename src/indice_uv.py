@@ -15,7 +15,8 @@ from st_files_connection import FilesConnection
 from botocore.exceptions import NoCredentialsError
 from hydralit import HydraApp
 from hydralit import HydraHeadApp
-
+import requests
+from bs4 import BeautifulSoup
 
 
 class Indice_UV(HydraHeadApp):
@@ -27,3 +28,13 @@ class Indice_UV(HydraHeadApp):
 
         st.header("Índice Solar UV: Conoce el Impacto del Sol en tu Piel")
         st.write("¡Descubre el impacto del sol en tu piel con nuestra sección de Incidencia Solar UV! Aquí te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Conoce cómo la radiación UV afecta tu piel en función de la época del año y la latitud en la que te encuentres, y aprende a tomar medidas preventivas para proteger tu piel contra los daños causados por la exposición al sol.")
+        # Saco la pagina
+        # Creo la tabla
+        url = 'https://www.tutiempo.net/malaga.html?datos=detallados'
+
+        response = requests.get(url)
+
+        # Verifica si la solicitud fue exitosa (código de estado 200)
+        if response.status_code == 200:
+            # Obtén el contenido HTML como texto
+            contenido_html = response.text

@@ -14,3 +14,5 @@ s3fs
 st-files-connection
 boto3
 hydralit
+requests
+beautifulsoup4
