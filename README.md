@@ -131,16 +131,15 @@ def encontrar_duplicados(carpeta_origen, carpeta_destino):
     print("Imágenes no duplicadas guardadas en la carpeta:", carpeta_destino)
 
 # Carpeta de origen con las imágenes
-carpeta_origen_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/benign'  # Cambiar a la ruta en tu caso
+carpeta_origen_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/benign'  
 # Carpeta de origen con las imágenes
-carpeta_origen_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/malignant'  # Cambiar a la ruta en tu caso
+carpeta_origen_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno/malignant'  
 
 # Carpeta donde se guardarán las imágenes no duplicadas
-carpeta_destino_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/bening'  # Cambiar a la ruta en tu caso
+carpeta_destino_benigno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/bening'
 # Carpeta donde se guardarán las imágenes no duplicadas
-carpeta_destino_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/malignant'  # Cambiar a la ruta en tu caso
+carpeta_destino_maligno = 'C:/Users/juanj/prueba_de_imagenes_objetos/super_benigno_vs_maligno_sin_duplicados/malignant'
 
-# Asegurarse de que el directorio de destino exista, o créalo si no existe
 if not os.path.exists(carpeta_destino):
     os.makedirs(carpeta_destino)
 
