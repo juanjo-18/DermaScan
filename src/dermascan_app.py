@@ -45,7 +45,7 @@ class DermascanApp(HydraHeadApp):
                 
                 try:
                     # Cargar los modelos
-                    piel_vs_cancer = tf.lite.Interpreter(model_path='model/piel_sana_cancer_mejorado.tflite')
+                    piel_vs_cancer = tf.lite.Interpreter(model_path='model/piel_sana_piel_cancer_mejorado.tflite')
                     benigno_vs_maligno = tf.lite.Interpreter(model_path='model/benigno_vs_maligno_mejorado2.tflite')
                     objeto_piel_modelo = tf.lite.Interpreter(model_path='model/piel_o_objeto_mejorado.tflite')
                 
