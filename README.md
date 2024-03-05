@@ -104,6 +104,7 @@ Primero guardamos todas las imagenes en una variable.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/renombrar_imagenes_declararlo.png)
 
 Ahora vamos ha modificar el nombre de todas las imagenes a un nombre mas corto, ya que al tener un nombre mas corto el entrenamiento se realiza mas rapido.
+
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/codigo_renombrar_imagenes.png)
 
 En este bloque de codigo estamos buscando dentro de la misma carpeta si hay alguna imagen repetida, ya qu eso nos perjudicaria en el rendimiento del modelo.
