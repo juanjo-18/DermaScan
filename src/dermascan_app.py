@@ -48,32 +48,19 @@ class DermascanApp(HydraHeadApp):
                     piel_vs_cancer = tf.lite.Interpreter(model_path='model/piel_sana_piel_cancer_mejorado.tflite')
                     benigno_vs_maligno = tf.lite.Interpreter(model_path='model/benigno_vs_maligno_mejorado2.tflite')
                     objeto_piel_modelo = tf.lite.Interpreter(model_path='model/piel_o_objeto_mejorado.tflite')
-                
+
+                    otra_lesion_vs_cancer=tf.lite.Interpreter(model_path='model/modelo_otras_lesiones_vs_cancer.tflite')
+                    clasificador_benigno=tf.lite.Interpreter(model_path='model/clasificador_cancer_benignos.tflite')
+                    clasificador_maligno=tf.lite.Interpreter(model_path='model/clasificador_cancer_malignos.tflite')
                 except Exception as e:
                     st.error(f"Error al cargar el modelo: {str(e)}")
                 
                 # Convertir la imagen a un formato adecuado para la predicción
                 imagen = Image.open(imagen).convert('RGB')
-                
-                # Objeto vs piel
-                imagen_objeto_vs_piel = imagen.resize((150, 150))# Igualar al modelo original
-                imagen_objeto_vs_piel = np.array(imagen_objeto_vs_piel)
-                imagen_objeto_vs_piel = imagen_objeto_vs_piel / 255.0  
-                imagen_objeto_vs_piel = np.expand_dims(imagen_objeto_vs_piel.astype(np.float32), axis=0)
-
-                # Piel sana y piel cancer
-                imagen_piel_sana_vs_cancer = imagen.resize((150, 150))# Igualar al modelo original
-                imagen_piel_sana_vs_cancer = np.array(imagen_piel_sana_vs_cancer)
-                imagen_piel_sana_vs_cancer = imagen_piel_sana_vs_cancer / 255.0  
-                imagen_piel_sana_vs_cancer = np.expand_dims(imagen_piel_sana_vs_cancer.astype(np.float32), axis=0)
-
-
-                # Benigno vs maligno
-                imagen_benigno_vs_maligno = imagen.resize((150, 150))# Igualar al modelo original
-                imagen_benigno_vs_maligno = np.array(imagen_benigno_vs_maligno)
-                imagen_benigno_vs_maligno = imagen_benigno_vs_maligno / 255.0  
-                imagen_benigno_vs_maligno = np.expand_dims(imagen_benigno_vs_maligno.astype(np.float32), axis=0)
-
+                imagen_reescalada=imagen.resize((150, 150))# Igualar al modelo original
+                imagen_reescalada=np.array(imagen_reescalada)
+                imagen_reescalada=imagen_reescalada / 255.0
+                imagen_reescalada=np.expand_dims(imagen_reescalada.astype(np.float32), axis=0)
 
                 
                 try:
@@ -81,7 +68,7 @@ class DermascanApp(HydraHeadApp):
                     objeto_piel_modelo.allocate_tensors()
                     entrada_details2 = objeto_piel_modelo.get_input_details()
                     salida_details2 = objeto_piel_modelo.get_output_details()
-                    objeto_piel_modelo.set_tensor(entrada_details2[0]['index'], imagen_objeto_vs_piel)
+                    objeto_piel_modelo.set_tensor(entrada_details2[0]['index'], imagen_reescalada)
                     objeto_piel_modelo.invoke()
                     prediccion_objeto_piel_modelo = objeto_piel_modelo.get_tensor(salida_details2[0]['index'])
 
@@ -89,7 +76,7 @@ class DermascanApp(HydraHeadApp):
                     benigno_vs_maligno.allocate_tensors()
                     entrada_details1 = benigno_vs_maligno.get_input_details()
                     salida_details1 = benigno_vs_maligno.get_output_details()
-                    benigno_vs_maligno.set_tensor(entrada_details1[0]['index'], imagen_benigno_vs_maligno)
+                    benigno_vs_maligno.set_tensor(entrada_details1[0]['index'], imagen_reescalada)
                     benigno_vs_maligno.invoke()
                     prediccion_benigno_vs_maligno = benigno_vs_maligno.get_tensor(salida_details1[0]['index'])
 
@@ -97,9 +84,17 @@ class DermascanApp(HydraHeadApp):
                     piel_vs_cancer.allocate_tensors()
                     entrada_details = piel_vs_cancer.get_input_details()
                     salida_details = piel_vs_cancer.get_output_details()
-                    piel_vs_cancer.set_tensor(entrada_details[0]['index'], imagen_piel_sana_vs_cancer)
+                    piel_vs_cancer.set_tensor(entrada_details[0]['index'], imagen_reescalada)
                     piel_vs_cancer.invoke()
                     prediccion_piel_vs_cancer = piel_vs_cancer.get_tensor(salida_details[0]['index'])
+                    
+                    # Realizar la predicción de otra lesion o cancer
+                    otra_lesion_vs_cancer.allocate_tensors()
+                    entrada_details3 = otra_lesion_vs_cancer.get_input_details()
+                    salida_details3 = otra_lesion_vs_cancer.get_output_details()
+                    otra_lesion_vs_cancer.set_tensor(entrada_details3[0]['index'], imagen_reescalada)
+                    otra_lesion_vs_cancer.invoke()
+                    prediccion_otra_lesion_vs_cancer = otra_lesion_vs_cancer.get_tensor(salida_details3[0]['index'])
 
 
                     # Imprimir la predicción de objeto o piel
@@ -120,6 +115,16 @@ class DermascanApp(HydraHeadApp):
                         st.write("La imagen es piel sana.")
                     else:
                         st.write("La imagen es piel cancer.")
+                    
+
+                    # Imprimir la predicción de otra lesion o cancer
+                    st.write("La prediccion es otra lesion al : ",prediccion_otra_lesion_vs_cancer[0][0])
+                    st.write("La prediccion es cancer al : ",prediccion_otra_lesion_vs_cancer[0][1])
+                    clase_predicha = np.argmax(prediccion_otra_lesion_vs_cancer)
+                    if clase_predicha == 0:
+                        st.write("La imagen es otra lesion.")
+                    else:
+                        st.write("La imagen es cancer.")
                     
 
                     # Imprimir la predicción de benigna o maligna
