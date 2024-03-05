@@ -72,14 +72,6 @@ class DermascanApp(HydraHeadApp):
                     objeto_piel_modelo.invoke()
                     prediccion_objeto_piel_modelo = objeto_piel_modelo.get_tensor(salida_details2[0]['index'])
 
-                    #  Realizar la predicción benigno maligno
-                    benigno_vs_maligno.allocate_tensors()
-                    entrada_details1 = benigno_vs_maligno.get_input_details()
-                    salida_details1 = benigno_vs_maligno.get_output_details()
-                    benigno_vs_maligno.set_tensor(entrada_details1[0]['index'], imagen_reescalada)
-                    benigno_vs_maligno.invoke()
-                    prediccion_benigno_vs_maligno = benigno_vs_maligno.get_tensor(salida_details1[0]['index'])
-
                     #  Realizar la predicción piel vs cancer
                     piel_vs_cancer.allocate_tensors()
                     entrada_details = piel_vs_cancer.get_input_details()
@@ -95,6 +87,22 @@ class DermascanApp(HydraHeadApp):
                     otra_lesion_vs_cancer.set_tensor(entrada_details3[0]['index'], imagen_reescalada)
                     otra_lesion_vs_cancer.invoke()
                     prediccion_otra_lesion_vs_cancer = otra_lesion_vs_cancer.get_tensor(salida_details3[0]['index'])
+
+                    #  Realizar la predicción benigno maligno
+                    benigno_vs_maligno.allocate_tensors()
+                    entrada_details1 = benigno_vs_maligno.get_input_details()
+                    salida_details1 = benigno_vs_maligno.get_output_details()
+                    benigno_vs_maligno.set_tensor(entrada_details1[0]['index'], imagen_reescalada)
+                    benigno_vs_maligno.invoke()
+                    prediccion_benigno_vs_maligno = benigno_vs_maligno.get_tensor(salida_details1[0]['index'])
+
+                    # Realizar predicción de clasificador benigno
+                    clasificador_benigno.allocate_tensors()
+                    entrada_details4 = clasificador_benigno.get_input_details()
+                    salida_details4 = clasificador_benigno.get_output_details()
+                    clasificador_benigno.set_tensor(entrada_details4[0]['index'], imagen_reescalada)
+                    clasificador_benigno.invoke()
+                    prediccion_clasificador_benigno = clasificador_benigno.get_tensor(salida_details4[0]['index'])
 
 
                     # Imprimir la predicción de objeto o piel
@@ -118,13 +126,13 @@ class DermascanApp(HydraHeadApp):
                     
 
                     # Imprimir la predicción de otra lesion o cancer
-                    st.write("La prediccion es otra lesion al : ",prediccion_otra_lesion_vs_cancer[0][0])
-                    st.write("La prediccion es cancer al : ",prediccion_otra_lesion_vs_cancer[0][1])
+                    st.write("La prediccion es otra 0 al : ",prediccion_otra_lesion_vs_cancer[0][0])
+                    st.write("La prediccion es 1 al : ",prediccion_otra_lesion_vs_cancer[0][1])
                     clase_predicha = np.argmax(prediccion_otra_lesion_vs_cancer)
                     if clase_predicha == 0:
-                        st.write("La imagen es otra lesion.")
+                        st.write("La imagen es 0.")
                     else:
-                        st.write("La imagen es cancer.")
+                        st.write("La imagen es 1.")
                     
 
                     # Imprimir la predicción de benigna o maligna
@@ -136,6 +144,12 @@ class DermascanApp(HydraHeadApp):
                     else:
                         st.write("La imagen es maligna.")
                     
+
+                    # Imprimir la predicción de clasificacion benigno
+                    st.write("La prediccion es 0 al : ",prediccion_clasificador_benigno[0][0])
+                    st.write("La prediccion es 1 al : ",prediccion_clasificador_benigno[0][1])
+                    st.write("La prediccion es 2 al : ",prediccion_clasificador_benigno[0][2])
+
                 except Exception as e:
                     st.error(f"Error al hacer la prediccion: {str(e)}")
 
