@@ -30,25 +30,25 @@ class About_US(HydraHeadApp):
         st.write("¡Bienvenido a nuestra sección 'About Us'! Aquí puedes conocer más sobre los creadores detrás de DermaScan: Juanjo Medina y Jesús Cánovas. Nos conocimos mientras realizábamos un Máster en inteligencia artificial y Big Data en el centro integrado de formación profesional Alan Turing, y desde entonces hemos estado trabajando juntos en proyectos innovadores. La idea de desarrollar DermaScan surgió de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana del cáncer de piel. Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la inteligencia artificial y la salud digital.")
 
 
-    # ---- CONTACT ----
+         # ---- CONTACT ----
 
-    with st.container():
-        st.write("---")
-        st.header("Get In Touch With Me!")
-        st.write("##")
+        with st.container():
+            st.write("---")
+            st.header("Get In Touch With Me!")
+            st.write("##")
 
-        # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
-        contact_form = """
-        <form action="https://formsubmit.co/stdust69cleaner@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" placeholder="Your message here" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        """
-        left_column, right_column = st.columns(2)
-        with left_column:
-            st.markdown(contact_form, unsafe_allow_html=True)
-        with right_column:
-            st.empty()
+            # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
+            contact_form = """
+            <form action="https://formsubmit.co/stdust69cleaner@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="Your name" required>
+                <input type="email" name="email" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message here" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            """
+            left_column, right_column = st.columns(2)
+            with left_column:
+                st.markdown(contact_form, unsafe_allow_html=True)
+            with right_column:
+                st.empty()
