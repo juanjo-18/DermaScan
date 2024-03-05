@@ -116,8 +116,8 @@ class DermascanApp(HydraHeadApp):
                     # Imprimir la predicción de objeto o piel
                     st.write("La prediccion de  piel es: ",prediccion_objeto_piel_modelo[0][0])
                     st.write("La prediccion de  objeto es: ",prediccion_objeto_piel_modelo[0][1])
-                    valor_prediccion_objeto_piel_modelo=prediccion_objeto_piel_modelo[0][0]
-                    if valor_prediccion_objeto_piel_modelo >= 0.75:
+                    valor_prediccion_objeto_piel_modelo= np.argmax(prediccion_objeto_piel_modelo)
+                    if valor_prediccion_objeto_piel_modelo == 0:
                         st.write("La imagen es piel.")
                     else:
                         st.write("La imagen es objeto.")
@@ -126,18 +126,21 @@ class DermascanApp(HydraHeadApp):
                     # Imprimir la predicción de piel o piel cancer
                     st.write("La prediccion es piel sana al : ",prediccion_piel_vs_cancer[0][0])
                     st.write("La prediccion es piel cancer al : ",prediccion_piel_vs_cancer[0][1])
-                    clase_predicha = prediccion_piel_vs_cancer[0][0]
-                    if clase_predicha >= 0.75:
+                    clase_predicha =  np.argmax(prediccion_piel_vs_cancer)
+                    if clase_predicha == 0:
                         st.write("La imagen es piel sana.")
                     else:
                         st.write("La imagen es piel cancer.")
                     
 
                     # Imprimir la predicción de otra lesion o cancer
-                    st.write("La prediccion es otra 0 al : ",prediccion_otra_lesion_vs_cancer[0][0])
-                    st.write("La prediccion es 1 al : ",prediccion_otra_lesion_vs_cancer[0][1])
+                    st.write("La prediccion es cancer al : ",prediccion_otra_lesion_vs_cancer[0][0])
+                    st.write("La prediccion es otro tipo de lesion al : ",prediccion_otra_lesion_vs_cancer[0][1])
                     clase_predicha = np.argmax(prediccion_otra_lesion_vs_cancer)
-                    
+                    if clase_predicha == 0:
+                        st.write("La imagen es cancer.")
+                    else:
+                        st.write("La imagen es otro tipo de lesión no cancerigena.")
 
                     # Imprimir la predicción de benigna o maligna
                     st.write("La prediccion es benigna al : ",prediccion_benigno_vs_maligno[0][0])
@@ -150,15 +153,29 @@ class DermascanApp(HydraHeadApp):
                     
 
                     # Imprimir la predicción de clasificacion benigno
-                    st.write("La prediccion es B 0 al : ",prediccion_clasificador_benigno[0][0])
-                    st.write("La prediccion es B 1 al : ",prediccion_clasificador_benigno[0][1])
-                    st.write("La prediccion es B 2 al : ",prediccion_clasificador_benigno[0][2])
-
+                    st.write("La prediccion es Dermatofibroma al : ",prediccion_clasificador_benigno[0][0])
+                    st.write("La prediccion es Melanocytic nevus al : ",prediccion_clasificador_benigno[0][1])
+                    st.write("La prediccion es queratosis seborreica al : ",prediccion_clasificador_benigno[0][2])
+                    clase_predicha = np.argmax(prediccion_clasificador_benigno)
+                    if clase_predicha == 0:
+                        st.write("La prediccion es Dermatofibroma")
+                    elif clase_predicha == 1:
+                        st.write("La prediccion es Melanocytic nevus ")
+                    else:
+                        st.write("La prediccion es queratosis seborreica")
+                    
                     # Imprimir la predicción de clasificacion maligno
-                    st.write("La prediccion es M 0 al : ",prediccion_clasificador_maligno[0][0])
-                    st.write("La prediccion es M 1 al : ",prediccion_clasificador_maligno[0][1])
-                    st.write("La prediccion es M 2 al : ",prediccion_clasificador_maligno[0][2])
-
+                    st.write("La prediccion es Basal cell carcinoma al : ",prediccion_clasificador_maligno[0][0])
+                    st.write("La prediccion es Melanoma al : ",prediccion_clasificador_maligno[0][1])
+                    st.write("La prediccion es Squamous cell carcinoma al : ",prediccion_clasificador_maligno[0][2])
+                    clase_predicha = np.argmax(prediccion_clasificador_maligno)
+                    if clase_predicha == 0:
+                        st.write("La prediccion es Basal cell carcinoma")
+                    elif clase_predicha == 1:
+                        st.write("La prediccion es Melanoma")
+                    else:
+                        st.write("La prediccion es Squamous cell carcinoma")
+                    
                 except Exception as e:
                     st.error(f"Error al hacer la prediccion: {str(e)}")
 
