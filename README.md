@@ -2,13 +2,13 @@
 # DermaScan
 Enlaces sobre nuestros colabs del trabajo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
-- Modelo de clasificación de objeto y piel:
-- Modelo de clasifiación piel sana y piel con lesion:
-- Modelo de clasificación de lesiones o de cancer de piel:
+- Modelo de clasificación de objeto y piel: https://github.com/juanjo-18/DermaScan/blob/main/colabs/objeto_vs_piel.ipynb
+- Modelo de clasifiación piel sana y piel con lesion: https://github.com/juanjo-18/DermaScan/blob/main/colabs/piel_sana_vs_cancer.ipynb
+- Modelo de clasificación de lesiones o de cancer de piel: https://github.com/juanjo-18/DermaScan/blob/main/colabs/cancer_vs_otras_lesiones.ipynb
 - Modelo de clasificación benigno y maligno: https://github.com/juanjo-18/DermaScan/blob/main/colabs/benigno_vs_maligno.ipynb
-- Modelo de clasificación de 3 tipos de cancer malignos:
-- Modelo de clasificación de 2 tipos de cancer benignos:
-- Web:
+- Modelo de clasificación de 3 tipos de cancer malignos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/clasificador_malignos_3types.ipynb
+- Modelo de clasificación de 2 tipos de cancer benignos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/clasificacion_benignos_2_tipos.ipynb
+- Web: https://dermascan.streamlit.app/
 - PDF:
 - Video:
 
@@ -50,10 +50,21 @@ Para el modelo de piel sana o piel con lesión, hemos hecho una combinación de 
 - Piel con cancer: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 
 ### Modelo de benigno o maligno.
-Para el modelo de benigno o maligno, hemos utilizado este dataset que ya contenia las imagenes benignas y malignas separadas ademas lo hemos juntado con otro conjunto de imagenes mas. Los dos han sido obtenidos de kaggle.
+Para el modelo de benigno o maligno, hemos utilizado estos dataset que ya contenian las imagenes benignas y malignas separadas ademas lo hemos juntado con otro conjunto de imagenes mas. Los dos han sido obtenidos de kaggle.
 - Benignos o malignos1: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Benignos o malignos2: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
+  
 
+### Modelo de piel con cancer o piel con otra lesión
+
+### Modelo de clasificación de 3 tipos de cancer maligno
+Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido melanoma, basall cell carcinoma y Squamous cell carcinoma. El dataset ha sido obtenido de kagle.
+- Enlace: https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled
+  
+### Modelo de clasificación de 2 tipos de cancer benigno
+Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido queratosis seborreica, dermatofibroma y Melanocytic nevus. El dataset ha sido obtenido de kagle.
+- Enlace: https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled
+  
 ### Modelo de sentimientos.
 Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts en español y despues lo hemos procesado.
 - Enlace: https://huggingface.co/datasets/pysentimiento/spanish-tweets
