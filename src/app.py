@@ -15,6 +15,7 @@ from st_files_connection import FilesConnection
 from botocore.exceptions import NoCredentialsError
 from hydralit import HydraApp
 from hydralit import HydraHeadApp
+from streamlit_pages.streamlit_pages import MultiPage
 
 from home import Home
 from dermascan_app import DermascanApp
