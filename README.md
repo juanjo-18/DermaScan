@@ -56,6 +56,11 @@ Para el modelo de benigno o maligno, hemos utilizado estos dataset que ya conten
   
 
 ### Modelo de piel con cancer o piel con otra lesión
+Para el modelo de imágenes de piel con cáncer y piel con otras lesiones, hemos hecho una combinación de tres datasets distintos conjuntos de imágenes: dos que contenía imagenes de pieles con cáncer y otro que contenía otro tipo de lesiones. Los tres han sido obtenidos de Kaggle:
+- Benignos o malignos1: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
+- Benignos o malignos2: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
+- Varios tipos de lesiones: https://www.kaggle.com/datasets/yashjaiswal4559/skin-disease
+Aun que este último dataset tiene imagenes tanto de cáncer como de otras lesiones que no son cáncer, para el apartado de cáncer hemos cogido las que son cancer sólo: melanoma y carcinomas basales. (Ya que las imagenes están etiquetasdas por carpetas según su clase).
 
 ### Modelo de clasificación de 3 tipos de cancer maligno
 Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido melanoma, basall cell carcinoma y Squamous cell carcinoma. El dataset ha sido obtenido de kagle.
