@@ -104,6 +104,14 @@ class DermascanApp(HydraHeadApp):
                     clasificador_benigno.invoke()
                     prediccion_clasificador_benigno = clasificador_benigno.get_tensor(salida_details4[0]['index'])
 
+                    # Realizar predicción de clasificador maligno
+                    clasificador_maligno.allocate_tensors()
+                    entrada_details5 = clasificador_maligno.get_input_details()
+                    salida_details5 = clasificador_maligno.get_output_details()
+                    clasificador_maligno.set_tensor(entrada_details5[0]['index'], imagen_reescalada)
+                    clasificador_maligno.invoke()
+                    prediccion_clasificador_maligno = clasificador_maligno.get_tensor(salida_details5[0]['index'])
+
 
                     # Imprimir la predicción de objeto o piel
                     st.write("La prediccion de  piel es: ",prediccion_objeto_piel_modelo[0][0])
@@ -129,10 +137,6 @@ class DermascanApp(HydraHeadApp):
                     st.write("La prediccion es otra 0 al : ",prediccion_otra_lesion_vs_cancer[0][0])
                     st.write("La prediccion es 1 al : ",prediccion_otra_lesion_vs_cancer[0][1])
                     clase_predicha = np.argmax(prediccion_otra_lesion_vs_cancer)
-                    if clase_predicha == 0:
-                        st.write("La imagen es 0.")
-                    else:
-                        st.write("La imagen es 1.")
                     
 
                     # Imprimir la predicción de benigna o maligna
@@ -146,9 +150,14 @@ class DermascanApp(HydraHeadApp):
                     
 
                     # Imprimir la predicción de clasificacion benigno
-                    st.write("La prediccion es 0 al : ",prediccion_clasificador_benigno[0][0])
-                    st.write("La prediccion es 1 al : ",prediccion_clasificador_benigno[0][1])
-                    st.write("La prediccion es 2 al : ",prediccion_clasificador_benigno[0][2])
+                    st.write("La prediccion es B 0 al : ",prediccion_clasificador_benigno[0][0])
+                    st.write("La prediccion es B 1 al : ",prediccion_clasificador_benigno[0][1])
+                    st.write("La prediccion es B 2 al : ",prediccion_clasificador_benigno[0][2])
+
+                    # Imprimir la predicción de clasificacion maligno
+                    st.write("La prediccion es M 0 al : ",prediccion_clasificador_maligno[0][0])
+                    st.write("La prediccion es M 1 al : ",prediccion_clasificador_maligno[0][1])
+                    st.write("La prediccion es M 2 al : ",prediccion_clasificador_maligno[0][2])
 
                 except Exception as e:
                     st.error(f"Error al hacer la prediccion: {str(e)}")
