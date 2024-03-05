@@ -40,7 +40,7 @@ class Home(HydraHeadApp):
             st.image("imagenes/skin_scan2.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
-            st.page_link("dermascan_app.py", label="App", icon="🤳")
+            st.page_link("./dermascan_app.py", label="App", icon="🤳")
         with col2:
         # Sección: Prevención y cuidado de la piel
             st.subheader("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
