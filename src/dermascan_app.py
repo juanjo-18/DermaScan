@@ -136,11 +136,11 @@ class DermascanApp(HydraHeadApp):
                                     # Imprimir la predicción de clasificacion benigno
                                     clase_predicha = np.argmax(prediccion_clasificador_benigno)
                                     if clase_predicha == 0:
-                                        st.write("El tipo de cancer es Dermatofibroma")
+                                        st.write("")
                                     elif clase_predicha == 1:
                                         st.write("El tipo de cancer es Melanocytic nevus ")
                                     else:
-                                        st.write("")
+                                        st.write("El tipo de cancer es Queratosis seborreica")
                                 else:
                                     st.write("La imagen insertada es un cancer de piel maligno.")
                                     # Imprimir la predicción de clasificacion maligno
