@@ -140,7 +140,7 @@ class DermascanApp(HydraHeadApp):
                                     elif clase_predicha == 1:
                                         st.write("El tipo de cancer es Melanocytic nevus ")
                                     else:
-                                        
+                                        st.write("")
                                 else:
                                     st.write("La imagen insertada es un cancer de piel maligno.")
                                     # Imprimir la predicción de clasificacion maligno
