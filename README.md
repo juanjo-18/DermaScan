@@ -420,8 +420,229 @@ history=model4.fit(train_generator, validation_data=test_generator, epochs=20, c
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fallos_modelo_benigno_maligno.png)
 
 ### Modelo objeto o piel.
-### Modelo piel sana o piel con lesión.
+Este modelo es una red neuronal convoluciona, nos ha dado una precisión con los datos de entremiento del 0.98%
+<pre>
+   <code class="language-python" id="2">
+      # Crear modelo
+      model1 = keras.models.Sequential([
+       Conv2D(64, 3, input_shape=(150, 150, 3)),
+       BatchNormalization(),
+       Activation('relu'),
+       Dropout(0.1),
+       MaxPooling2D(),
+   
+       Conv2D(64, 3),
+       BatchNormalization(),
+       Activation('relu'),
+       Dropout(0.15),
+       MaxPooling2D(),
+   
+       Flatten(),
+       Dense(300, activation='relu'),
+       Dropout(0.5),
+       Dense(2, activation='softmax')
+   ])
+   
+   # Compilar el modelo
+   model1.compile(optimizer=keras.optimizers.Adam(learning_rate=0.0001), loss='categorical_crossentropy', metrics=['accuracy'])
+   
+   # Mostrar resumen del modelo
+   model1.summary()
+   
+   # Entrenar el modelo con los nuevos datos
+   history1 = model1.fit(
+       X_train,
+       y_train_one_hot,
+       validation_data=(X_test, y_test_one_hot),
+       epochs=15,
+       batch_size=32  # Ajustar según tus necesidades
+   )
+</code>
+</pre>
 
+### Modelo piel sana o piel con lesión.
+En este modelo se ha utilizado un modelo preentrenado MobileNetV2.
+Este modelo nos ha dado una precisión con los datos de entremiento del 0.9731%
+<pre>
+   <code class="language-python" id="103">
+   base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(150, 150, 3), pooling='max')
+
+for layer in base_model.layers[-10:]:
+    layer.trainable = True
+
+# Aumento de datos
+datagen = ImageDataGenerator(
+    rotation_range=40,           # Rango de rotación más amplio
+    width_shift_range=0.2,
+    height_shift_range=0.2,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True,
+    vertical_flip=True,          # Agregar volteo vertical
+    fill_mode='nearest'
+)
+
+datagen.fit(X_train)
+
+# Crear modelo
+model3 = Sequential([
+    base_model,
+    Dense(512, activation='relu', kernel_regularizer='l2'),
+    BatchNormalization(),
+    Dropout(0.5),
+    Dense(256, activation='relu', kernel_regularizer='l2'),
+    BatchNormalization(),
+    Dropout(0.5),
+    Dense(2, activation='softmax')  # 8 clases en tu caso
+])
+
+
+# Compilar el modelo
+model3.compile(optimizer=keras.optimizers.Adam(learning_rate=0.0001), loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Mostrar resumen del modelo
+model3.summary()
+
+# Añadir Early Stopping
+early_stopping = EarlyStopping(monitor='val_accuracy', patience=5, restore_best_weights=True)
+
+# Entrenar el modelo con Early Stopping utilizando generadores de datos
+history3 = model3.fit(
+    datagen.flow(X_train, y_train_one_hot, batch_size=32),
+    validation_data=(X_test, y_test_one_hot),
+    epochs=30,
+    callbacks=[early_stopping]
+)
+</code>
+</pre>
+
+
+
+### Modelo piel con lesion o cancer.
+En este modelo se ha utilizado un modelo preentrenado Xception.
+Este modelo nos ha dado una precisión con los datos de entremiento del 0.97%
+<pre>
+   <code class="language-python" id="1002">
+   
+base_model = Xception(weights='imagenet', include_top=False, input_shape=(tamano, tamano, 3), pooling='max')
+
+# Crear el callback CustomLearningRateScheduler
+custom_lr_scheduler = CustomLearningRateScheduler(factor=0.5, patience=2, min_lr=1e-12)
+
+# Callback para guardar el modelo con la mejor precisión en el conjunto de validación
+#model_checkpoint = ModelCheckpoint('best_model_checkpoint7.h5', save_best_only=True, monitor='val_accuracy', mode='max')
+
+# PARA LOCAL: cambia la ruta al directorio local donde deseas guardar el archivo .h5
+nombre_archivo = 'best_model_checkpoint7.h5'
+ruta_guardado_local = 'C:/Users/admin2/Desktop/dermascan_colabs/modelos/' + nombre_archivo
+
+# Callback para guardar el modelo con la mejor precisión en el conjunto de validación en tu ordenador local
+model_checkpoint = ModelCheckpoint(ruta_guardado_local, save_best_only=True, monitor='val_accuracy', mode='max')
+
+# Agregar capas personalizadas
+x = base_model.output
+x = Dense(1024, activation='relu')(x)
+x = Dropout(0.5)(x)
+predictions = Dense(2, activation='softmax')(x)
+
+# Crear el modelo
+model7 = Model(inputs=base_model.input, outputs=predictions)
+
+for layer in base_model.layers[-15:]:
+    layer.trainable = True
+
+
+# Compilar el modelo con el optimizador Adam y el callback ReduceLROnPlateau
+model7.compile(optimizer=keras.optimizers.Adam(learning_rate=0.0005), loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Mostrar resumen del modelo
+model7.summary()
+
+# Entrenar el modelo utilizando el generador de datos aumentados para el conjunto de entrenamiento
+history7=model7.fit(train_generator, validation_data=test_generator, epochs=25, callbacks=[custom_lr_scheduler, model_checkpoint])
+</code>
+</pre>
+### Modelo de clasifiación de 3 tipos de cancer malignos.
+En este modelo se ha utilizado un modelo preentrenado Xception.
+Este modelo nos ha dado una precisión con los datos de entremiento del 0.9445%.
+<pre>
+   <code class="language-python" id="108">
+   base_model = Xception(weights='imagenet', include_top=False, input_shape=(tamano, tamano, 3), pooling='max')
+
+# Crear el callback CustomLearningRateScheduler
+custom_lr_scheduler = CustomLearningRateScheduler(factor=0.5, patience=2, min_lr=1e-12)
+
+# PARA LOCAL: cambia la ruta al directorio local donde deseas guardar el archivo .h5
+nombre_archivo = 'best_model_checkpoint8.h5'
+ruta_guardado_local = 'C:/Users/admin2/Desktop/dermascan_colabs/modelos/' + nombre_archivo
+
+# Callback para guardar el modelo con la mejor precisión en el conjunto de validación
+model_checkpoint = ModelCheckpoint(ruta_guardado_local, save_best_only=True, monitor='val_accuracy', mode='max')
+
+# Agregar capas personalizadas
+x = base_model.output
+x = Dense(1024, activation='relu')(x)
+x = Dropout(0.5)(x)
+predictions = Dense(3, activation='softmax')(x)
+
+# Crear el modelo
+model8 = Model(inputs=base_model.input, outputs=predictions)
+
+for layer in base_model.layers[-10:]:
+    layer.trainable = True
+
+# Compilar el modelo con el optimizador Adam y el callback ReduceLROnPlateau
+model8.compile(optimizer=keras.optimizers.Adam(learning_rate=0.0005), loss='categorical_crossentropy', metrics=['accuracy'])
+
+# Mostrar resumen del modelo
+model8.summary()
+
+# Entrenar el modelo utilizando el generador de datos aumentados para el conjunto de entrenamiento
+history=model8.fit(train_generator, validation_data=test_generator, epochs=20, callbacks=[custom_lr_scheduler, model_checkpoint])
+
+# Continuar entrenando el modelo por más épocas
+history_continued1 = model8.fit(train_generator, validation_data=test_generator, epochs=20, callbacks=[custom_lr_scheduler, model_checkpoint])
+
+# Continuar entrenando el modelo por más épocas
+history_continued1 = model8.fit(train_generator, validation_data=test_generator, epochs=20, callbacks=[custom_lr_scheduler, model_checkpoint])
+</code>
+</pre>
+
+### Modelo de clasificación de 2 tipos de cancer benignos.
+En este modelo se ha utilizado un modelo preentrenado Xception.
+Este modelo nos ha dado una precisión con los datos de entremiento del 0.9389%.
+<pre>
+   <code class="language-python" id="1005">
+   base_model = Xception(weights='imagenet', include_top=False, input_shape=(tamano, tamano, 3), pooling='max')
+
+# Crear el callback CustomLearningRateScheduler
+custom_lr_scheduler = CustomLearningRateScheduler(factor=0.5, patience=2, min_lr=1e-12)
+
+# Callback para guardar el modelo con la mejor precisión en el conjunto de validación
+model_checkpoint = ModelCheckpoint('best_model_checkpoint7.h5', save_best_only=True, monitor='val_accuracy', mode='max')
+
+# Agregar capas personalizadas
+x = base_model.output
+x = Dense(1024, activation='relu')(x)
+x = Dropout(0.5)(x)
+predictions = Dense(3, activation='softmax')(x)
+
+# Crear el modelo
+model7 = Model(inputs=base_model.input, outputs=predictions)
+
+for layer in base_model.layers[-10:]:
+    layer.trainable = True
+
+
+# Compilar el modelo con el optimizador Adam y el callback ReduceLROnPlateau
+model7.compile(optimizer=keras.optimizers.Adam(learning_rate=0.0005), loss='categorical_crossentropy', metrics=['accuracy'])
+
+
+# Entrenar el modelo utilizando el generador de datos aumentados para el conjunto de entrenamiento
+history=model7.fit(train_generator, validation_data=test_generator, epochs=20,callbacks=[custom_lr_scheduler, model_checkpoint])
+     
+</code>
+</pre>
 ## 7. Procesamiento de Lenguaje Natural.
 
 En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
@@ -462,7 +683,7 @@ Podemos ver que tenemos un 92% de acierto en este modelo.
 En esta imagen comparamos los modelos que hicimos para puntualizar algunas frases y ver cual es el modelo que es mas coherente.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/resultados_de_los_modelos.png)
 
-Alfinal nos quedmaos con el que  mayor coerencia tiene pensamos que es el de LinearRegression.
+Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de LinearRegression.
 
 
 
