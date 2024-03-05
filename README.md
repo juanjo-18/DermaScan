@@ -1,10 +1,13 @@
 
 # DermaScan
-Enlaces sobre nuestro trabajo.
+Enlaces sobre nuestros colabs del trabajo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
-- Modelo de objeto y piel:
-- Modelo de piel sana y piel con lesion:
-- Modelo de benigno y maligno: https://github.com/juanjo-18/DermaScan/blob/main/colabs/benigno_vs_maligno.ipynb
+- Modelo de clasificación de objeto y piel:
+- Modelo de clasifiación piel sana y piel con lesion:
+- Modelo de clasificación de lesiones o de cancer de piel:
+- Modelo de clasificación benigno y maligno: https://github.com/juanjo-18/DermaScan/blob/main/colabs/benigno_vs_maligno.ipynb
+- Modelo de clasificación de 3 tipos de cancer malignos:
+- Modelo de clasificación de 2 tipos de cancer benignos:
 - Web:
 - PDF:
 - Video:
