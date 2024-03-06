@@ -908,17 +908,17 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 ### Página home o INICIO:
 
 - En esta página hacemos la presentación de nuestra aplicación y mostramos las distintas secciones que tiene nuestra página:
-- 
-  - Podemos ver una captura de la apariencia de la web: 
+
+- Podemos ver una captura de la apariencia de la web: 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_44.png)
 
+- En la siguiente captura vemos el código principal de la página:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_3.png)
 
-- Aqui podemos ver una muestra de su apariencia:
-    
-![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_100.png)
-
 ### Página de la aplicación de detección de predicción de tipos de imágenes:
+
+- Aqui podemos ver una muestra de su apariencia:
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_100.png)
 
 - Carga de modelos y conversión de formato de imagen:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_5.png)
