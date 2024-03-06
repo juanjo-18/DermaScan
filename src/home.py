@@ -26,11 +26,13 @@ class Home(HydraHeadApp):
 
         with st.container():
             style_image1 = """
-            width: auto;
-            max-width: 850px;
-            height: auto;
-            max-height: 750px;
             display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: auto;
+            max-width: 350px;
+            max-height: 350px;
             justify-content: center;
             border-radius: 20%;
             """
