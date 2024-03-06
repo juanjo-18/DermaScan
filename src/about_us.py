@@ -17,12 +17,6 @@ from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
 
-# Use local CSS
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-local_css("style/style.css")
 
 class About_US(HydraHeadApp):
 
@@ -43,7 +37,7 @@ class About_US(HydraHeadApp):
                 st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
         local_css("style/style.css")
-        
+
         with st.container():
             st.write("---")
             st.header("Get In Touch With Me!")

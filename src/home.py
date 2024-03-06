@@ -24,7 +24,12 @@ class Home(HydraHeadApp):
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
         
+        def local_css(file_name):
+                with open(file_name) as f:
+                    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+        local_css("style/style.css")
+        
         st.markdown(f"<h1 style='text-align:center; font-size:150px;'>DermaScan</h1>", unsafe_allow_html=True)
 
         # Encabezado principal

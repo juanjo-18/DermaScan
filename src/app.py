@@ -25,6 +25,14 @@ from about_us import About_US
 
 if __name__ == '__main__':
 
+# Use local CSS
+    def local_css(file_name):
+        with open(file_name) as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+    local_css("style/style.css")    
+
+    
     # ESTA ES LA PAGINA HOST A LA QUE LE AÑADIMOS LAS HIJAS
     app = HydraApp(title='DermaScan',favicon="🔬", hide_streamlit_markers=True,use_navbar=True, navbar_sticky=True)
   
