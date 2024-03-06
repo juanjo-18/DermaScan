@@ -1,9 +1,9 @@
-
-<h1 style='text-align:center;'>¡Bienvenido a DermaScan!</h1>
+# ¡Bienvenido a DermaScan!
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
 
-Enlaces sobre nuestros colabs del trabajo.
+# Enlaces a documentos de nuestro proyecto.
+
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
 - Modelo de clasificación de objeto y piel: https://github.com/juanjo-18/DermaScan/blob/main/colabs/objeto_vs_piel.ipynb
 - Modelo de clasifiación piel sana y piel con lesion: https://github.com/juanjo-18/DermaScan/blob/main/colabs/piel_sana_vs_cancer.ipynb
@@ -14,6 +14,13 @@ Enlaces sobre nuestros colabs del trabajo.
 - Web: https://dermascan.streamlit.app/
 - PDF:
 - Video:
+  
+# Integrantes del proyecto
+
+[Juanjo Medina Díaz](https://github.com/juanjo-18)
+[Jesús Cánovas Barqueros](https://github.com/JesusCanovas)
+- Juanjo Medina Díaz
+- Jesús Cánovas Barqueros
 
 # Índice
 
@@ -44,7 +51,11 @@ Enlaces sobre nuestros colabs del trabajo.
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/scan_1.jpg)
 
-- Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
+- Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición.
+  
+- Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea.
+  
+- ¡Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología!
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/skin_care.jpg)
 
