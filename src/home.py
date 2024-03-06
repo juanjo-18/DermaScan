@@ -32,7 +32,8 @@ class Home(HydraHeadApp):
 
         st.divider()
 
-        col1, col3 = st.columns([1, 1])
+        col1, col2, col3 = st.columns([4, 2, 4])
+
         with col1:
         # Sección: DermaScan App
             
@@ -51,8 +52,9 @@ class Home(HydraHeadApp):
             
         st.divider()
 
-        col3, col4 = st.columns([1, 1])
-        with col3:
+        col4, col5, col6 = st.columns([4, 2, 4])
+        
+        with col4:
         # Sección: Incidencia Solar UV
             
             st.markdown(f"<h3 style='text-align:center;'> Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
@@ -60,7 +62,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar concienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en Málaga, así como pronósticos para los próximos días. </p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
-        with col4:
+        with col6:
         # Sección: About us
             
             st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores de DermaScan! </h3>", unsafe_allow_html=True)
