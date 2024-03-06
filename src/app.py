@@ -28,7 +28,7 @@ if __name__ == '__main__':
     # ESTA ES LA PAGINA HOST A LA QUE LE AÑADIMOS LAS HIJAS
     app = HydraApp(title='DermaScan',favicon="🔬", hide_streamlit_markers=True,use_navbar=True, navbar_sticky=True)
   
-    # AÑADIMOS LAAS CLASES
+    # AÑADIMOS LAS CLASES
     app.add_app("Inicio", icon="🔬", app=Home())
     app.add_app("Dermascan App",icon="🤳", app=DermascanApp())
     app.add_app("Prevencion", icon="😎", app=Prevencion())
