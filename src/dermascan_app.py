@@ -279,7 +279,8 @@ class DermascanApp(HydraHeadApp):
             st.markdown(f"<h1 style='text-align:center;'>Valoraciones</h1>", unsafe_allow_html=True)
             #st.header("Valoraciones")
             # Casilla de entrada de texto
-            st.write("Púntua nuestra pagina dejando un comentario: ")
+            st.markdown(f"<h3 style='text-align:center;'>Comenta que te ha parecido la App:</h3>", unsafe_allow_html=True)
+            #st.write("Comenta que te ha parecido la App: ")
             # text_area para ingresar el comentario
             texto_calificacion = st.text_input("")
             
