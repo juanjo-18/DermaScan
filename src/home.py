@@ -25,16 +25,27 @@ class Home(HydraHeadApp):
     def run(self):
 
         with st.container():
-            
+            style_image1 = """
+            width: auto;
+            max-width: 850px;
+            height: auto;
+            max-height: 750px;
+            display: block;
+            justify-content: center;
+            border-radius: 20%;
+            """
+
             col1, col2, col3 = st.columns(3)
             with col1:
                 st.empty()
             with col2:
+                st.markdown(f"<h1 style='text-align:center; font-size:100px;'>DermaScan</h1>", unsafe_allow_html=True)
                 st.image("imagenes/app_logo.png", use_column_width=True)
+                st.markdown(f'<img src="{"imagenes/app_logo.png"}" style="{style_image1}">', unsafe_allow_html=True,)
             with col2:
                 st.empty()
 
-        st.markdown(f"<h1 style='text-align:center; font-size:50px;'>DermaScan</h1>", unsafe_allow_html=True)
+        
 
     
 
