@@ -1,5 +1,8 @@
 
 # DermaScan
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
+
 Enlaces sobre nuestros colabs del trabajo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
 - Modelo de clasificación de objeto y piel: https://github.com/juanjo-18/DermaScan/blob/main/colabs/objeto_vs_piel.ipynb
@@ -29,7 +32,6 @@ Enlaces sobre nuestros colabs del trabajo.
 
 - Nuestro proyecto **DermaScan** es una plataforma web dedicada a la detección de tumores de piel a través de la carga de imágenes. En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
 
-![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
 
 - Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
 
