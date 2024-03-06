@@ -83,7 +83,7 @@ class Indice_UV(HydraHeadApp):
         
         with st.container():
 
-            st.area_chart(data=df, x='Dia de la semana', y='Radiación UV', color="red", width=0, height=0, use_container_width=True)
+            st.area_chart(data=df, x='Dia de la semana', y='Radiación UV', color="#ffaa0088", width=0, height=0, use_container_width=True)
 
 
             # You can call any Streamlit command, including custom components:
