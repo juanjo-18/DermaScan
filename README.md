@@ -1,9 +1,9 @@
-
-# DermaScan
+# ¡Bienvenido a DermaScan!
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
 
-Enlaces sobre nuestros colabs del trabajo.
+# Enlaces a documentos de nuestro proyecto.
+
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
 - Modelo de clasificación de objeto y piel: https://github.com/juanjo-18/DermaScan/blob/main/colabs/objeto_vs_piel.ipynb
 - Modelo de clasifiación piel sana y piel con lesion: https://github.com/juanjo-18/DermaScan/blob/main/colabs/piel_sana_vs_cancer.ipynb
@@ -14,6 +14,12 @@ Enlaces sobre nuestros colabs del trabajo.
 - Web: https://dermascan.streamlit.app/
 - PDF:
 - Video:
+  
+# Integrantes del proyecto
+
+- [Juanjo Medina Díaz](https://github.com/juanjo-18)
+- [Jesús Cánovas Barqueros](https://github.com/JesusCanovas)
+
 
 # Índice
 
@@ -30,14 +36,25 @@ Enlaces sobre nuestros colabs del trabajo.
 
 # 1. Justificación y descripción del proyecto
 
-- Nuestro proyecto **DermaScan** es una plataforma web dedicada a la detección de tumores de piel a través de la carga de imágenes. En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
-
+- Nuestro proyecto **DermaScan** es una plataforma web dedicada a la detección de lesiones cutáneas a través de la carga de imágenes.
+  
+- DermaScan surge de nuestra pasión por la tecnología y del concienciamiento del desafío que supone la detección temprana del cáncer de piel.
+  
+- Como residentes de Málaga, ciudad con 90% de dias de sol al año, somos conscientes de la importancia de protegerse contra la radiación solar UV y de prevenir la aparición de enfermedades relacionadas con la inadecuada exposición al sol.
+  
+- Esto fué lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la precvención del cáncer de piel.
+  
+- En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
 
 - Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/scan_1.jpg)
 
-- Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
+- Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición.
+  
+- Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea.
+  
+- ¡Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología!
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/skin_care.jpg)
 
@@ -359,6 +376,41 @@ basal_cell_carcinoma_dir = os.path.join(train_dir, "basal_cell_carcinoma")
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_4.png)
 
+## Visualización de las predicciones de los modelos
+
+* Después de haber entrenado a los modelos, y para evaluar su rendimiento, sacamos con el conjunto de imágenes de test, una muestra de la predicción que ha echo el modelo vs la imagen que es realmente.
+
+<pre>
+   <code class="language-python" id="visual-pred">
+     
+# Obtener el lote de imágenes y etiquetas del generador de prueba
+images_batch, labels_batch = next(test_generator)
+
+# Obtener las predicciones del modelo para el lote actual
+y_pred = best_model8.predict(images_batch)
+
+# Obtener las etiquetas predichas (índice de la clase con la probabilidad más alta)
+predicted_labels = np.argmax(y_pred, axis=1)
+
+# Obtener las etiquetas reales (índice de la clase con el valor más alto en labels_batch)
+true_labels = np.argmax(labels_batch, axis=1)
+
+# Muestra solo las imágenes bien clasificadas
+plt.figure(figsize=(20, 20))
+for i in range(30):
+    plt.subplot(6, 5, i + 1)  # Ajusta el número de filas y columnas según sea necesario
+    cmap_image = "binary" if predicted_labels[i] == true_labels[i] else "Oranges"
+    plt.imshow(images_batch[i], cmap=cmap_image)
+    plt.xticks([])
+    plt.yticks([])
+    c = "blue" if predicted_labels[i] == true_labels[i] else "red"
+    plt.xlabel(f"True: {true_labels[i]}\nPred: {predicted_labels[i]}", color=c)
+plt.show()
+
+     </code>
+</pre>
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_5.png)
 
 
 
@@ -567,6 +619,17 @@ Este modelo es una red neuronal convoluciona, nos ha dado una precisión con los
    )
 </code>
 </pre>
+- Aquí mostramos una grafica de los modelos provados y el que mejor resultados nos dio fue el DenseNet121.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/comparacion_modelos.png)
+
+- Aquí podemos ver la grafica durante el entrenamiento del modelo, el val_accuraccy va un siempre mejor que el accuracy.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/grafica_.png)
+
+- Podemos ver aqui los valores resultantes de nuestro modelo con la clase de test, sus aciertos, fallos, val_accuracy, la confusion matrix y el classification report. Podemos ver que a fallado 1 vez en el la primera clase y a fallado 2 veces en la segunda clase es casi perfecto.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/fallos.png)
 
 ## Modelo piel sana o piel con lesión.
 En este modelo se ha utilizado un modelo preentrenado MobileNetV2.
@@ -624,6 +687,19 @@ history3 = model3.fit(
 </code>
 </pre>
 
+- Podemos ver en esta gráfica, que de los tres modelos entrenados el mejor a sido el MobileNetV2 con un 97,31% de precision en los datos de test.
+  
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/comparacion_modelos.png)
+
+- En la siguiente gráfica el val accuracy es peor que el accuracy y el val acurracy va dando muchos picos durante el entrenamiento.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/grafica.png)
+
+- En esta imagen vemos que para la primera clase no ha fallado pero para la segunda ha tenido 9 fallos.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/fallos.png)
+
 
 
 ## Modelo piel con lesion o cancer.
@@ -670,6 +746,16 @@ model7.summary()
 history7=model7.fit(train_generator, validation_data=test_generator, epochs=25, callbacks=[custom_lr_scheduler, model_checkpoint])
 </code>
 </pre>
+
+- Podemos ver en la grafica que el porcentaje de precision de val_acurracy es menor al accuracy.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_lesion_vs_cancer/gafrica.png)
+
+- En esta imagen de confusion matrix tenemos en la primera clase mas del doble de errores que en la segunda clase.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_lesion_vs_cancer/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_lesion_vs_cancer/errores.png)
+
 ## Modelo de clasifiación de 3 tipos de cancer malignos.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9445%.
@@ -716,6 +802,17 @@ history_continued1 = model8.fit(train_generator, validation_data=test_generator,
 </code>
 </pre>
 
+- En esta grafica el validation accuracy ha ido muy pegado al accuracy lo que es bueno.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/grafico.png)
+
+- En esta imagen de confusion matrix tenemos mas fallos en la primera clase con 44 comparado a la segunda clase con 25 y la tercera con 25 tambien.
+  
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/errores.png)
+
+
 ## Modelo de clasificación de 2 tipos de cancer benignos.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9389%.
@@ -751,6 +848,12 @@ history=model7.fit(train_generator, validation_data=test_generator, epochs=20,ca
      
 </code>
 </pre>
+- Podemos ver en la siguiente imagen de la grafica que el val_acurracy al inicio si esta pegado al accuracy pero durante el paso de las epocas se fue distanciando.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_benignos/grafico.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_benignos/fallos.png)
+
 
 # 7. Procesamiento de Lenguaje Natural.
 
@@ -796,6 +899,15 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 
 # 8. Aplicación web
+
 # 9. Conclusiones
+
+- Aquí ha terminado nuestro proyecto DermaScan. Aún no sabemos si será un punto final o un punto y seguido, ya que sería necesario realizar un estudio de viabilidad y posible amortización del tiempo invertido en este proyecto.
+
+- Debido a la falta de tiempo en este proyecto, algunos modelos no han podido superar el 95% de precisión con datos de prueba. Además, algunos modelos no han podido contar con el número suficiente de imágenes para su entrenamiento.
+
+- No hemos tomado este proyecto como un simple trabajo, sino como un desafío personal para ver hasta dónde somos capaces de llegar en un periodo de tiempo muy reducido, el cual nos hubiera gustado que fuera mayor.
+Íbamos a implementar muchos más puntos, pero el tiempo no estuvo a nuestro favor.
+
 # 10. Bibliografía
 
