@@ -24,14 +24,6 @@ class Indice_UV(HydraHeadApp):
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
 
-        def local_css(file_name):
-            with open(file_name) as f:
-                st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-        local_css("style/style.css")
-
-        st.title("DermaScan")
-
         st.header("Índice Solar UV: Conoce el Impacto del Sol en tu Piel")
         st.write("¡Descubre el impacto del sol en tu piel con nuestra sección de Incidencia Solar UV! Aquí te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Conoce cómo la radiación UV afecta tu piel en función de la época del año y la latitud en la que te encuentres, y aprende a tomar medidas preventivas para proteger tu piel contra los daños causados por la exposición al sol.")
         # Saco la pagina
@@ -76,7 +68,7 @@ class Indice_UV(HydraHeadApp):
                                         'Dia de la semana': salida2.get_text(),
                                         'Temperatura MAX': salida3.get_text(),
                                         'Temperatura MIN': salida4.get_text(),
-                                        'Radiación UVA': salida5.get_text()
+                                        'Radiación UV': salida5.get_text()
                                         })
 
 
@@ -91,7 +83,10 @@ class Indice_UV(HydraHeadApp):
             st.write("Gráfica de incidencia solar")
 
             # You can call any Streamlit command, including custom components:
-            st.bar_chart(df)
+            #st.bar_chart(df)
+            chart_data = pd.DataFrame(np.df('Dia de la semana', 'Temperatura MAX'), columns=["Radiación UV"])
+
+            st.line_chart(chart_data)
 
         with st.container():
             style_image2 = """
@@ -110,8 +105,8 @@ class Indice_UV(HydraHeadApp):
             with col1:
                 st.empty()
             with col2:
-                #st.image("imagenes/imagen_radiacion_uva.png", use_column_width=True)
-                st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="" style="{style_image2}">', unsafe_allow_html=True)
+                st.image("imagenes/imagen_radiacion_uva.png", use_column_width=True)
+                #st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="" style="{style_image2}">', unsafe_allow_html=True)
             with col3:
                 st.empty()
 
