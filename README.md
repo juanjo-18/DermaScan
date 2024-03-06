@@ -25,56 +25,60 @@ Enlaces sobre nuestros colabs del trabajo.
 9. [Conclusiones](#9-conclusiones)
 
 
+# 1. Justificación y descripción del proyecto
+
+- Nuestro proyecto **DermaScan** es una plataforma web dedicada a la detección de tumores de piel a través de la carga de imágenes. En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
+
+- Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/scan_1.jpg)
+
+- Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/skin_care.jpg)
 
 
-   
-## 1. Justificación y descripción del proyecto
-Nuestro innovador proyecto es una plataforma web dedicada a la detección de tumores de piel a través de la carga de imágenes. En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
+# 2. Obtención de los datos.
 
-Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
-
-Este servicio va más allá al proporcionar detalles específicos sobre el tipo de tumor detectado, permitiendo a los usuarios obtener información detallada sobre su condición. Nuestra misión es hacer que la detección temprana de problemas de piel sea accesible y efectiva, brindando a los usuarios la tranquilidad y la información necesaria para tomar decisiones informadas sobre su salud cutánea. Bienvenido a una nueva era de cuidado personalizado y empoderamiento a través de la tecnología."
-
-
-## 2. Obtención de los datos.
-
-### Modelo de objeto o imagen piel.
+## Modelo de objeto o imagen piel.
 Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: uno que contenía objetos, otro que contenía imágenes de piel con cáncer y otro con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
 - Objetos y imagenes variadas: https://www.kaggle.com/datasets/greg115/various-tagged-images
 - Benignos o malignos: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
 
-### Modelo de piel sana o piel con lesión.
+## Modelo de piel sana o piel con lesión.
 Para el modelo de piel sana o piel con lesión, hemos hecho una combinación de dos conjuntos de imágenes: uno que contenía imagenes de pieles con cancer y otro que contenía imágenes de pieles sanas. Los dos han sido obtenidos de Kaggle.
 - Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
 - Piel con cancer: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 
-### Modelo de benigno o maligno.
+## Modelo de benigno o maligno.
 Para el modelo de benigno o maligno, hemos utilizado estos dataset que ya contenian las imagenes benignas y malignas separadas ademas lo hemos juntado con otro conjunto de imagenes mas. Los dos han sido obtenidos de kaggle.
 - Benignos o malignos1: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Benignos o malignos2: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
   
 
-### Modelo de piel con cancer o piel con otra lesión
+## Modelo de piel con cancer o piel con otra lesión
 Para el modelo de imágenes de piel con cáncer y piel con otras lesiones, hemos hecho una combinación de tres datasets distintos conjuntos de imágenes: dos que contenía imagenes de pieles con cáncer y otro que contenía otro tipo de lesiones. Los tres han sido obtenidos de Kaggle:
 - Benignos o malignos1: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
 - Benignos o malignos2: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Varios tipos de lesiones: https://www.kaggle.com/datasets/yashjaiswal4559/skin-disease
 Aun que este último dataset tiene imagenes tanto de cáncer como de otras lesiones que no son cáncer, para el apartado de cáncer hemos cogido las que son cancer sólo: melanoma y carcinomas basales. (Ya que las imagenes están etiquetasdas por carpetas según su clase).
 
-### Modelo de clasificación de 3 tipos de cancer maligno
+## Modelo de clasificación de 3 tipos de cancer maligno
 Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido melanoma, basall cell carcinoma y Squamous cell carcinoma. El dataset ha sido obtenido de kagle.
 - Enlace: https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled
   
-### Modelo de clasificación de 2 tipos de cancer benigno
+## Modelo de clasificación de 2 tipos de cancer benigno
 Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido queratosis seborreica, dermatofibroma y Melanocytic nevus. El dataset ha sido obtenido de kagle.
 - Enlace: https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled
   
-### Modelo de sentimientos.
+## Modelo de sentimientos.
 Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts en español y despues lo hemos procesado.
 - Enlace: https://huggingface.co/datasets/pysentimiento/spanish-tweets
 
-### Web Scrapping.
+## Web Scrapping.
 A traves de este enlace del tiempo he creado una tabla para mostrarla en la web haciendo web scrapping.
 - Enlace: https://www.tutiempo.net/malaga.html?datos=detallados
 Primero saco todo el html de la web y lo guardo en una variable.
@@ -88,16 +92,16 @@ Aqui muestro en la web la tabla que hemos scrapeado.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/web_scrapin_resultado.png)
 
 
-## 3. Limpieza de datos (Preprocesado).
+# 3. Limpieza de datos (Preprocesado).
 
-### Modelo de sentimientos.
+## Modelo de sentimientos.
 Para el modelo de sentimientos primero los twits que tenemos les estamos eliminadon valores y caracteres que no son necesarios, como los iconos, eliminar los @ y el texto asociado, eliminar # y su texto, eliminar urls y convertir todo a minusculas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/Limpiar%20textos.png)
 
 Aqui estamos eliminado de las frases las stopwords para despues pasarselo al modelo.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/quitamos_stopword.png)
 
-### El resto de modelos.
+## El resto de modelos.
 Como estamos trabajando con imagenes necesitamos hacer varias comprobaciones y arreglos antes de poder utilizarla, ahora vamos a contar algunas cosas realizadas.
 
 Primero guardamos todas las imagenes en una variable.
@@ -250,11 +254,31 @@ encontrar_duplicados(carpeta_origen_benigno, carpeta_origen_maligno, carpeta_des
 </code>
 </pre>
 
+# 4. Exploración y visualización de los datos.
 
-## 4. Exploración y visualización de los datos.
+- En este proceso hemos utilizado una dinámica estructurada y sistemática con el mismo patrón en casi todos cuadernos Jupyter en los que hemos creado y entrenado nuestros modelos y es la siguiente:
+
+## Contenido del dataset
+- Para mostrar el contenido del dataset hemos utilizado el siguiente bloque de código:
+
+<pre>
+   <code class="language-python" id="contenido-dataset">
+     
+# Numero de imagenes para cada clase
+nums_train = {}
+nums_val = {}
+for s in object_skin:
+    nums_train[s] = len(os.listdir(train_dir + '/' + s))
+img_per_class_train = pd.DataFrame(nums_train.values(), index=nums_train.keys(), columns=["no. of images"])
+print('Train data distribution :')
+img_per_class_train
+![image](https://github.com/juanjo-18/DermaScan/assets/146923591/2bb86da0-b44a-436a-8eae-8d7762ad7085)
+
+   </code>
+</pre>
 
 
-## 5. Preparación de los datos para Machine Learning.
+# 5. Preparación de los datos para Machine Learning.
 
 En todos nuestros modelos de clasificación de imagenes hemos realizado estos pasos:
 - Redimensionamiento de las imagenes a 150 x 150 pixeles, despues concatenamos todos los datos en arrays, ya que al tenerlos en numerico el modelo puede trabajar mejor con ellos y mejorar muchisimo la velocidad de entrenamiento.
@@ -373,7 +397,7 @@ test_generator = datagen_test.flow(X_test, y_test_one_hot, batch_size=32)
 </code>
 </pre>
 
-## 6. Entrenamiento del modelo y comprobación del rendimiento.
+# 6. Entrenamiento del modelo y comprobación del rendimiento.
 Para el entrenamiento de nuestros modelos hemos utilizado modelos preentrenados hemos utilizado varios que se pueden ver en los colab aquí voy a mostrar el mejor de cada modelo.
 
 ### Modelo benigno o maligno
@@ -419,7 +443,7 @@ history=model4.fit(train_generator, validation_data=test_generator, epochs=20, c
 - En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fallos_modelo_benigno_maligno.png)
 
-### Modelo objeto o piel.
+## Modelo objeto o piel.
 Este modelo es una red neuronal convoluciona, nos ha dado una precisión con los datos de entremiento del 0.98%
 <pre>
    <code class="language-python" id="2">
@@ -460,7 +484,7 @@ Este modelo es una red neuronal convoluciona, nos ha dado una precisión con los
 </code>
 </pre>
 
-### Modelo piel sana o piel con lesión.
+## Modelo piel sana o piel con lesión.
 En este modelo se ha utilizado un modelo preentrenado MobileNetV2.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9731%
 <pre>
@@ -518,7 +542,7 @@ history3 = model3.fit(
 
 
 
-### Modelo piel con lesion o cancer.
+## Modelo piel con lesion o cancer.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.97%
 <pre>
@@ -562,7 +586,7 @@ model7.summary()
 history7=model7.fit(train_generator, validation_data=test_generator, epochs=25, callbacks=[custom_lr_scheduler, model_checkpoint])
 </code>
 </pre>
-### Modelo de clasifiación de 3 tipos de cancer malignos.
+## Modelo de clasifiación de 3 tipos de cancer malignos.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9445%.
 <pre>
@@ -608,7 +632,7 @@ history_continued1 = model8.fit(train_generator, validation_data=test_generator,
 </code>
 </pre>
 
-### Modelo de clasificación de 2 tipos de cancer benignos.
+## Modelo de clasificación de 2 tipos de cancer benignos.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9389%.
 <pre>
@@ -643,7 +667,8 @@ history=model7.fit(train_generator, validation_data=test_generator, epochs=20,ca
      
 </code>
 </pre>
-## 7. Procesamiento de Lenguaje Natural.
+
+# 7. Procesamiento de Lenguaje Natural.
 
 En el cuaderno jupyter a continuacion esta todo mas detallado del modelo.
 - Modelo de sentimientos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/modelo_sentimientos.ipynb
@@ -686,7 +711,7 @@ En esta imagen comparamos los modelos que hicimos para puntualizar algunas frase
 Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de LinearRegression.
 
 
-
-## 8. Aplicación web
-## 9. Conclusiones
+# 8. Aplicación web
+# 9. Conclusiones
+# 10. Bibliografía
 
