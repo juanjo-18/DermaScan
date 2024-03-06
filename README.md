@@ -259,7 +259,8 @@ encontrar_duplicados(carpeta_origen_benigno, carpeta_origen_maligno, carpeta_des
 - En este proceso hemos utilizado una dinámica estructurada y sistemática con el mismo patrón en casi todos cuadernos Jupyter en los que hemos creado y entrenado nuestros modelos y es la siguiente:
 
 ## Contenido del dataset
-- Para mostrar el contenido del dataset hemos utilizado el siguiente bloque de código:
+
+* Para mostrar el contenido del dataset hemos utilizado el siguiente bloque de código:
 
 <pre>
    <code class="language-python" id="contenido-dataset">
@@ -267,7 +268,7 @@ encontrar_duplicados(carpeta_origen_benigno, carpeta_origen_maligno, carpeta_des
 # Numero de imagenes para cada clase
 nums_train = {}
 nums_val = {}
-for s in object_skin:
+for s in cancer_y_otros:
     nums_train[s] = len(os.listdir(train_dir + '/' + s))
 img_per_class_train = pd.DataFrame(nums_train.values(), index=nums_train.keys(), columns=["no. of images"])
 print('Train data distribution :')
@@ -276,6 +277,88 @@ img_per_class_train
    </code>
 </pre>
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_1.png)
+
+## Distribución de los datos
+
+* Creamos una gráfica de barras para representar la distribución de las imágenes del dataset ssegún su clase.
+
+<pre>
+   <code class="language-python" id="distribucion-dataset">
+     
+plt.figure(figsize=(7,7))
+plt.title('Distribución de los datos',fontsize=30)
+plt.ylabel('Número de imágenes',fontsize=20)
+plt.xlabel('Tipo de cáncer de piel',fontsize=20)
+
+keys = list(nums_train.keys())
+vals = list(nums_train.values())
+sns.barplot(x=keys, y=vals)
+     
+   </code>
+</pre>
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_2.png)
+
+## Visualización de los datos
+
+* Creamos una función para visualizar los datos
+
+<pre>
+   <code class="language-python" id="visual-func">
+     
+# Funcion para mostrar imagénes
+train = ImageFolder(train_dir, transform=transforms.ToTensor())
+def show_image(image, label):
+    print("Label :" + train.classes[label] + "(" + str(label) + ")")
+    return image.permute(1, 2, 0)
+     
+   </code>
+</pre>
+
+* Sacamos una muestra de una de las clases que tengamos, en este caso cáncer tipo *Basal Cell Carcinoma*
+
+<pre>
+   <code class="language-python" id="visual-type1">
+     
+# Directorio que contiene las imágenes
+basal_cell_carcinoma_dir = os.path.join(train_dir, "basal_cell_carcinoma")
+
+# Muestra 6 imágenes
+fig, axs = plt.subplots(2, 3, figsize=(12, 10))
+fig.tight_layout(pad=0)
+
+# Iterar sobre las primeras 6 imágenes del directorio
+for i in range(6):
+    image_files = [file for file in os.listdir(basal_cell_carcinoma_dir) if file.endswith('.jpg')]
+    if i < len(image_files):
+        image_path = os.path.join(basal_cell_carcinoma_dir, image_files[i])
+        image = Image.open(image_path)
+        axs[i//3, i%3].imshow(image)
+        axs[i//3, i%3].set_title(f'Imagen {i+1}')
+    else:
+        axs[i//3, i%3].axis('off')  # No mostrar ejes si no hay imagen para mostrar
+plt.show()
+     
+   </code>
+</pre>
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_3.png)
+
+* Podemos ver otra muestra de otra clase diferente que tengamos, en este caso cáncer tipo *Melanoma*, para ello sólo tenemos que cambiar la parte del código que accdede al directorio donde se encuentran las imágenes a las que queremos acceder:
+
+<pre>
+   <code class="language-python" id="visual-type2">
+     
+# Directorio que contiene las imágenes
+basal_cell_carcinoma_dir = os.path.join(train_dir, "basal_cell_carcinoma")
+     
+   </code>
+</pre>
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_4.png)
+
+
+
 
 # 5. Preparación de los datos para Machine Learning.
 
