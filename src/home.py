@@ -50,7 +50,7 @@ class Home(HydraHeadApp):
         
 
         # Encabezado principal
-        st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos a DermaScan!  Descubre el Futuro del Cuidado de la Piel</h2>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos al Futuro del Cuidado de la Piel!</h2>", unsafe_allow_html=True)
         #st.markdown(f"<h3 style='text-align:center;'> Descubre el Futuro del Cuidado de la Piel </h3>", unsafe_allow_html=True)
 
         st.divider()
