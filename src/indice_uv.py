@@ -84,7 +84,7 @@ class Indice_UV(HydraHeadApp):
 
             # You can call any Streamlit command, including custom components:
             #st.bar_chart(df)
-            chart_data = pd.DataFrame(df('Dia de la semana', 'Temperatura MAX'), columns=["Radiación UV"])
+            chart_data = df(('Dia de la semana', 'Temperatura MAX'), columns=["Radiación UV"])
 
             st.line_chart(chart_data)
 
