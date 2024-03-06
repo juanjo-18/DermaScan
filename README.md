@@ -256,6 +256,25 @@ encontrar_duplicados(carpeta_origen_benigno, carpeta_origen_maligno, carpeta_des
 
 # 4. Exploración y visualización de los datos.
 
+- En este proceso hemos utilizado una dinámica estructurada y sistemática con el mismo patrón en casi todos cuadernos Jupyter en los que hemos creado y entrenado nuestros modelos y es la siguiente:
+
+## Contenido del dataset
+- Para mostrar el contenido del dataset hemos utilizado el siguiente bloque de código:
+
+<pre>
+   <code class="language-python" id="contenido-dataset">
+     
+# Numero de imagenes para cada clase
+nums_train = {}
+nums_val = {}
+for s in object_skin:
+    nums_train[s] = len(os.listdir(train_dir + '/' + s))
+img_per_class_train = pd.DataFrame(nums_train.values(), index=nums_train.keys(), columns=["no. of images"])
+print('Train data distribution :')
+img_per_class_train
+
+   </code>
+</pre>
 
 
 # 5. Preparación de los datos para Machine Learning.
