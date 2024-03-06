@@ -111,12 +111,14 @@ Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts 
 ## Web Scrapping.
 
 A traves de este enlace del tiempo he creado una tabla para mostrarla en la web haciendo web scrapping.
+
 - Enlace: https://www.tutiempo.net/malaga.html?datos=detallados
 Primero saco todo el html de la web y lo guardo en una variable.
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/web_scrapin_guardar_url.png)
 
 Aqui estoy creando un dataframe que me guarde el dia, la temperatura maxima, la temperatura minima y el indice UV.
+
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/codigo_web_scrapping.png)
 
 Aqui muestro en la web la tabla que hemos scrapeado.
