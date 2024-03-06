@@ -1,4 +1,6 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+import seaborn as sns
 import pandas as pd
 import numpy as np
 import tensorflow as tf
@@ -82,11 +84,21 @@ class Indice_UV(HydraHeadApp):
         with st.container():
             st.write("Gráfica de incidencia solar")
 
+            def mostrar_grafica(df):
+                plt.figure(figsize=(10, 6))
+                sns.barplot(x='Producto', y='Ventas', data=df)
+                plt.title('Ventas por Producto')
+                plt.xlabel('Producto')
+                plt.ylabel('Ventas')
+                st.pyplot()
+
+            # Mostrar la gráfica en Streamlit
+            st.title('Gráfica de Ventas por Producto')
+            mostrar_grafica(df)
             # You can call any Streamlit command, including custom components:
             #st.bar_chart(df)
-            chart_data = df(('Dia de la semana', 'Temperatura MAX'), columns=["Radiación UV"])
-
-            st.line_chart(chart_data)
+            #chart_data = df(('Dia de la semana', 'Temperatura MAX'), columns=["Radiación UV"])
+            #st.line_chart(chart_data)
 
         with st.container():
             style_image2 = """
