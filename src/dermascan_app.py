@@ -68,7 +68,7 @@ class DermascanApp(HydraHeadApp):
 
                 
                 try:
-                    #  Realizar la predicción piel vs cancer
+                    #  Realizar la predicción objeto vs piel
                     objeto_piel_modelo.allocate_tensors()
                     entrada_details2 = objeto_piel_modelo.get_input_details()
                     salida_details2 = objeto_piel_modelo.get_output_details()

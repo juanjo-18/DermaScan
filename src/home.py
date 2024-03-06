@@ -36,7 +36,6 @@ class Home(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-
             col1, col2, col3 = st.columns(3)
             with col1:
                 st.empty()
@@ -47,29 +46,23 @@ class Home(HydraHeadApp):
             with col2:
                 st.empty()
 
-        
-
         # Encabezado principal
         st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos al Futuro del Cuidado de la Piel!</h2>", unsafe_allow_html=True)
         #st.markdown(f"<h3 style='text-align:center;'> Descubre el Futuro del Cuidado de la Piel </h3>", unsafe_allow_html=True)
-
         st.divider()
 
         col1, col2, col3, col4, col5 = st.columns([1, 3.5, 1, 3.5, 1])
 
         with col2:
         # Sección: DermaScan App
-            
             st.markdown(f"<h3 style='text-align:center;'> DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             st.image("imagenes/scan_1.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna y clasificarla por tipos, convirtiéndose en una potente herramienta para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
     
-
         with col4:
         # Sección: Prevención y cuidado de la piel
-            
             st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel. El camino hacia una Piel Saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares.</p>", unsafe_allow_html=True)
@@ -89,9 +82,9 @@ class Home(HydraHeadApp):
             st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de ser consciente del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantente alerta y protege tu piel de los daños causados por la radiación solar UV.</p>", unsafe_allow_html=True)
+        
         with col9:
         # Sección: About us
-            
             st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores de DermaScan! </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
