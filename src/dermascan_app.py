@@ -275,7 +275,8 @@ class DermascanApp(HydraHeadApp):
                 elif puntuacion == 5:
                     st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
             
-            st.markdown(f"<h2 style='text-align:center;'>Valoraciones</h2>", unsafe_allow_html=True)
+            
+            st.markdown(f"<h1 style='text-align:center;'>Valoraciones</h1>", unsafe_allow_html=True)
             #st.header("Valoraciones")
             # Casilla de entrada de texto
             st.write("Púntua nuestra pagina dejando un comentario: ")
