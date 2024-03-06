@@ -93,9 +93,28 @@ class Indice_UV(HydraHeadApp):
             # You can call any Streamlit command, including custom components:
             st.bar_chart(df)
 
-        # Puedes proporcionar la ruta de la imagen localmente o una URL
-        ruta_imagen = "imagenes/imagen_radiacion_uva.png"  
+        with st.container():
+            style_image1 = """
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: auto;
+            max-width: 350px;
+            max-height: 350px;
+            justify-content: center;
+            border-radius: 20%;
+            """
 
-        # Mostrar la imagen en Streamlit
-        st.image(ruta_imagen, caption='', use_column_width=False, width=750)
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.empty()
+            with col2:
+                st.markdown(f"<h1 style='text-align:center; font-size:100px;'>DermaScan</h1>", unsafe_allow_html=True)
+                #st.image("imagenes/app_logo.png", use_column_width=True)
+                st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="333" style="{style_image1}">', unsafe_allow_html=True)
+            with col2:
+                st.empty()
+
+        
       
