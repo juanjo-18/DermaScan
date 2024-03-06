@@ -30,11 +30,11 @@ if __name__ == '__main__':
     app = HydraApp(title='DermaScan',favicon="🔬", hide_streamlit_markers=True,use_navbar=True, navbar_sticky=True)
   
     # AÑADIMOS LAS CLASES
-    app.add_app("Inicio", icon="🔬", app=Home())
-    app.add_app("Dermascan App",icon="🤳", app=DermascanApp())
-    app.add_app("Prevencion", icon="😎", app=Prevencion())
-    app.add_app("Indice UV", icon="☀️", app=Indice_UV())
-    app.add_app("Sobre nosotros", icon="👥", app=About_US())
+    app.add_app("INICIO", icon="🔬", app=Home())
+    app.add_app("DERMASCAN APP",icon="🤳", app=DermascanApp())
+    app.add_app("PREVENCIÓN", icon="😎", app=Prevencion())
+    app.add_app("ÍNDICE UV", icon="☀️", app=Indice_UV())
+    app.add_app("SOBRE NOSOTROS", icon="👥", app=About_US())
    
 
     # EJECUTA EL MAIN
