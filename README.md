@@ -975,3 +975,12 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 # 10. Bibliografía
 
+- [Documentacion Envidia Cudnn](https://docs.nvidia.com/cudnn/index.html)
+- [Documentación Tensorflow](https://www.tensorflow.org/guide)
+- [Documentacion Clasificador de imágenes Tensorflow](https://www.tensorflow.org/hub/tutorials/tf2_image_retraining?hl=es-419)
+- [Documentación Streamlit](https://docs.streamlit.io/)
+- [Documentación HTML](https://www.w3schools.com/html/html_intro.asp)
+- [Documentación CSS](https://lenguajecss.com/)
+- [Tutoriales Medium](https://medium.com/)
+- [Documentación Markdown](https://www.markdownguide.org/getting-started/)
+- [Documentación Python 3.9](https://docs.python.org/es/3.9/index.html)
