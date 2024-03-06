@@ -156,8 +156,6 @@ class DermascanApp(HydraHeadApp):
                                     else:
                                         st.write("El tipo de cancer es es Squamous cell carcinoma")
                             
-
-                    
                 except Exception as e:
                     st.error(f"Error al hacer la prediccion: {str(e)}")
 
