@@ -42,7 +42,7 @@ class Home(HydraHeadApp):
                 st.markdown(f"<h1 style='text-align:center; font-size:100px;'>DermaScan</h1>", unsafe_allow_html=True)
                 #st.image("imagenes/app_logo.png", use_column_width=True)
                 st.markdown(
-                    '<img src="./app/static/app_logo.png" height="333" style="border: 5px solid black">',
+                    '<img src="./app/.static/app_logo.png" height="150" style="">',
                     unsafe_allow_html=True,
                 )
             with col2:
