@@ -1,5 +1,5 @@
 
-# DermaScan
+markdown(f"<h1 style='text-align:center;'>¡Bienvenido a DermaScan!</h1>", unsafe_allow_html=True)
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
 
