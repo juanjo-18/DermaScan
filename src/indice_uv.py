@@ -83,7 +83,7 @@ class Indice_UV(HydraHeadApp):
         
         with st.container():
 
-            st.bar_chart(df, x="Dia de la semana", y="Radiación UV", color="Temperatura MAX")
+            st.bar_chart(df, y="Dia de la semana", x="Radiación UV", color="Temperatura MAX")
 
             # You can call any Streamlit command, including custom components:
             #st.bar_chart(df)
