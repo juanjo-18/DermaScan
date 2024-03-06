@@ -636,6 +636,7 @@ history3 = model3.fit(
 </pre>
 
 - Podemos ver en esta gráfica, que de los tres modelos entrenados el mejor a sido el MobileNetV2 con un 97,31% de precision en los datos de test.
+  
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/comparacion_modelos.png)
 
 - En la siguiente gráfica el val accuracy es peor que el accuracy y el val acurracy va dando muchos picos durante el entrenamiento.
