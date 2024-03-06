@@ -40,14 +40,10 @@ class About_US(HydraHeadApp):
         local_css("style/style.css")
 
         with st.container():
-            col1, col2, col3 = st.columns(3)
-            with col1:
-                st.empty()
-            with col2:
-                st.write("---")
-                st.header("Contáctanos!")
-                st.write("##")
-                
+            st.write("---")
+            st.header("Contáctanos!")
+            st.write("##")
+
             # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
             contact_form = """
             <form action="https://formsubmit.co/stdust69cleaner@gmail.com" method="POST">
@@ -58,8 +54,10 @@ class About_US(HydraHeadApp):
                 <button type="submit">Enviar</button>
             </form>
             """
-
-            st.markdown(contact_form, unsafe_allow_html=True)
-         
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.empty()
+            with col2:
+                st.markdown(contact_form, unsafe_allow_html=True)
             with col3:
                 st.empty()
