@@ -1,5 +1,5 @@
 
-(f"<h1 style='text-align:center;'>¡Bienvenido a DermaScan!</h1>")
+<h1 style='text-align:center;'>¡Bienvenido a DermaScan!</h1>
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/app_logo.png)
 
