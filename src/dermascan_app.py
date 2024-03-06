@@ -37,7 +37,7 @@ class DermascanApp(HydraHeadApp):
             
             st.divider()
 
-            st.write("Sube o captura una imagen, procura enfocar sólo superficie de piel.")
+            st.markdown(f"<h3 style='text-align:center;'>Sube o captura una imagen, procura enfocar sólo superficie de piel</h3>", unsafe_allow_html=True)
 
             # Agregar un apartado para cargar una foto
             imagen = st.file_uploader("Carga la imagen", type=["jpg", "jpeg", "png"])
