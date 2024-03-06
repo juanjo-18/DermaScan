@@ -30,11 +30,11 @@ Enlaces sobre nuestros colabs del trabajo.
 
 # 1. Justificación y descripción del proyecto
 
-- Nuestro proyecto **DermaScan** es una plataforma web dedicada a la detección de tumores de piel a través de la carga de imágenes.
+- Nuestro proyecto **DermaScan** es una plataforma web dedicada a la detección de lesiones cutáneas a través de la carga de imágenes.
   
 - DermaScan surge de nuestra pasión por la tecnología y del concienciamiento del desafío que supone la detección temprana del cáncer de piel.
   
-- Como residentes de Málaga, somos conscientes de la importancia de protegerse contra la radiación solar UV y de prevenir la aparición de enfermedades relacionadas con la inadecuada exposición al sol.
+- Como residentes de Málaga, ciudad con 90% de dias de sol al año, somos conscientes de la importancia de protegerse contra la radiación solar UV y de prevenir la aparición de enfermedades relacionadas con la inadecuada exposición al sol.
   
 - Esto fué lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la precvención del cáncer de piel.
   
