@@ -30,7 +30,7 @@ class Home(HydraHeadApp):
             with col1:
                 st.empty()
             with col2:
-                st.image("app_logo.jpg", use_column_width=True)
+                st.image("app_logo.png", use_column_width=True)
             with col2:
                 st.empty()
 
