@@ -83,18 +83,9 @@ class Indice_UV(HydraHeadApp):
         
         with st.container():
 
-            def mostrar_grafica(df):
-                plt.figure(figsize=(10, 6))
-                sns.barplot(x='Dia de la semana', y='Radiación UV', data=df)
-                plt.title('Indice UV')
-                plt.xlabel('Dia')
-                plt.ylabel('Nivel')
-                st.pyplot()
+            st.area_chart(data=df, x='Dia de la semana', y='Radiación UV', color="red", width=0, height=0, use_container_width=True)
 
-            # Mostrar la gráfica en Streamlit
-            st.title('Gráfica de incidencia solar')
-            mostrar_grafica(df)
-            
+
             # You can call any Streamlit command, including custom components:
             #st.bar_chart(df)
             #chart_data = df(('Dia de la semana', 'Temperatura MAX'), columns=["Radiación UV"])
