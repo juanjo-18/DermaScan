@@ -85,8 +85,8 @@ class Home(HydraHeadApp):
             
             st.markdown(f"<h3 style='text-align:center;'> Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.divider()
-            st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en Málaga, así como pronósticos para los próximos días. </p>", unsafe_allow_html=True)
+            st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar concienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
         with col9:
@@ -96,4 +96,5 @@ class Home(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             st.image("imagenes/us.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>La idea de desarrollar DermaScan surgió de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana del cáncer de piel. Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la inteligencia artificial y la salud digital.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>La idea de desarrollar DermaScan surgió de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la inteligencia artificial y la salud digital!</p>", unsafe_allow_html=True)
