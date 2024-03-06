@@ -20,6 +20,10 @@
 - [Juanjo Medina Díaz](https://github.com/juanjo-18)
 - [Jesús Cánovas Barqueros](https://github.com/JesusCanovas)
 
+## Peso del proyecto por integrante
+
+- Juanjo Medina = 55%
+- Jesús Cánovas = 45%
 
 # Índice
 
