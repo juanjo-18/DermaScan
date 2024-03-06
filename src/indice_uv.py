@@ -88,10 +88,10 @@ class Indice_UV(HydraHeadApp):
        
         
         with st.container():
-            st.write("This is inside the container")
+            st.write("Gráfica de incidencia solar")
 
             # You can call any Streamlit command, including custom components:
-            st.bar_chart(np.random.randn(50, 3))
+            st.bar_chart(np.df)
 
         # Puedes proporcionar la ruta de la imagen localmente o una URL
         ruta_imagen = "imagenes/imagen_radiacion_uva.png"  
