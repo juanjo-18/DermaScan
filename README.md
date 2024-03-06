@@ -976,12 +976,26 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 # 9. Conclusiones
 
-- Aquí ha terminado nuestro proyecto DermaScan. Aún no sabemos si será un punto final o un punto y seguido, ya que sería necesario realizar un estudio de viabilidad y posible amortización del tiempo invertido en este proyecto.
+## Resumen
 
-- Debido a la falta de tiempo en este proyecto, algunos modelos no han podido superar el 95% de precisión con datos de prueba. Además, algunos modelos no han podido contar con el número suficiente de imágenes para su entrenamiento.
+DermaScan, ha sido un desafío personal para aplicar nuestros conocimientos de ML y desarrollo web en el campo de la dermatología. Nuestro objetivo era crear una aplicación web para la detección y prevención de enfermedades de la piel, utilizando conjuntos de datos de imágenes y técnicas de análisis avanzadas.
 
-- No hemos tomado este proyecto como un simple trabajo, sino como un desafío personal para ver hasta dónde somos capaces de llegar en un periodo de tiempo muy reducido, el cual nos hubiera gustado que fuera mayor.
-Íbamos a implementar muchos más puntos, pero el tiempo no estuvo a nuestro favor.
+Desde la exploración y visualización de los datos, hasta la identificación de patrones y distribuciones clave hemos conseguido optimizar los conjuntos de datos. Hemos conseguido implementar una gran variedad de modelos de aprendizaje automático, utilizando técnicas de preprocesamiento y aumento de datos para mejorar su precisión.
+
+La aplicación web contiene secciones dedicadas a la detección de enfermedades de la piel, la prevención y cuidado de la piel, y la información sobre los índices solares UV. También hemos conectado con servicios externos como AWS S3 para el almacenamiento de datos.
+
+## Desafíos
+
+A pesar de los desafíos encontrados, como la limitación de tiempo y la baja disponibilidad de datos y debido a eso, algunos modelos no han podido superar el 95% de precisión con datos de prueba. Aun así hemos conseguido un producto que, en nuestra humilde opinión representa un paso significativo en la aplicación de IA al campo de la medicina dermatológica. Pero somos conscientes de que en este ámbito tan delicado como es el médico, existe la necesidad de realizar un estudio de viabilidad e investigación más profundo.
+
+## Conclusión
+
+En conclusión, el proyecto DermaScan representa un hito importante en nuestro viaje de exploración y descubrimiento en el campo de la inteligencia artificial aplicada a la salud. A lo largo de este proceso, hemos demostrado nuestro compromiso con la calidad y la innovación, superando desafíos y aprendiendo lecciones valiosas en el camino.
+
+Si bien el proyecto marca un punto culminante en nuestra búsqueda, reconocemos que todavía hay mucho por hacer. Nuestra aplicación web puede ser solo el comienzo de un viaje más largo hacia soluciones más avanzadas y efectivas en el diagnóstico y tratamiento de enfermedades de la piel.
+
+Nos sentimos orgullosos de lo que hemos logrado hasta ahora, pero también reconocemos la importancia de seguir adelante, explorando nuevas ideas, colaborando con expertos en el campo y haciendo un impacto positivo en la salud y el bienestar de las personas. DermaScan puede ser el punto de partida para futuras innovaciones que mejoren la vida de millones de personas en todo el mundo.
+
 
 # 10. Bibliografía
 
