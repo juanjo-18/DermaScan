@@ -275,7 +275,7 @@ img_per_class_train
      
    </code>
 </pre>
-![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_exploracion/4_1.png)
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_1.png)
 
 # 5. Preparación de los datos para Machine Learning.
 
