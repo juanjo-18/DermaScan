@@ -13,7 +13,7 @@
 - Modelo de clasificación de 2 tipos de cancer benignos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/clasificacion_benignos_2_tipos.ipynb
 - Web: https://dermascan.streamlit.app/
 - PDF: https://github.com/juanjo-18/DermaScan/blob/main/Presentacion%20DermaScan.pdf
-- Video:
+- Video: https://youtu.be/o_1uGpyH_lA
   
 # Integrantes del proyecto
 
