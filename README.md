@@ -754,6 +754,7 @@ history_continued1 = model8.fit(train_generator, validation_data=test_generator,
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/grafico.png)
 
 - En esta imagen de confusion matrix tenemos mas fallos en la primera clase con 44 comparado a la segunda clase con 25 y la tercera con 25 tambien.
+  
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/aciertos.png)
 
 - En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
