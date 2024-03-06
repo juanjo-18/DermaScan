@@ -25,19 +25,22 @@ class DermascanApp(HydraHeadApp):
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
         
-        st.title("DermaScan App")
-
         calificacion = 0
         # Set the layout to two columns
         col5, col6,col7 = st.columns([6,1,3])
         with col5:
-            st.header("¡Tu Aliado en la Lucha Contra el Cáncer de Piel!")
-            st.subheader("¡Bienvenido a DermaScan App!")
-            st.write("Nos situamos en la vanguardia de la tecnología de cuidado de la piel desarrollado una aplicación revolucionaria que utiliza modelos de Inteligencia Artificial entrenados con una amplia variedad de imágenes de piel sana y afectada por diversas lesiones cutáneas. Nuestra aplicación es capaz de analizar imágenes y detectar la presencia de lesiones, determinar si son malignas y clasificarlas según su tipo. Con DermaScan App, puedes realizar evaluaciones rápidas y precisas de tu piel desde la comodidad de tu hogar, ayudando a detectar tempranamente posibles signos de cáncer de piel y promoviendo una piel más saludable y segura.")
-            st.write("Inserta una imagen en el recuadro, que solo salga la piel donde quieras utilizarla.")
+            st.markdown(f"<h1 style='text-align:center; font-size:100px;'>¡Bienvenido a DermaScan App!</h1>", unsafe_allow_html=True)
+            st.markdown(f"<h2 style='text-align:center; font-size:100px;'>Tu Aliada en la Lucha Contra el Cáncer de Piel</h2>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:100px;'>Nos situamos en la vanguardia de la tecnología de cuidado de la piel desarrollado una aplicación revolucionaria que utiliza modelos de Inteligencia Artificial</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:100px;'>Entrenamos nuestros modelos con una amplia variedad de imágenes de piel sana y afectada por diversas lesiones cutáneas. Más de 50.000 imágenes.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:100px;'>Nuestra aplicación es capaz de analizar imágenes y detectar la presencia de lesiones, determinar si son malignas y clasificarlas según su tipo. Con DermaScan App, puedes realizar evaluaciones rápidas y precisas de tu piel desde la comodidad de tu hogar, ayudando a detectar tempranamente posibles signos de cáncer de piel y promoviendo una piel más saludable y segura.</p>", unsafe_allow_html=True)
+            
+            st.divider()
+
+            st.write("Sube o captura una imagen, procura enfocar sólo superficie de piel.")
 
             # Agregar un apartado para cargar una foto
-            imagen = st.file_uploader("Inserta una imagen", type=["jpg", "jpeg", "png"])
+            imagen = st.file_uploader("Carga la imagen", type=["jpg", "jpeg", "png"])
 
             # Verificar si se cargó una foto
             if imagen is not None:
@@ -272,7 +275,8 @@ class DermascanApp(HydraHeadApp):
                 elif puntuacion == 5:
                     st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
             
-            st.header("Ratings")
+            st.markdown(f"<h2 style='text-align:center; font-size:100px;'>Valoraciones</h2>", unsafe_allow_html=True)
+            #st.header("Valoraciones")
             # Casilla de entrada de texto
             st.write("Púntua nuestra pagina dejando un comentario: ")
             # text_area para ingresar el comentario
