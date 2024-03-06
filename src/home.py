@@ -45,7 +45,7 @@ class Home(HydraHeadApp):
         # Sección: Prevención y cuidado de la piel
             
             st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable </h3>", unsafe_allow_html=True)
-            st.image("imagenes/cuidado_sol.jpg", use_column_width=True)
+            st.image("imagenes/cuidado_sol.jpg", use_column_width=False)
             st.markdown(f"<p style='text-align:center;'>En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Desde prácticas diarias de cuidado de la piel hasta medidas preventivas contra el cáncer de piel, estamos aquí para ayudarte a mantener una piel radiante y saludable en todo momento.</p>", unsafe_allow_html=True)
             
