@@ -376,6 +376,41 @@ basal_cell_carcinoma_dir = os.path.join(train_dir, "basal_cell_carcinoma")
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_4.png)
 
+## Visualización de las predicciones de los modelos
+
+* Después de haber entrenado a los modelos, y para evaluar su rendimiento, sacamos con el conjunto de imágenes de test, una muestra de la predicción que ha echo el modelo vs la imagen que es realmente.
+
+<pre>
+   <code class="language-python" id="visual-pred">
+     
+# Obtener el lote de imágenes y etiquetas del generador de prueba
+images_batch, labels_batch = next(test_generator)
+
+# Obtener las predicciones del modelo para el lote actual
+y_pred = best_model8.predict(images_batch)
+
+# Obtener las etiquetas predichas (índice de la clase con la probabilidad más alta)
+predicted_labels = np.argmax(y_pred, axis=1)
+
+# Obtener las etiquetas reales (índice de la clase con el valor más alto en labels_batch)
+true_labels = np.argmax(labels_batch, axis=1)
+
+# Muestra solo las imágenes bien clasificadas
+plt.figure(figsize=(20, 20))
+for i in range(30):
+    plt.subplot(6, 5, i + 1)  # Ajusta el número de filas y columnas según sea necesario
+    cmap_image = "binary" if predicted_labels[i] == true_labels[i] else "Oranges"
+    plt.imshow(images_batch[i], cmap=cmap_image)
+    plt.xticks([])
+    plt.yticks([])
+    c = "blue" if predicted_labels[i] == true_labels[i] else "red"
+    plt.xlabel(f"True: {true_labels[i]}\nPred: {predicted_labels[i]}", color=c)
+plt.show()
+
+     </code>
+</pre>
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_5.png)
 
 
 
@@ -864,6 +899,15 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 
 # 8. Aplicación web
+
 # 9. Conclusiones
+
+- Aquí ha terminado nuestro proyecto DermaScan. Aún no sabemos si será un punto final o un punto y seguido, ya que sería necesario realizar un estudio de viabilidad y posible amortización del tiempo invertido en este proyecto.
+
+- Debido a la falta de tiempo en este proyecto, algunos modelos no han podido superar el 95% de precisión con datos de prueba. Además, algunos modelos no han podido contar con el número suficiente de imágenes para su entrenamiento.
+
+- No hemos tomado este proyecto como un simple trabajo, sino como un desafío personal para ver hasta dónde somos capaces de llegar en un periodo de tiempo muy reducido, el cual nos hubiera gustado que fuera mayor.
+Íbamos a implementar muchos más puntos, pero el tiempo no estuvo a nuestro favor.
+
 # 10. Bibliografía
 
