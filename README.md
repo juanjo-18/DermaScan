@@ -567,6 +567,17 @@ Este modelo es una red neuronal convoluciona, nos ha dado una precisión con los
    )
 </code>
 </pre>
+- Aquí mostramos una grafica de los modelos provados y el que mejor resultados nos dio fue el DenseNet121.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/comparacion_modelos.png)
+
+- Aquí podemos ver la grafica durante el entrenamiento del modelo, el val_accuraccy va un siempre mejor que el accuracy.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/grafica_.png)
+
+- Podemos ver aqui los valores resultantes de nuestro modelo con la clase de test, sus aciertos, fallos, val_accuracy, la confusion matrix y el classification report. Podemos ver que a fallado 1 vez en el la primera clase y a fallado 2 veces en la segunda clase es casi perfecto.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/objeto_vs_piel/fallos.png)
 
 ## Modelo piel sana o piel con lesión.
 En este modelo se ha utilizado un modelo preentrenado MobileNetV2.
@@ -624,6 +635,18 @@ history3 = model3.fit(
 </code>
 </pre>
 
+- Podemos ver en esta gráfica, que de los tres modelos entrenados el mejor a sido el MobileNetV2 con un 97,31% de precision en los datos de test.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/comparacion_modelos.png)
+
+- En la siguiente gráfica el val accuracy es peor que el accuracy y el val acurracy va dando muchos picos durante el entrenamiento.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/grafica.png)
+
+- En esta imagen vemos que para la primera clase no ha fallado pero para la segunda ha tenido 9 fallos.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_sana_vs_piel_lesion/fallos.png)
+
 
 
 ## Modelo piel con lesion o cancer.
@@ -670,6 +693,16 @@ model7.summary()
 history7=model7.fit(train_generator, validation_data=test_generator, epochs=25, callbacks=[custom_lr_scheduler, model_checkpoint])
 </code>
 </pre>
+
+- Podemos ver en la grafica que el porcentaje de precision de val_acurracy es menor al accuracy.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_lesion_vs_cancer/gafrica.png)
+
+- En esta imagen de confusion matrix tenemos en la primera clase mas del doble de errores que en la segunda clase.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_lesion_vs_cancer/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/piel_lesion_vs_cancer/errores.png)
+
 ## Modelo de clasifiación de 3 tipos de cancer malignos.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9445%.
@@ -716,6 +749,16 @@ history_continued1 = model8.fit(train_generator, validation_data=test_generator,
 </code>
 </pre>
 
+- En esta grafica el validation accuracy ha ido muy pegado al accuracy lo que es bueno.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/grafico.png)
+
+- En esta imagen de confusion matrix tenemos mas fallos en la primera clase con 44 comparado a la segunda clase con 25 y la tercera con 25 tambien.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/aciertos.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_malignos/errores.png)
+
+
 ## Modelo de clasificación de 2 tipos de cancer benignos.
 En este modelo se ha utilizado un modelo preentrenado Xception.
 Este modelo nos ha dado una precisión con los datos de entremiento del 0.9389%.
@@ -751,6 +794,12 @@ history=model7.fit(train_generator, validation_data=test_generator, epochs=20,ca
      
 </code>
 </pre>
+- Podemos ver en la siguiente imagen de la grafica que el val_acurracy al inicio si esta pegado al accuracy pero durante el paso de las epocas se fue distanciando.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_benignos/grafico.png)
+
+- En esta imagen estamos mostrando cuales son las imagenes las cuales el modelo a fallado en etiquetarlas.
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/fotos_modelos/tipos_de_cancer_benignos/fallos.png)
+
 
 # 7. Procesamiento de Lenguaje Natural.
 
