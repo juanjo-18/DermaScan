@@ -48,7 +48,7 @@
   
 - Esto fué lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la prevención del cáncer de piel.
   
-- En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplican una variedad de filtros especializados. 
+- En este espacio interactivo, los usuarios podrán cargar sus imágenes y  aplicarse una variedad de filtros especializados. 
 
 - Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
 
@@ -67,8 +67,8 @@
 
 ## Modelo de objeto o imagen piel.
 
-Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: uno que contenía objetos, otro que contenía imágenes de piel con cáncer y otro con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
-- Objetos y imagenes variadas: https://www.kaggle.com/datasets/greg115/various-tagged-images
+Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: Uno con imágenes de objetos, otro con imágenes de piel con cáncer y un tercero con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
+- Objetos y imágenes variadas: https://www.kaggle.com/datasets/greg115/various-tagged-images
 - Benignos o malignos: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
 
