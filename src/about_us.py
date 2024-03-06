@@ -54,8 +54,10 @@ class About_US(HydraHeadApp):
                 <button type="submit">Enviar</button>
             </form>
             """
-            left_column, right_column = st.columns(2)
-            with left_column:
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.empty()
+            with col2:
                 st.markdown(contact_form, unsafe_allow_html=True)
-            with right_column:
+            with col3:
                 st.empty()
