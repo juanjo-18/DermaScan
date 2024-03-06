@@ -85,7 +85,7 @@ class Home(HydraHeadApp):
             
             st.markdown(f"<h3 style='text-align:center;'> Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en Málaga, así como pronósticos para los próximos días. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Info en tiempo real sobre el índice UV actual en Málaga y pronósticos para los próximos días. </p>", unsafe_allow_html=True)
             st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar concienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
