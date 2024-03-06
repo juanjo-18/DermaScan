@@ -44,8 +44,8 @@ class Home(HydraHeadApp):
 
         with col3:
         # Sección: Prevención y cuidado de la piel
-            st.subheader("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
-            st.markdown(f"<h3 style='text-align:center;'> ¡Bienvenidos a DermaScan!  Descubre el Futuro del Cuidado de la Piel</h3>", unsafe_allow_html=True)
+            
+            st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable </h3>", unsafe_allow_html=True)
             st.image("imagenes/skin_care.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Desde prácticas diarias de cuidado de la piel hasta medidas preventivas contra el cáncer de piel, estamos aquí para ayudarte a mantener una piel radiante y saludable en todo momento.</p>", unsafe_allow_html=True)
@@ -55,16 +55,16 @@ class Home(HydraHeadApp):
         col3, col4 = st.columns([1, 1])
         with col3:
         # Sección: Incidencia Solar UV
-            st.subheader("Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel")
-            st.markdown(f"<h3 style='text-align:center;'> ¡Bienvenidos a DermaScan!  Descubre el Futuro del Cuidado de la Piel</h3>", unsafe_allow_html=True)
+            
+            st.markdown(f"<h3 style='text-align:center;'> Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar conscienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
 
         with col4:
         # Sección: About us
-            st.subheader("About us: Conoce a los Creadores de DermaScan")
-            st.markdown(f"<h3 style='text-align:center;'> ¡Bienvenidos a DermaScan!  Descubre el Futuro del Cuidado de la Piel</h3>", unsafe_allow_html=True)
+            
+            st.markdown(f"<h3 style='text-align:center;'> Sobre nosotros: Conoce a los Creadores de DermaScan </h3>", unsafe_allow_html=True)
             st.image("imagenes/sun_1.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo de inteligencia artificial para la detección temprana de enfermedades de la piel. </p>", unsafe_allow_html=True)
