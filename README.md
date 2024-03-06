@@ -413,7 +413,6 @@ plt.show()
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_visual/4_5.png)
 
 
-
 # 5. Preparación de los datos para Machine Learning.
 
 En todos nuestros modelos de clasificación de imagenes hemos realizado estos pasos:
@@ -897,8 +896,56 @@ En esta imagen comparamos los modelos que hicimos para puntualizar algunas frase
 
 Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de LinearRegression.
 
-
 # 8. Aplicación web
+
+## Desarrollo de la aplicación web
+
+### Estructura de la web
+
+- Para el desarrollo de la aplicación web hemos estructurado el código de la siguiente manera:
+
+#### Pagina principal app.py:
+- Esta página de código es desde la la que ejecutamos nuestra aplicacion con `app.run()`y llamos a las diferentes paginas que componen nuestro proyecto mediante el método `add_app()` de HydraApp, una app del paquete de Hydralit que permite integrar una aplicación multipágina en streamlit.
+    
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_1.png)
+
+#### Página home o INICIO:
+
+- En esta página hacemos la presentación de nuestra aplicación y mostramos las distintas secciones que tiene nuestra página:
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_3.png)
+
+- Aqui podemos ver una muestra de su apariencia:
+    
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_4.png)
+
+#### Página de la aplicación de detección de predicción de tipos de imágenes:
+
+- Carga de modelos y conversión de formato de imagen:
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_5.png)
+
+- Lógica de impleplementación de la predicción de los modelos:
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_6.png)
+
+- Mostrar los resultados de las predicciones:
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_7.png)
+
+- Implementación de la conexión con AWS S3 para el almacenamiento de las valoraciones de la web:
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_9.png)
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_10.png)
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_11.png)
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_12.png)
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_13.png)
+
+
+
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_11.png)
+
 
 # 9. Conclusiones
 
