@@ -32,9 +32,9 @@ class Home(HydraHeadApp):
 
         st.divider()
 
-        col1, col2, col3 = st.columns([4, 2, 4])
+        col1, col2, col3, col4, col5 = st.columns([1, 3.5, 1, 3.5, 1])
 
-        with col1:
+        with col2:
         # Sección: DermaScan App
             
             st.markdown(f"<h3 style='text-align:center;'> DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel </h3>", unsafe_allow_html=True)
@@ -42,7 +42,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna, así como clasificarla según su tipo, proporcionando a los usuarios una herramienta poderosa para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
 
-        with col3:
+        with col4:
         # Sección: Prevención y cuidado de la piel
             
             st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable </h3>", unsafe_allow_html=True)
@@ -52,9 +52,9 @@ class Home(HydraHeadApp):
             
         st.divider()
 
-        col4, col5, col6 = st.columns([4, 2, 4])
-        
-        with col4:
+        col6, col7, col8, col9, col10 = st.columns([1, 3.5, 1, 3.5, 1])
+
+        with col7:
         # Sección: Incidencia Solar UV
             
             st.markdown(f"<h3 style='text-align:center;'> Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
@@ -62,7 +62,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar concienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en Málaga, así como pronósticos para los próximos días. </p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
-        with col6:
+        with col9:
         # Sección: About us
             
             st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores de DermaScan! </h3>", unsafe_allow_html=True)
