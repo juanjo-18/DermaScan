@@ -41,13 +41,11 @@ class Home(HydraHeadApp):
             with col2:
                 st.markdown(f"<h1 style='text-align:center; font-size:100px;'>DermaScan</h1>", unsafe_allow_html=True)
                 #st.image("imagenes/app_logo.png", use_column_width=True)
-                st.markdown('<img src="./app/.static/app_logo.png" height="" style="">', unsafe_allow_html=True)
+                st.markdown('<img src="./app/static/app_logo.png" height="" style="">', unsafe_allow_html=True)
             with col2:
                 st.empty()
 
         
-
-    
 
         # Encabezado principal
         st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos a DermaScan!  Descubre el Futuro del Cuidado de la Piel</h2>", unsafe_allow_html=True)
