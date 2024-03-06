@@ -57,13 +57,13 @@ class Home(HydraHeadApp):
             
             st.markdown(f"<h3 style='text-align:center;'> Incidencia Solar UV: Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.image("imagenes/uv_index.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar conscienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
-
+            st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar concienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>En esta sección, te proporcionamos información en tiempo real sobre el índice UV actual en Málaga, así como pronósticos para los próximos días. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
         with col4:
         # Sección: About us
             
-            st.markdown(f"<h3 style='text-align:center;'> Sobre nosotros: Conoce a los Creadores de DermaScan </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores de DermaScan! </h3>", unsafe_allow_html=True)
             st.image("imagenes/sun_1.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo de inteligencia artificial para la detección temprana de enfermedades de la piel. </p>", unsafe_allow_html=True)
