@@ -17,10 +17,9 @@
   
 # Integrantes del proyecto
 
-[Juanjo Medina Díaz](https://github.com/juanjo-18)
-[Jesús Cánovas Barqueros](https://github.com/JesusCanovas)
-- Juanjo Medina Díaz
-- Jesús Cánovas Barqueros
+- [Juanjo Medina Díaz](https://github.com/juanjo-18)
+- [Jesús Cánovas Barqueros](https://github.com/JesusCanovas)
+
 
 # Índice
 
