@@ -898,28 +898,27 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 
 # 8. Aplicación web
 
-## Desarrollo de la aplicación web
+## Estructura, apariencia y desarrollo de la web
 
-### Estructura de la web
-
-- Para el desarrollo de la aplicación web hemos estructurado el código de la siguiente manera:
-
-#### Pagina principal app.py:
+### Pagina principal app.py:
 - Esta página de código es desde la la que ejecutamos nuestra aplicacion con `app.run()`y llamos a las diferentes paginas que componen nuestro proyecto mediante el método `add_app()` de HydraApp, una app del paquete de Hydralit que permite integrar una aplicación multipágina en streamlit.
     
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_1.png)
 
-#### Página home o INICIO:
+### Página home o INICIO:
 
 - En esta página hacemos la presentación de nuestra aplicación y mostramos las distintas secciones que tiene nuestra página:
+- 
+  - Podemos ver una captura de la apariencia de la web: 
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_44.png)
 
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_3.png)
 
 - Aqui podemos ver una muestra de su apariencia:
     
-![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_4.png)
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_100.png)
 
-#### Página de la aplicación de detección de predicción de tipos de imágenes:
+### Página de la aplicación de detección de predicción de tipos de imágenes:
 
 - Carga de modelos y conversión de formato de imagen:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_5.png)
@@ -930,21 +929,39 @@ Alfinal nos quedamos con el que  mayor coerencia tiene pensamos que es el de Lin
 - Mostrar los resultados de las predicciones:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_7.png)
 
+#### Conexsión con AWS S3, extracción y carga de datos:
+
 - Implementación de la conexión con AWS S3 para el almacenamiento de las valoraciones de la web:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_9.png)
 
+- Lógica de extracción de datos desde AWS S3:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_10.png)
 
+#### Sección de Valoración de los usuarios:
+
+- Podemos ver una captura de la sección:
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_110.png)
+
+- Lógica para mostrar los comentarios de los usuarios:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_11.png)
 
+- Predicción del modelo de analisis de sentimientos y visualización de las reseñas hechas por los usuarios:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_12.png)
 
+- Estilos, input, y submit de la sección de reseñas:
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_13.png)
 
+### Página de la aplicación de Prevención y Cuidado de la Piel:
 
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_50.png)
 
+### Página de la aplicación Índice Solar UV:
 
-![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_11.png)
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_60.png)
+
+### Página de la aplicación Sobre nosotros:
+
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_web/w_70.png)
 
 
 # 9. Conclusiones
