@@ -272,11 +272,10 @@ for s in object_skin:
 img_per_class_train = pd.DataFrame(nums_train.values(), index=nums_train.keys(), columns=["no. of images"])
 print('Train data distribution :')
 img_per_class_train
-![image](https://github.com/juanjo-18/DermaScan/assets/146923591/2bb86da0-b44a-436a-8eae-8d7762ad7085)
-
+     
    </code>
 </pre>
-
+![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/img_exploracion/4_1.png)
 
 # 5. Preparación de los datos para Machine Learning.
 
