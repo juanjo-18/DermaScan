@@ -42,9 +42,9 @@
   
 - Como residentes de Málaga, ciudad con 90% de dias de sol al año, somos conscientes de la importancia de protegerse contra la radiación solar UV y de prevenir la aparición de enfermedades relacionadas con la inadecuada exposición al sol.
   
-- Esto fué lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la precvención del cáncer de piel.
+- Esto fué lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la prevención del cáncer de piel.
   
-- En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplicarn una variedad de filtros especializados. Desde distinguir entre objetos y áreas de la piel hasta analizar la salud cutánea y detectar posibles tumores, nuestro sistema ofrece una experiencia completa.
+- En este espacio interactivo, los usuarios podrán cargar sus imágenes y se aplican una variedad de filtros especializados. 
 
 - Con herramientas avanzadas, los usuarios podrán obtener resultados precisos sobre la naturaleza del tejido cutáneo en la imagen, identificando si es sano o presenta algún tipo de tumor. Además, ofrecemos la capacidad de diferenciar entre tumores benignos y malignos, brindando información crucial para la toma de decisiones médicas.
 
@@ -62,23 +62,27 @@
 # 2. Obtención de los datos.
 
 ## Modelo de objeto o imagen piel.
+
 Para el modelo de objeto o imagen de piel, hemos hecho una combinación de tres conjuntos de imágenes: uno que contenía objetos, otro que contenía imágenes de piel con cáncer y otro con imágenes de piel sana. Los tres han sido obtenidos de Kaggle.
 - Objetos y imagenes variadas: https://www.kaggle.com/datasets/greg115/various-tagged-images
 - Benignos o malignos: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
 
 ## Modelo de piel sana o piel con lesión.
+
 Para el modelo de piel sana o piel con lesión, hemos hecho una combinación de dos conjuntos de imágenes: uno que contenía imagenes de pieles con cancer y otro que contenía imágenes de pieles sanas. Los dos han sido obtenidos de Kaggle.
 - Pieles sanas: https://www.kaggle.com/datasets/thanatw/isic2019-modded
 - Piel con cancer: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 
 ## Modelo de benigno o maligno.
+
 Para el modelo de benigno o maligno, hemos utilizado estos dataset que ya contenian las imagenes benignas y malignas separadas ademas lo hemos juntado con otro conjunto de imagenes mas. Los dos han sido obtenidos de kaggle.
 - Benignos o malignos1: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
 - Benignos o malignos2: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
   
 
 ## Modelo de piel con cancer o piel con otra lesión
+
 Para el modelo de imágenes de piel con cáncer y piel con otras lesiones, hemos hecho una combinación de tres datasets distintos conjuntos de imágenes: dos que contenía imagenes de pieles con cáncer y otro que contenía otro tipo de lesiones. Los tres han sido obtenidos de Kaggle:
 - Benignos o malignos1: https://www.kaggle.com/datasets/fanconic/skin-cancer-malignant-vs-benign?select=train
 - Benignos o malignos2: https://www.kaggle.com/datasets/hasnainjaved/melanoma-skin-cancer-dataset-of-10000-images
@@ -86,18 +90,22 @@ Para el modelo de imágenes de piel con cáncer y piel con otras lesiones, hemos
 Aun que este último dataset tiene imagenes tanto de cáncer como de otras lesiones que no son cáncer, para el apartado de cáncer hemos cogido las que son cancer sólo: melanoma y carcinomas basales. (Ya que las imagenes están etiquetasdas por carpetas según su clase).
 
 ## Modelo de clasificación de 3 tipos de cancer maligno
+
 Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido melanoma, basall cell carcinoma y Squamous cell carcinoma. El dataset ha sido obtenido de kagle.
 - Enlace: https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled
   
 ## Modelo de clasificación de 2 tipos de cancer benigno
+
 Para el modelo, hemos utilizado este dataset que contenia varias carpetas con imagenes clasificadas de las cuales hemos cogido queratosis seborreica, dermatofibroma y Melanocytic nevus. El dataset ha sido obtenido de kagle.
 - Enlace: https://www.kaggle.com/datasets/riyaelizashaju/isic-skin-disease-image-dataset-labelled
   
 ## Modelo de sentimientos.
+
 Para el modelo de sentimientos hemos cogido 500 lineas de este enlace de twitts en español y despues lo hemos procesado.
 - Enlace: https://huggingface.co/datasets/pysentimiento/spanish-tweets
 
 ## Web Scrapping.
+
 A traves de este enlace del tiempo he creado una tabla para mostrarla en la web haciendo web scrapping.
 - Enlace: https://www.tutiempo.net/malaga.html?datos=detallados
 Primero saco todo el html de la web y lo guardo en una variable.
@@ -114,6 +122,7 @@ Aqui muestro en la web la tabla que hemos scrapeado.
 # 3. Limpieza de datos (Preprocesado).
 
 ## Modelo de sentimientos.
+
 Para el modelo de sentimientos primero los twits que tenemos les estamos eliminadon valores y caracteres que no son necesarios, como los iconos, eliminar los @ y el texto asociado, eliminar # y su texto, eliminar urls y convertir todo a minusculas.
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/Limpiar%20textos.png)
 
@@ -121,6 +130,7 @@ Aqui estamos eliminado de las frases las stopwords para despues pasarselo al mod
 ![Descripción de la imagen](https://github.com/juanjo-18/DermaScan/blob/main/imagenes/imagenes_readmi/imagenes_sentimientos/quitamos_stopword.png)
 
 ## El resto de modelos.
+
 Como estamos trabajando con imagenes necesitamos hacer varias comprobaciones y arreglos antes de poder utilizarla, ahora vamos a contar algunas cosas realizadas.
 
 Primero guardamos todas las imagenes en una variable.
