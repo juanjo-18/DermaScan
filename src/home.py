@@ -96,5 +96,5 @@ class Home(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             st.image("imagenes/us.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>La idea de desarrollar DermaScan surgió de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la inteligencia artificial y la salud digital!</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>La idea de desarrollar DermaScan surge de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana de cáncer de piel. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la AI y la salud digital!</p>", unsafe_allow_html=True)
