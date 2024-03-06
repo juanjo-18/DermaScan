@@ -25,7 +25,7 @@ class Home(HydraHeadApp):
     def run(self):
         
 
-        st.markdown(f"<h1 style='text-align:center; font-size:200px;'>DermaScan</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align:center; font-size:150px;'>DermaScan</h1>", unsafe_allow_html=True)
 
         # Encabezado principal
         st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos a DermaScan!  -  Descubre el Futuro del Cuidado de la Piel</h2>", unsafe_allow_html=True)
