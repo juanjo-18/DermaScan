@@ -70,7 +70,7 @@ class Home(HydraHeadApp):
         with col4:
         # Sección: Prevención y cuidado de la piel
             
-            st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel. El camino hacia una Piel Saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares.</p>", unsafe_allow_html=True)
             st.image("imagenes/cuidado_sol.jpg", use_column_width=True)
@@ -87,8 +87,8 @@ class Home(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Info en tiempo real sobre el índice UV actual en Málaga y pronósticos para los próximos días. </p>", unsafe_allow_html=True)
             st.image("imagenes/uv_index.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>Descubre la importancia de estar concienciado del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Mantente informado y protege tu piel contra los daños causados por la radiación solar.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Descubre la importancia de ser consciente del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Mantente alerta y protege tu piel de los daños causados por la radiación solar UV.</p>", unsafe_allow_html=True)
         with col9:
         # Sección: About us
             
@@ -96,5 +96,5 @@ class Home(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             st.image("imagenes/us.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>La idea de desarrollar DermaScan surge de nuestra pasión por la tecnología y nuestra conciencia sobre los desafíos en la detección temprana de cáncer de piel. </p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en nuestra misión de concienciar y prevenir el cáncer de piel mientras exploramos los límites de la AI y la salud digital!</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>DermaScan surge de nuestra pasión por la tecnología y del concienciamiento del desafío que supone la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en nuestra misión de prevenir el cáncer de piel mientras exploramos los límites de la IA y la salud digital!</p>", unsafe_allow_html=True)
