@@ -29,7 +29,7 @@ class Indice_UV(HydraHeadApp):
                 st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
         local_css("style/style.css")
-        
+
         st.title("DermaScan")
 
         st.header("Índice Solar UV: Conoce el Impacto del Sol en tu Piel")
@@ -86,6 +86,13 @@ class Indice_UV(HydraHeadApp):
         # Mostrar la tabla en Streamlit
         st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
        
+        
+        with st.container():
+            st.write("This is inside the container")
+
+            # You can call any Streamlit command, including custom components:
+            st.bar_chart(np.random.randn(50, 3))
+
         # Puedes proporcionar la ruta de la imagen localmente o una URL
         ruta_imagen = "imagenes/imagen_radiacion_uva.png"  
 

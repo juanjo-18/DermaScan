@@ -24,7 +24,19 @@ class Home(HydraHeadApp):
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
 
+        with st.container():
+            
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.empty()
+            with col2:
+                st.image("app_logo.jpg", use_column_width=True)
+            with col2:
+                st.empty()
+
         st.markdown(f"<h1 style='text-align:center; font-size:50px;'>DermaScan</h1>", unsafe_allow_html=True)
+
+        st.image("imagenes/skin_scan2.jpg", use_column_width=True)
 
         # Encabezado principal
         st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos a DermaScan!  Descubre el Futuro del Cuidado de la Piel</h2>", unsafe_allow_html=True)
