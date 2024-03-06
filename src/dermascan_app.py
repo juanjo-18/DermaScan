@@ -24,7 +24,7 @@ class DermascanApp(HydraHeadApp):
 
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
-        local_css("style/style.css")
+        
         st.title("DermaScan App")
 
         calificacion = 0
