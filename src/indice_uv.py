@@ -94,7 +94,7 @@ class Indice_UV(HydraHeadApp):
             st.bar_chart(df)
 
         with st.container():
-            style_image1 = """
+            style_image2 = """
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -110,10 +110,9 @@ class Indice_UV(HydraHeadApp):
             with col1:
                 st.empty()
             with col2:
-                st.markdown(f"<h1 style='text-align:center; font-size:100px;'>DermaScan</h1>", unsafe_allow_html=True)
                 #st.image("imagenes/app_logo.png", use_column_width=True)
-                st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="333" style="{style_image1}">', unsafe_allow_html=True)
-            with col2:
+                st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="333" style="{style_image2}">', unsafe_allow_html=True)
+            with col3:
                 st.empty()
 
         
