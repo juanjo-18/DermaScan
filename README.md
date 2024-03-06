@@ -11,8 +11,8 @@
 - Modelo de clasificación benigno y maligno: https://github.com/juanjo-18/DermaScan/blob/main/colabs/benigno_vs_maligno.ipynb
 - Modelo de clasificación de 3 tipos de cancer malignos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/clasificador_malignos_3types.ipynb
 - Modelo de clasificación de 2 tipos de cancer benignos: https://github.com/juanjo-18/DermaScan/blob/main/colabs/clasificacion_benignos_2_tipos.ipynb
-- Web: https://dermascan.streamlit.app/
-- PDF:
+- Web:
+- PDF: https://github.com/juanjo-18/DermaScan/blob/main/Presentacion%20DermaScan.pdf
 - Video: https://youtu.be/tRqCY6vEV3g
   
 # Integrantes del proyecto
