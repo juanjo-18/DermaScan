@@ -98,20 +98,20 @@ class Indice_UV(HydraHeadApp):
             display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
+            width: 100%;
             height: auto;
-            max-width: 350px;
-            max-height: 350px;
+            max-width: 1000px;
+            max-height: 1000px;
             justify-content: center;
-            border-radius: 20%;
+            border-radius: ;
             """
 
             col1, col2, col3 = st.columns(3)
             with col1:
                 st.empty()
             with col2:
-                #st.image("imagenes/app_logo.png", use_column_width=True)
-                st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="333" style="{style_image2}">', unsafe_allow_html=True)
+                #st.image("imagenes/imagen_radiacion_uva.png", use_column_width=True)
+                st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="" style="{style_image2}">', unsafe_allow_html=True)
             with col3:
                 st.empty()
 
