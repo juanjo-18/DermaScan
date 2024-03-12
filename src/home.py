@@ -110,7 +110,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV en Málaga y previsión para los próximos días. </p>", unsafe_allow_html=True)
             
             style_image4 = """
-            display: block flow;
+            display: flow;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -133,7 +133,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             
             style_image5 = """
-            display: block flow;
+            display: flow;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
