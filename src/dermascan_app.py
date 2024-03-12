@@ -178,6 +178,7 @@ class DermascanApp(HydraHeadApp):
 
         # COLUMNA DE RATINGS (20%)
         with col7:
+            @st.cache_data
             def text_cleaning(text, remove_stop_words=True, lemmatize_words=True):
                 # Clean the text
                 text = re.sub(r"[^A-Za-z0-9]", " ", text) # eliminar caracteres especiales
@@ -300,6 +301,7 @@ class DermascanApp(HydraHeadApp):
                 with st.container():
                     st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, textos_concatenados), unsafe_allow_html=True)
 
+            @st.cache_data
             def make_prediction(review):
                 # Limpiamos los datos llamando a la función de limpieza
                 clean_review = text_cleaning(review)
