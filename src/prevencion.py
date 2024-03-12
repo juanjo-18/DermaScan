@@ -107,7 +107,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Elige un protector solar que ofrezca protección de amplio espectro contra los rayos UVA y UVB, y asegúrate de aplicarlo generosamente en todas las áreas expuestas de la piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>No te olvides de proteger tus labios con un bálsamo labial con SPF y usar gafas de sol con protección UV para proteger tus ojos del daño solar.</p>", unsafe_allow_html=True)
 
-            style_image1 = """
+            style_image4 = """
             display: flow;
             margin-left: auto;
             margin-right: auto;
@@ -118,7 +118,7 @@ class Prevencion(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-            st.markdown(f'<img src="./app/static/protect4_prev.jpg" height="600" style="{style_image1}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/protect4_prev.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
             
     
         with col11:
@@ -129,7 +129,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>El dermatólogo puede ofrecerte consejos personalizados sobre cómo cuidar y proteger tu piel, así como recomendaciones específicas de productos y tratamientos adecuados para tus necesidades individuales.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>No subestimes la importancia de consultar regularmente a un dermatólogo, especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
             
-            style_image2 = """
+            style_image5 = """
             display: flow;
             margin-left: auto;
             margin-right: auto;
@@ -140,7 +140,7 @@ class Prevencion(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-            st.markdown(f'<img src="./app/static/derm5_prev.jpg" height="600" style="{style_image2}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/derm5_prev.jpg" height="600" style="{style_image5}">', unsafe_allow_html=True)
             
 
         with col13:
@@ -151,7 +151,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>vita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos pueden afectar negativamente la salud de la piel y aumentar el riesgo de problemas cutáneos como el envejecimiento prematuro y el cáncer de piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés crónico puede contribuir a problemas cutáneos como el acné y la dermatitis.</p>", unsafe_allow_html=True)
 
-            style_image3 = """
+            style_image6 = """
             display: flow;
             margin-left: auto;
             margin-right: auto;
@@ -162,7 +162,7 @@ class Prevencion(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-            st.markdown(f'<img src="./app/static/sport6_prev.jpg" height="600" style="{style_image3}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/sport6_prev.jpg" height="600" style="{style_image6}">', unsafe_allow_html=True)
             
 
         #st.header("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
