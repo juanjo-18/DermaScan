@@ -108,18 +108,21 @@ class Home(HydraHeadApp):
             st.markdown(f"<h3 style='text-align:center;'> Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV en Málaga y previsión para los próximos días. </p>", unsafe_allow_html=True)
+            
             style_image4 = """
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
             height: auto;
-            max-width: 350px;
-            max-height: 350px;
+            max-width: 600px;
+            max-height: 600px;
             justify-content: center;
-            border-radius: 20%;
+            border-radius: 10%;
             """
-            st.image("imagenes/uv_index.jpg", use_column_width=True)
+            st.markdown(f'<img src="./app/static/cuidado_sol.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
+            
+            #st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de ser consciente del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantente alerta y protege tu piel de la radiación solar Ultravioleta.</p>", unsafe_allow_html=True)
         
@@ -128,17 +131,20 @@ class Home(HydraHeadApp):
             st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores de DermaScan! </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
+            
             style_image5 = """
             display: block;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
             height: auto;
-            max-width: 350px;
-            max-height: 350px;
+            max-width: 600px;
+            max-height: 600px;
             justify-content: center;
-            border-radius: 20%;
+            border-radius: 10%;
             """
-            st.image("imagenes/us.jpg", use_column_width=True)
+            st.markdown(f'<img src="./app/static/cuidado_sol.jpg" height="600" style="{style_image5}">', unsafe_allow_html=True)
+            
+            #st.image("imagenes/us.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>DermaScan surge de nuestra pasión por la tecnología y del desafío que supone la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en la integración de la IA y la salud digital!</p>", unsafe_allow_html=True)
