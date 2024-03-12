@@ -341,9 +341,9 @@ class DermascanApp(HydraHeadApp):
             #st.write("Comenta que te ha parecido la App: ")
             # text_area para ingresar el comentario
             texto_calificacion = st.text_input("")
-
-            # Calcula la predicción
-            result, probability = make_prediction(texto_calificacion)
+            if len(texto_calificacion.strip()) > 0:
+                # Calcula la predicción
+                result, probability = make_prediction(texto_calificacion)
         
             # Muestra los resultados 
             st.header("Resultados")
