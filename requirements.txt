@@ -7,7 +7,7 @@ tensorflow==2.7.0
 keras==2.7.0
 protobuf==3.19.4
 Pillow==8.4.0
-streamlit==1.4.1
+streamlit==1.2.2
 plotly==5.16.0
 click==8.0.4
 s3fs==2021.10.0
