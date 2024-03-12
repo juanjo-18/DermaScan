@@ -349,11 +349,8 @@ class DermascanApp(HydraHeadApp):
         
                 # Muestra los resultados 
                 st.header("Resultados")
+                st.write(probability)
             
-                if int(result) == 1:
-                    st.write("Esto es una reseña positiva con una probabilidad del ", probability)
-                else:
-                    st.write("Esto es una reseña negativa con una probabilidad del ", probability)
             
 
             # Centra el botón utilizando st.button y estilo CSS
