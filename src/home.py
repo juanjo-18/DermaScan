@@ -78,7 +78,7 @@ class Home(HydraHeadApp):
     
         with col4:
         # Sección: Prevención y cuidado de la piel
-            st.markdown(f"<h3 style='text-align:center;'> Prevención y cuidado de la piel. El camino hacia una piel saludable </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'>Cuidado y Prevención. El camino hacia una piel saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Aquí encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida.</p>", unsafe_allow_html=True)
             
