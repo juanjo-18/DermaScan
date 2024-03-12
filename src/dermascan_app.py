@@ -314,9 +314,11 @@ class DermascanApp(HydraHeadApp):
             
                 # Calculamos la probabilidad
                 probas = model.predict_proba([clean_review])
-                st.write(probas)
                 st.write(result)
+                st.write(probas)
+                
                 probability = "{:.2f}".format(float(probas[:, int(result)]))
+                st.write(probability)
             
                 return result, probability
 
