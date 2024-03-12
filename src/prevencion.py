@@ -18,7 +18,6 @@ from botocore.exceptions import NoCredentialsError
 from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
-spacy.download('es_core_news_sm')
 
 
 # CREMOS UNA CLASE PARA LA PAGINA
