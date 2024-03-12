@@ -57,7 +57,7 @@ class Home(HydraHeadApp):
         # Sección: DermaScan App
             st.markdown(f"<h3 style='text-align:center;'> DermaScan App: Tu Aliado contra el cáncer de piel </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel. </p>", unsafe_allow_html=True)
+            #st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel. </p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Utiliza tecnologías de IA para analizar imágenes de la piel y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             
             style_image2 = """
@@ -78,7 +78,7 @@ class Home(HydraHeadApp):
     
         with col4:
         # Sección: Prevención y cuidado de la piel
-            st.markdown(f"<h3 style='text-align:center;'>Cuidado y Prevención. El camino hacia una piel saludable </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'>Cuidado y Prevención: Una piel más saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Aquí encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida.</p>", unsafe_allow_html=True)
             
