@@ -314,13 +314,8 @@ class DermascanApp(HydraHeadApp):
             
                 # Calculamos la probabilidad
                 probas = model.predict_proba([clean_review])
-                st.write(result)
-                st.write(probas)
                 
-                probability = "{:.2f}".format(float(probas[:, result]))
-                st.write(probability)
-            
-                return result, probability
+                return result, probas
 
            
 
@@ -347,7 +342,7 @@ class DermascanApp(HydraHeadApp):
             #st.write("Comenta que te ha parecido la App: ")
             # text_area para ingresar el comentario
             texto_calificacion = st.text_input("")
-            '''
+            
             if len(texto_calificacion.strip()) > 0:
                 # Calcula la predicción
                 result, probability = make_prediction(texto_calificacion)
@@ -359,7 +354,7 @@ class DermascanApp(HydraHeadApp):
                     st.write("Esto es una reseña positiva con una probabilidad del ", probability)
                 else:
                     st.write("Esto es una reseña negativa con una probabilidad del ", probability)
-            '''
+            
 
             # Centra el botón utilizando st.button y estilo CSS
             button_html = """
