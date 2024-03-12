@@ -343,12 +343,7 @@ class DermascanApp(HydraHeadApp):
             # text_area para ingresar el comentario
             texto_calificacion = st.text_input("")
             
-            if len(texto_calificacion.strip()) > 0:
-                # Calcula la predicción
-                result, probability = make_prediction(texto_calificacion)
-        
-                
-                st.write((probability[0,1])*5)
+            
             
             
 
@@ -368,7 +363,12 @@ class DermascanApp(HydraHeadApp):
             if st.button("Enviar"):
                     # Llamar a la función para guardar los datos en S3
                 if len(texto_calificacion.strip()) > 0:
-                    calificacion=modelo.predict([texto_calificacion])[0]
+                   
+                    # Calcula la predicción
+                    result, probability = make_prediction(texto_calificacion)
+                    
+                    #calificacion=modelo.predict([texto_calificacion])[0]
+                    calificacion=(probability[0,1])*5
                     st.write("Tu calificacion a sido de: ",calificacion)
                     guardar_puntuacion_en_s3(texto_calificacion, calificacion)
             mostrar_datos_desde_s3()
