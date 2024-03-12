@@ -31,10 +31,10 @@ class Indice_UV(HydraHeadApp):
         # Saco la pagina
         # Creo la tabla
         # Lista de nombres
-        nombres = ["Nombre 1", "Nombre 2", "Nombre 3", "Nombre 4"]
+        nombres = ["Asturias", "Barcelona", "Cantabria", "Jaén","Madrid","Málaga","Navarra","Sevilla","Valencia","Zaragoza"]
 
         # Crear un desplegable con st.multiselect
-        nombres_seleccionados = st.multiselect("Selecciona uno o más nombres:", nombres)
+        nombres_seleccionados = st.selectbox("Selecciona un nombre:", nombres)
 
         # Mostrar los nombres seleccionados
         st.write("Nombres seleccionados:", nombres_seleccionados)
