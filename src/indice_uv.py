@@ -18,6 +18,7 @@ from botocore.exceptions import NoCredentialsError
 from hydralit import HydraApp
 from hydralit import HydraHeadApp
 import requests
+from unidecode import unidecode
 from bs4 import BeautifulSoup
 
 
@@ -34,12 +35,13 @@ class Indice_UV(HydraHeadApp):
         nombres = ["Asturias", "Barcelona", "Cantabria", "Jaén","Madrid","Málaga","Navarra","Sevilla","Valencia","Zaragoza"]
 
         # Crear un desplegable con st.multiselect
-        nombres_seleccionados = st.selectbox("Selecciona un nombre:", nombres)
+        nombres_seleccionados = st.selectbox("Selecciona una provincia:", nombres)
 
         # Mostrar los nombres seleccionados
-        st.write("Nombres seleccionados:", nombres_seleccionados)
+        nombre_formateado = unidecode(nombres_seleccionados.lower())
+        st.write("Nombres seleccionados:", nombre_formateado)
 
-        url = 'https://www.tutiempo.net/malaga.html?datos=detallados'
+        url = 'https://www.tutiempo.net/',nombre_formateado,'.html?datos=detallados'
 
         response = requests.get(url)
 
@@ -85,7 +87,6 @@ class Indice_UV(HydraHeadApp):
 
         # Convierte la lista de datos a un DataFrame
         df = pd.DataFrame(datos_productos)
-        st.write(len(df))
         # Mostrar la tabla en Streamlit
         st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
        
