@@ -57,11 +57,11 @@ class Home(HydraHeadApp):
         # Sección: DermaScan App
             st.markdown(f"<h3 style='text-align:center;'> DermaScan App: Tu Aliado contra el cáncer de piel </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel. </p>", unsafe_allow_html=True)
+            #st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel. </p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Utiliza tecnologías de IA para analizar imágenes de la piel y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             
             style_image2 = """
-            display: inline;
+            display: flow;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -71,19 +71,19 @@ class Home(HydraHeadApp):
             justify-content: center;
             border-radius: 10%;
             """
-            st.markdown(f'<img src="./app/static/scan_1.jpg" height="600" style="{style_image2}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/scan_home.jpg" height="600" style="{style_image2}">', unsafe_allow_html=True)
             
             #st.image("imagenes/scan_1.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>DermaScan puede identificar si una lesión es maligna y clasificarla por tipos, convirtiéndose en una potente herramienta en la detección temprana y la prevención de enfermedades de la piel.</p>", unsafe_allow_html=True)
     
         with col4:
         # Sección: Prevención y cuidado de la piel
-            st.markdown(f"<h3 style='text-align:center;'>Cuidado y Prevención. El camino hacia una piel saludable </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'>Cuidado y Prevención: Una piel más saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Aquí encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida.</p>", unsafe_allow_html=True)
             
             style_image3 = """
-            display: inline;
+            display: flow;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -93,7 +93,7 @@ class Home(HydraHeadApp):
             justify-content: center;
             border-radius: 10%;
             """
-            st.markdown(f'<img src="./app/static/cuidado_sol.jpg" height="600" style="{style_image3}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/care_home.jpg" height="600" style="{style_image3}">', unsafe_allow_html=True)
             
             #st.image("imagenes/cuidado_sol.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Desde prácticas del cuidado de la piel hasta medidas para la prevención de lesiones de la piel.</p>", unsafe_allow_html=True)
@@ -110,7 +110,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV en Málaga y previsión para los próximos días. </p>", unsafe_allow_html=True)
             
             style_image4 = """
-            display: inline;
+            display: flow;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -120,7 +120,7 @@ class Home(HydraHeadApp):
             justify-content: center;
             border-radius: 10%;
             """
-            st.markdown(f'<img src="./app/static/uv_index.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/uv_home.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
             
             #st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de ser consciente del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
@@ -128,12 +128,12 @@ class Home(HydraHeadApp):
         
         with col9:
         # Sección: About us
-            st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores! </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'>¡Conoce a los Creadores! </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             
             style_image5 = """
-            display: inline;
+            display: flow;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -143,7 +143,7 @@ class Home(HydraHeadApp):
             justify-content: center;
             border-radius: 10%;
             """
-            st.markdown(f'<img src="./app/static/us.jpg" height="600" style="{style_image5}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/us_home.jpg" height="600" style="{style_image5}">', unsafe_allow_html=True)
             
             #st.image("imagenes/us.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>DermaScan surge de nuestra pasión por la tecnología y del desafío que supone la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
