@@ -32,7 +32,7 @@ class Indice_UV(HydraHeadApp):
         # Saco la pagina
         # Creo la tabla
         # Lista de nombres
-        nombres = ["Barcelona", "Jaén","Madrid","Málaga","Sevilla","Valencia","Zaragoza"]
+        nombres = ["Barcelona", "Bilbao","Granada","Madrid","Málaga","Sevilla","Valencia","Zaragoza"]
 
         # Crear un desplegable con st.multiselect
         nombres_seleccionados = st.selectbox("Selecciona una provincia:", nombres)
