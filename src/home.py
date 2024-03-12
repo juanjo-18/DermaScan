@@ -30,11 +30,11 @@ class Home(HydraHeadApp):
             margin-left: auto;
             margin-right: auto;
             width: 100%;
-            height: auto;
+            height: 350px;
             max-width: 350px;
             max-height: 350px;
             justify-content: center;
-            border-radius: 5%;
+            border-radius: 20%;
             """
             col1, col2, col3 = st.columns(3)
             with col1:
