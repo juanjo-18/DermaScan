@@ -76,8 +76,8 @@ class Indice_UV(HydraHeadApp):
                             for indice5, salida5 in enumerate(radiacion_uva):
                                 if indice==indice2==indice3==indice4==indice5:
                                     datos_productos.append({
-                                        'Dia': salida.get_text(),
-                                        'Dia de la semana': salida2.get_text(),
+                                        'Fecha': salida.get_text(),
+                                        'Día': salida2.get_text(),
                                         'Radiación UV': salida5.get_text(),
                                         'Temperatura MAX': salida3.get_text(),
                                         'Temperatura MIN': salida4.get_text()
