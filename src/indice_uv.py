@@ -32,7 +32,7 @@ class Indice_UV(HydraHeadApp):
         # Saco la pagina
         # Creo la tabla
         # Lista de nombres
-        nombres = ["Asturias", "Barcelona", "Cantabria", "Jaén","Madrid","Málaga","Navarra","Sevilla","Valencia","Zaragoza"]
+        nombres = ["Barcelona", "Cantabria", "Jaén","Madrid","Málaga","Navarra","Sevilla","Valencia","Zaragoza"]
 
         # Crear un desplegable con st.multiselect
         nombres_seleccionados = st.selectbox("Selecciona una provincia:", nombres)
@@ -41,7 +41,7 @@ class Indice_UV(HydraHeadApp):
         nombre_formateado = unidecode(nombres_seleccionados.lower())
         st.write("Nombres seleccionados:", nombre_formateado)
 
-        url = 'https://www.tutiempo.net/',nombre_formateado,'.html?datos=detallados'
+        url = 'https://www.tutiempo.net/'+nombre_formateado+'.html?datos=detallados'
 
         response = requests.get(url)
 
@@ -68,7 +68,7 @@ class Indice_UV(HydraHeadApp):
             # Busca la temperatura minima
             temperatura_minima = contenedor_producto.find_all('span', class_='t min')
             # Busca la radiacion uva
-            radiacion_uva = contenedor_producto.find_all('span', class_='c2')
+            radiacion_uva = contenedor_producto.find_all('span', class_= ['c2', 'c3'])
 
             for indice, salida in enumerate(dia_texto):
                 for indice2, salida2 in enumerate(dia_numero):
