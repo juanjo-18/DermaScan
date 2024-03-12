@@ -31,7 +31,7 @@ class About_US(HydraHeadApp):
         st.divider()
         st.markdown(f"<p style='text-align:center;'>Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo AI para la detección temprana de enfermedades de la piel. </p>", unsafe_allow_html=True)
         st.divider()
-        st.markdown(f"<p style='text-align:center;'>Como residentes de Málaga, somos conscientes de la importancia de proteger la piel contra la radiación solar UV, lo que nos impulsó a crear esta aplicación innovadora como nuestro proyecto final de máster. Únete a nosotros en nuestra misión sobre el concienciamiento y la precvención del cáncer de piel.</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align:center;'>Como residentes de Málaga, somos conscientes de la importancia de proteger la piel contra la radiación solar UV, lo que nos impulsó a crear esta aplicación innovadora como nuestro Proyecto Fin de Máster. Únete a nosotros en nuestra misión de prevenir y concienciar del cáncer de piel.</p>", unsafe_allow_html=True)
 
          # ---- CONTACT ----
 
@@ -55,10 +55,13 @@ class About_US(HydraHeadApp):
             </form>
             """
             col1, col2, col3 = st.columns(3)
+
             with col1:
                 st.empty()
+
             with col2:
-                st.header("Contáctanos!")
+                st.markdown(f"<h3 style='text-align:center;'>Contáctanos!</h3>", unsafe_allow_html=True)
                 st.markdown(contact_form, unsafe_allow_html=True)
+                
             with col3:
                 st.empty()
