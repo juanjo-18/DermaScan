@@ -32,16 +32,15 @@ class Indice_UV(HydraHeadApp):
         # Saco la pagina
         # Creo la tabla
         # Lista de nombres
-        nombres = ["Asturias", "Barcelona", "Cantabria", "Jaén","Madrid","Málaga","Navarra","Sevilla","Valencia","Zaragoza"]
+        nombres = ["Barcelona", "Bilbao","Granada","Madrid","Málaga","Sevilla","Valencia","Zaragoza"]
 
         # Crear un desplegable con st.multiselect
         nombres_seleccionados = st.selectbox("Selecciona una provincia:", nombres)
 
         # Mostrar los nombres seleccionados
         nombre_formateado = unidecode(nombres_seleccionados.lower())
-        st.write("Nombres seleccionados:", nombre_formateado)
 
-        url = 'https://www.tutiempo.net/',nombre_formateado,'.html?datos=detallados'
+        url = 'https://www.tutiempo.net/'+nombre_formateado+'.html?datos=detallados'
 
         response = requests.get(url)
 
@@ -68,7 +67,7 @@ class Indice_UV(HydraHeadApp):
             # Busca la temperatura minima
             temperatura_minima = contenedor_producto.find_all('span', class_='t min')
             # Busca la radiacion uva
-            radiacion_uva = contenedor_producto.find_all('span', class_='c2')
+            radiacion_uva = contenedor_producto.find_all('span', class_= ['c2', 'c3'])
 
             for indice, salida in enumerate(dia_texto):
                 for indice2, salida2 in enumerate(dia_numero):
@@ -77,11 +76,12 @@ class Indice_UV(HydraHeadApp):
                             for indice5, salida5 in enumerate(radiacion_uva):
                                 if indice==indice2==indice3==indice4==indice5:
                                     datos_productos.append({
-                                        'Dia': salida.get_text(),
-                                        'Dia de la semana': salida2.get_text(),
+                                        'Fecha': salida.get_text(),
+                                        'Día': salida2.get_text(),
+                                        'Radiación UV': salida5.get_text(),
                                         'Temperatura MAX': salida3.get_text(),
-                                        'Temperatura MIN': salida4.get_text(),
-                                        'Radiación UV': salida5.get_text()
+                                        'Temperatura MIN': salida4.get_text()
+                                        
                                         })
 
 
@@ -93,7 +93,7 @@ class Indice_UV(HydraHeadApp):
         
         with st.container():
 
-            st.bar_chart(df, y="Dia de la semana", x="Radiación UV", color="Temperatura MAX")
+            st.bar_chart(df, y="Día", x="Radiación UV", color="Temperatura MAX")
 
             # You can call any Streamlit command, including custom components:
             #st.bar_chart(df)
