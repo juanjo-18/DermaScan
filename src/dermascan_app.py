@@ -305,15 +305,14 @@ class DermascanApp(HydraHeadApp):
                 clean_review = text_cleaning(review)
             
                 # Cargamos el modelo
-                model = joblib.load("model/sentiment_SVC.pkl")
+                model = joblib.load("model/sentiment_MNB.pkl")
             
                 # Hacemos la predicción
                 result = model.predict([clean_review])
             
                 # Calculamos la probabilidad
-                #probas = model.predict_proba([clean_review])
-                probas=result
-                st.write(probas)
+                probas = model.predict_proba([clean_review])
+            
                 probability = "{:.2f}".format(float(probas[:, result]))
             
                 return result, probability
