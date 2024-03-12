@@ -37,7 +37,7 @@ class Prevencion(HydraHeadApp):
             page_bg_img = '''
             <style>
             body {
-            background-image: url("data:image/png;base64,%s");
+            background-image: url("data:imagenes/derma_back;base64,%s");
             background-size: cover;
             }
             </style>

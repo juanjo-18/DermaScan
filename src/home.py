@@ -35,7 +35,7 @@ class Home(HydraHeadApp):
             page_bg_img = '''
             <style>
             body {
-            background-image: url("data:image/png;base64,%s");
+            background-image: url("data:imagenes/derma_back.jpg;base64,%s");
             background-size: cover;
             }
             </style>
@@ -45,7 +45,7 @@ class Home(HydraHeadApp):
             return
 
         set_png_as_page_bg('background.png')
-        
+
         with st.container():
             style_image1 = """
             display: block;
