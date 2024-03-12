@@ -128,7 +128,7 @@ class Home(HydraHeadApp):
         
         with col9:
         # Sección: About us
-            st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores de DermaScan! </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'> ¡Conoce a los Creadores! </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             
