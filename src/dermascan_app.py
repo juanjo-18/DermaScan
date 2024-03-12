@@ -348,7 +348,7 @@ class DermascanApp(HydraHeadApp):
                 result, probability = make_prediction(texto_calificacion)
         
                 
-                st.write(probability[0,1])
+                st.write((probability[0,1])*5)
             
             
 
