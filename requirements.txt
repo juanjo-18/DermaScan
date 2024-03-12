@@ -13,7 +13,7 @@ click==8.0.4
 s3fs
 st-files-connection
 boto3
-hydralit
+hydralit==1.0.10
 requests
 beautifulsoup4
 matplotlib
