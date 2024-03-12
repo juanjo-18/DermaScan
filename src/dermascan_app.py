@@ -305,7 +305,7 @@ class DermascanApp(HydraHeadApp):
                 clean_review = text_cleaning(review)
             
                 # Cargamos el modelo
-                model = joblib.load("model/sentiment_review.pkl")
+                model = joblib.load("model/sentiment_SVC.pkl")
             
                 # Hacemos la predicción
                 result = model.predict([clean_review])
