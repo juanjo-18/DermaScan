@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore")
 
 np.random.seed(123)
  
-stop_words = stopwords.words("english")
+stop_words = stopwords.words("spanish")
 
 
 # CREMOS UNA CLASE PARA LA PAGINA
