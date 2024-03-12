@@ -118,7 +118,7 @@ class Prevencion(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-            st.markdown(f'<img src="./app/static/protect4_prev.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/protec4_prev.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
             
     
         with col11:
