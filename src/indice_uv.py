@@ -78,9 +78,10 @@ class Indice_UV(HydraHeadApp):
                                     datos_productos.append({
                                         'Dia': salida.get_text(),
                                         'Dia de la semana': salida2.get_text(),
+                                        'Radiación UV': salida5.get_text(),
                                         'Temperatura MAX': salida3.get_text(),
-                                        'Temperatura MIN': salida4.get_text(),
-                                        'Radiación UV': salida5.get_text()
+                                        'Temperatura MIN': salida4.get_text()
+                                        
                                         })
 
 
