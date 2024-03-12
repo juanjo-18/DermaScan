@@ -317,7 +317,7 @@ class DermascanApp(HydraHeadApp):
                 st.write(result)
                 st.write(probas)
                 
-                probability = "{:.2f}".format(float(probas[:, int(result)]))
+                probability = "{:.2f}".format(float(probas[:, result]))
                 st.write(probability)
             
                 return result, probability
