@@ -25,7 +25,6 @@ class Prevencion(HydraHeadApp):
     def run(self):
         
 
-        st.title("DermaScan")
 
         st.header("Prevención y Cuidado de la Piel: Tu Guía hacia una Piel Saludable")
         st.write("¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! Aquí encontrarás una completa guía para mantener tu piel saludable y protegida en todo momento. Desde consejos sobre rutinas de cuidado diario hasta recomendaciones sobre protección solar y hábitos alimenticios, estamos aquí para ayudarte a mantener una piel radiante y resistente a los daños solares. Explora nuestros recursos y descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.")
