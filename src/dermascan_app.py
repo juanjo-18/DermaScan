@@ -17,6 +17,22 @@ from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
 
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer  
+from string import punctuation
+# text preprocessing modules
+from nltk.tokenize import word_tokenize
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+import re  # regular expressio
+import warnings
+nltk.download('wordnet')
+nltk.download('stopwords')
+warnings.filterwarnings("ignore")
+
+np.random.seed(123)
+ 
+stop_words = stopwords.words("spanish")
 
 
 # CREMOS UNA CLASE PARA LA PAGINA
@@ -162,6 +178,32 @@ class DermascanApp(HydraHeadApp):
 
         # COLUMNA DE RATINGS (20%)
         with col7:
+            def text_cleaning(text, remove_stop_words=True, lemmatize_words=True):
+                # Clean the text
+                text = re.sub(r"[^A-Za-z0-9]", " ", text) # eliminar caracteres especiales
+                text = re.sub(r"\'s", " ", text) # quitar apóstrofes 
+                text = re.sub(r"http\S+", " link ", text) # quitar enlaces sustituyendolos por "link"
+                text = re.sub(r"\b\d+(?:\.\d+)?\s+", "", text)  
+            
+                # Quitamos signos de puntuacion
+                text = "".join([c for c in text if c not in punctuation])
+            
+                # Quitamos Stopwords
+                if remove_stop_words:
+                    text = text.split()
+                    text = [w for w in text if not w in stop_words]
+                    text = " ".join(text)
+            
+                # Lemmatizamos las palabras
+                if lemmatize_words:
+                    text = text.split()
+                    lemmatizer = WordNetLemmatizer()
+                    lemmatized_words = [lemmatizer.lemmatize(word) for word in text]
+                    text = " ".join(lemmatized_words)
+            
+                # Devolvemos una lista de palabras tratadas
+                return text
+
             # Llamar a la función para mostrar los datos desde S3
             def guardar_puntuacion_en_s3(comentario, puntuacion):
                 # Convierte el comentario y la puntuación en un DataFrame
@@ -258,6 +300,23 @@ class DermascanApp(HydraHeadApp):
                 with st.container():
                     st.markdown('<div style="{}">{}</div>'.format(estilo_bloque, textos_concatenados), unsafe_allow_html=True)
 
+            def make_prediction(review):
+                # Limpiamos los datos llamando a la función de limpieza
+                clean_review = text_cleaning(review)
+            
+                # Cargamos el modelo
+                model = joblib.load("model/sentiment_review.pkl")
+            
+                # Hacemos la predicción
+                result = model.predict([clean_review])
+            
+                # Calculamos la probabilidad
+                probas = model.predict_proba([clean_review])
+                probability = "{:.2f}".format(float(probas[:, result]))
+            
+                return result, probability
+
+           
 
             modelo=joblib.load("model/sentimientos_modelo.pkl")  
             def mostrar_imagen_segun_puntuacion(puntuacion):
@@ -282,7 +341,18 @@ class DermascanApp(HydraHeadApp):
             #st.write("Comenta que te ha parecido la App: ")
             # text_area para ingresar el comentario
             texto_calificacion = st.text_input("")
-            
+
+            # Calcula la predicción
+            result, probability = make_prediction(texto_calificacion)
+        
+            # Muestra los resultados 
+            st.header("Resultados")
+        
+            if int(result) == 1:
+                st.write("Esto es una reseña positiva con una probabilidad del ", probability)
+            else:
+                st.write("Esto es una reseña negativa con una probabilidad del ", probability)
+                
             # Centra el botón utilizando st.button y estilo CSS
             button_html = """
                 <style>
