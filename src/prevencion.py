@@ -7,6 +7,7 @@ import tensorflow
 import keras
 import boto3
 import os
+import spacy
 
 from keras.models import load_model
 from PIL import Image
@@ -167,9 +168,20 @@ class Prevencion(HydraHeadApp):
         st.divider()
 
         # CHATBOT: DermIA
+        # Cargar modelo de lenguaje en español
+        nlp = spacy.load("es_core_news_sm")
+
+        # Función para calcular la similitud entre dos textos
+        def calcular_similitud(texto1, texto2):
+            doc1 = nlp(texto1)
+            doc2 = nlp(texto2)
+            return doc1.similarity(doc2)
+
         # Función para responder preguntas
         def responder_pregunta(pregunta):
             respuesta = ""
+            max_similitud = 0
+            
             pregunta = pregunta.lower()  # Convertir la pregunta a minúsculas para facilitar la comparación
 
             # Lista de preguntas frecuentes y respuestas asociadas
@@ -293,14 +305,15 @@ class Prevencion(HydraHeadApp):
             
             }
 
-            # Buscar la pregunta en las preguntas frecuentes y devolver la respuesta asociada
+            # Buscar la pregunta en las preguntas frecuentes y devolver la respuesta asociada con mayor similitud
             for key, value in preguntas_frecuentes.items():
-                if key in pregunta:
+                similitud = calcular_similitud(pregunta, key)
+                if similitud > max_similitud:
+                    max_similitud = similitud
                     respuesta = value
-                    break
             
-            # Si no se encontró una respuesta, mostrar un mensaje predeterminado
-            if not respuesta:
+            # Si la similitud máxima es baja, mostrar un mensaje predeterminado
+            if max_similitud < 0.5:
                 respuesta = "Lo siento, no puedo responder esa pregunta en este momento. Por favor, intenta con otra pregunta relacionada con la prevención solar y el cuidado de la piel."
 
             return respuesta
