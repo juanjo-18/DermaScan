@@ -38,7 +38,7 @@ class Indice_UV(HydraHeadApp):
 
         # Mostrar los nombres seleccionados
         st.write("Nombres seleccionados:", nombres_seleccionados)
-        
+
         url = 'https://www.tutiempo.net/malaga.html?datos=detallados'
 
         response = requests.get(url)
@@ -85,7 +85,7 @@ class Indice_UV(HydraHeadApp):
 
         # Convierte la lista de datos a un DataFrame
         df = pd.DataFrame(datos_productos)
-
+        st.write(len(df))
         # Mostrar la tabla en Streamlit
         st.table(df.style.set_table_styles([dict(selector="th", props=[("text-align", "center")])]))
        
