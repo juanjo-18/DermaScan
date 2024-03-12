@@ -61,7 +61,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Utiliza tecnologías de IA para analizar imágenes de la piel y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             
             style_image2 = """
-            display: block flow;
+            display: inline;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -83,7 +83,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Aquí encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida.</p>", unsafe_allow_html=True)
             
             style_image3 = """
-            display: block flow;
+            display: inline;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -110,7 +110,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV en Málaga y previsión para los próximos días. </p>", unsafe_allow_html=True)
             
             style_image4 = """
-            display: flow;
+            display: inline;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
@@ -133,7 +133,7 @@ class Home(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             
             style_image5 = """
-            display: flow;
+            display: inline;
             margin-left: auto;
             margin-right: auto;
             width: 100%;
