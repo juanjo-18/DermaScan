@@ -30,6 +30,14 @@ class Indice_UV(HydraHeadApp):
         st.write("¡Descubre el impacto del sol en tu piel con nuestra sección de Incidencia Solar UV! Aquí te proporcionamos información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Conoce cómo la radiación UV afecta tu piel en función de la época del año y la latitud en la que te encuentres, y aprende a tomar medidas preventivas para proteger tu piel contra los daños causados por la exposición al sol.")
         # Saco la pagina
         # Creo la tabla
+        # Lista de nombres
+        nombres = ["Nombre 1", "Nombre 2", "Nombre 3", "Nombre 4"]
+
+        # Crear un desplegable con st.multiselect
+        nombres_seleccionados = st.multiselect("Selecciona uno o más nombres:", nombres)
+
+        # Mostrar los nombres seleccionados
+        st.write("Nombres seleccionados:", nombres_seleccionados)
         url = 'https://www.tutiempo.net/malaga.html?datos=detallados'
 
         response = requests.get(url)
