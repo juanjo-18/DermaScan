@@ -39,7 +39,6 @@ class Indice_UV(HydraHeadApp):
 
         # Mostrar los nombres seleccionados
         nombre_formateado = unidecode(nombres_seleccionados.lower())
-        st.write("Nombres seleccionados:", nombre_formateado)
 
         url = 'https://www.tutiempo.net/'+nombre_formateado+'.html?datos=detallados'
 
