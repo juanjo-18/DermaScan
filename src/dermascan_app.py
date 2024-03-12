@@ -347,9 +347,8 @@ class DermascanApp(HydraHeadApp):
                 # Calcula la predicción
                 result, probability = make_prediction(texto_calificacion)
         
-                # Muestra los resultados 
-                st.header("Resultados")
-                st.write(probability)
+                
+                st.write(probability.index(1))
             
             
 
