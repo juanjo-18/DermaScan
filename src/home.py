@@ -69,7 +69,7 @@ class Home(HydraHeadApp):
             max-width: 600px;
             max-height: 600px;
             justify-content: center;
-            border-radius: 10%;
+            border-radius: 20%;
             """
             st.markdown(f'<img src="./app/static/scan_home.jpg" height="600" style="{style_image2}">', unsafe_allow_html=True)
             
@@ -91,7 +91,7 @@ class Home(HydraHeadApp):
             max-width: 600px;
             max-height: 600px;
             justify-content: center;
-            border-radius: 10%;
+            border-radius: 20%;
             """
             st.markdown(f'<img src="./app/static/care_home.jpg" height="600" style="{style_image3}">', unsafe_allow_html=True)
             
@@ -118,7 +118,7 @@ class Home(HydraHeadApp):
             max-width: 600px;
             max-height: 600px;
             justify-content: center;
-            border-radius: 10%;
+            border-radius: 20%;
             """
             st.markdown(f'<img src="./app/static/uv_home.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
             
@@ -141,7 +141,7 @@ class Home(HydraHeadApp):
             max-width: 600px;
             max-height: 600px;
             justify-content: center;
-            border-radius: 10%;
+            border-radius: 20%;
             """
             st.markdown(f'<img src="./app/static/us_home.jpg" height="600" style="{style_image5}">', unsafe_allow_html=True)
             
