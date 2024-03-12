@@ -47,7 +47,7 @@ class Home(HydraHeadApp):
                 st.empty()
 
         # Encabezado principal
-        st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenidos al Futuro del Cuidado de la Piel!</h2>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenido al Futuro del Cuidado de la Piel!</h2>", unsafe_allow_html=True)
         #st.markdown(f"<h3 style='text-align:center;'> Descubre el Futuro del Cuidado de la Piel </h3>", unsafe_allow_html=True)
         st.divider()
 
@@ -55,19 +55,20 @@ class Home(HydraHeadApp):
 
         with col2:
         # Sección: DermaScan App
-            st.markdown(f"<h3 style='text-align:center;'> DermaScan App: Tu Aliado en la Lucha Contra el Cáncer de Piel </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'> DermaScan App: Tu Aliado contra el cáncer de piel </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel, utilizando modelos de inteligencia artificial para analizar imágenes y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>DermaScan App representa la vanguardia en el cuidado de la piel. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Utiliza tecnologías de IA para analizar imágenes de la piel y detectar posibles lesiones cutáneas.</p>", unsafe_allow_html=True)
             st.image("imagenes/scan_1.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>Nuestra aplicación puede identificar si una lesión es maligna y clasificarla por tipos, convirtiéndose en una potente herramienta para la detección temprana y la prevención del cáncer de piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>DermaScan puede identificar si una lesión es maligna y clasificarla por tipos, convirtiéndose en una potente herramienta en la detección temprana y la prevención de enfermedades de la piel.</p>", unsafe_allow_html=True)
     
         with col4:
         # Sección: Prevención y cuidado de la piel
-            st.markdown(f"<h3 style='text-align:center;'> Prevención y Cuidado de la Piel. El camino hacia una Piel Saludable </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'> Prevención y cuidado de la piel. El camino hacia una piel saludable </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>En esta sección, encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida contra los daños solares.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Aquí encontrarás una amplia gama de recomendaciones y consejos sobre cómo mantener tu piel saludable y protegida.</p>", unsafe_allow_html=True)
             st.image("imagenes/cuidado_sol.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>Desde prácticas diarias de cuidado de la piel hasta medidas preventivas contra el cáncer de piel, estamos aquí para ayudarte a mantener una piel radiante y saludable en todo momento.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Desde prácticas del cuidado de la piel hasta medidas para la prevención de lesiones de la piel.</p>", unsafe_allow_html=True)
             
         st.divider()
 
@@ -78,10 +79,10 @@ class Home(HydraHeadApp):
             
             st.markdown(f"<h3 style='text-align:center;'> Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>Info en tiempo real sobre el índice UV actual en Málaga y pronósticos para los próximos días. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV en Málaga y previsión para los próximos días. </p>", unsafe_allow_html=True)
             st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de ser consciente del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Mantente alerta y protege tu piel de los daños causados por la radiación solar UV.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Mantente alerta y protege tu piel de la radiación solar Ultravioleta.</p>", unsafe_allow_html=True)
         
         with col9:
         # Sección: About us
@@ -89,5 +90,5 @@ class Home(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del aprendizaje automático y la ciencia de datos.</p>", unsafe_allow_html=True)
             st.image("imagenes/us.jpg", use_column_width=True)
-            st.markdown(f"<p style='text-align:center;'>DermaScan surge de nuestra pasión por la tecnología y del concienciamiento del desafío que supone la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en nuestra misión de prevenir el cáncer de piel mientras exploramos los límites de la IA y la salud digital!</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>DermaScan surge de nuestra pasión por la tecnología y del desafío que supone la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en la integración de la IA y la salud digital!</p>", unsafe_allow_html=True)
