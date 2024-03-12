@@ -305,10 +305,10 @@ class Prevencion(HydraHeadApp):
 
             return respuesta
 
-            # Interfaz de usuario de Streamlit
-            st.title("DermIA: ")
-            pregunta_usuario = st.text_input("¡Hola! Soy DermIA, ¿en que puedo ayudarte?")
+        # Interfaz de usuario de Streamlit
+        st.title("DermIA: ")
+        pregunta_usuario = st.text_input("¡Hola! Soy DermIA, ¿en que puedo ayudarte?")
 
-            if pregunta_usuario:
-                respuesta_chatbot = responder_pregunta(pregunta_usuario)
-                st.text(respuesta_chatbot)
+        if pregunta_usuario:
+            respuesta_chatbot = responder_pregunta(pregunta_usuario)
+            st.text(respuesta_chatbot)
