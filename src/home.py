@@ -121,7 +121,7 @@ class Home(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-            st.markdown(f'<img src="./app/static/uv_home.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/impacto_home.jpg" height="600" style="{style_image4}">', unsafe_allow_html=True)
             
             #st.image("imagenes/uv_index.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>Descubre la importancia de ser consciente del índice UV y su impacto en tu piel.</p>", unsafe_allow_html=True)
