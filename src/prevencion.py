@@ -35,11 +35,11 @@ class Prevencion(HydraHeadApp):
 
         with col2:
         # Sección: DermaScan App
-            st.markdown(f"<h3 style='text-align:center;'> Tiempo de Exposición al Sol </h3>", unsafe_allow_html=True)
+            st.markdown(f"<h3 style='text-align:center;'> Exposición al Sol </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Limita tu tiempo de exposición al sol, especialmente durante las horas pico de radiación solar.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Usa ropa protectora, sombreros de ala ancha y busca sombra para reducir la exposición directa al sol.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Aplica protector solar de amplio espectro con factor de protección solar (FPS) 30 o superior cada dos horas, o más frecuentemente si sudas o te mojas.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'></p>", unsafe_allow_html=True)
 
             style_image1 = """
             display: flow;
@@ -106,9 +106,9 @@ class Prevencion(HydraHeadApp):
         # Sección: DermaScan App
             st.markdown(f"<h3 style='text-align:center;'> Protección Solar </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Usa protector solar incluso en días nublados o cuando estés bajo la sombra, ya que los rayos UV pueden penetrar las nubes y reflejarse en superficies como la arena y el agua.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Elige un protector solar que ofrezca protección de amplio espectro contra los rayos UVA y UVB, y asegúrate de aplicarlo generosamente en todas las áreas expuestas de la piel.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>No te olvides de proteger tus labios con un bálsamo labial con SPF y usar gafas de sol con protección UV para proteger tus ojos del daño solar.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Usa protector solar incluso en días nublados o cuando estés bajo la sombra.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Elige un protector solar que ofrezca protección de amplio espectro contra los rayos UVA y UVB.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Protege tus labios con un bálsamo labial con SPF y usar gafas de sol con protección UV para proteger tus ojos del daño solar.</p>", unsafe_allow_html=True)
 
             style_image4 = """
             display: flow;
@@ -128,8 +128,8 @@ class Prevencion(HydraHeadApp):
         # Sección: Prevención y cuidado de la piel
             st.markdown(f"<h3 style='text-align:center;'>Visita al dermatólogo </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Programa revisiones periódicas con un dermatólogo para realizar un seguimiento de la salud de tu piel y detectar cualquier cambio o problema potencial de manera temprana.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>El dermatólogo puede ofrecerte consejos personalizados sobre cómo cuidar y proteger tu piel, así como recomendaciones específicas de productos y tratamientos adecuados para tus necesidades individuales.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Programa revisiones periódicas con un dermatólogo para favorecer la detección temprana de cualquier posible lesión.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>El dermatólogo proporciona consejos personalizados sobre cómo cuidar y proteger tu piel, así como recomendaciones específicas de productos y tratamientos adecuados para tus necesidades individuales.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>No subestimes la importancia de consultar regularmente a un dermatólogo, especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
             
             style_image5 = """
