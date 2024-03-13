@@ -238,10 +238,10 @@ class About_US(HydraHeadApp):
                         st.image("imagenes/estrellas_5.png", caption="", use_column_width=True)
                 
                 
-                st.markdown(f"<h1 style='text-align:center;'>Valoraciones</h1>", unsafe_allow_html=True)
+                st.markdown(f"<h2 style='text-align:center;'>Valoraciones</h2>", unsafe_allow_html=True)
                 #st.header("Valoraciones")
                 # Casilla de entrada de texto
-                st.markdown(f"<h3 style='text-align:center;'>Comenta que te ha parecido la App:</h3>", unsafe_allow_html=True)
+                st.markdown(f"<h3 style='text-align:center;'>Comenta que te ha parecido la App y como podemos mejorar:</h3>", unsafe_allow_html=True)
                 #st.write("Comenta que te ha parecido la App: ")
                 # text_area para ingresar el comentario
                 texto_calificacion = st.text_input("")
