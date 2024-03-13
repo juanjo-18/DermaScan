@@ -47,7 +47,7 @@ class About_US(HydraHeadApp):
         st.divider()
         st.markdown(f"<p style='text-align:center;'>Somos Juanjo Medina y Jesús Cánovas, dos apasionados del ML, DL y Data Science. Nos conocimos mientras realizábamos un Máster en AI y Big Data en la modalidad FP in Company en Accenture Málaga. </p>", unsafe_allow_html=True)
         st.divider()
-        st.markdown(f"<p style='text-align:center;'>Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo AI para la detección temprana de enfermedades de la piel. </p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align:center;'>Nuestra inspiración para desarrollar DermaScan surgió de la necesidad de crear un modelo de IA para integrar la Inteligencia Artificial en el campo de la medicina dermatológica </p>", unsafe_allow_html=True)
         st.divider()
         st.markdown(f"<p style='text-align:center;'>Somos conscientes de la importancia de la prevención y la detección temprana del cáncer de piel, lo que nos impulsó a crear esta aplicación innovadora como nuestro Proyecto Fin de Máster. Únete a nosotros en nuestra misión de prevenir y concienciar sobre el cáncer de piel.</p>", unsafe_allow_html=True)
 
