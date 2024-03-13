@@ -31,9 +31,11 @@ class Indice_UV(HydraHeadApp):
 
         with col2:
             st.markdown(f"<h1 style='text-align:center;'>Índice Solar UV: Conoce el Impacto del Sol en tu Piel</h1>", unsafe_allow_html=True)
+            st.divider()
             st.markdown(f"<h2 style='text-align:center;'>Consulta el Índice UV en las principales capitales de provincia de España</h2>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Aquí puedes encontrar información en tiempo real sobre el índice UV actual en diferentes regiones, así como pronósticos para los próximos días. Conoce cómo la radiación UV afecta tu piel en función de la época del año y la latitud en la que te encuentres.</p>", unsafe_allow_html=True)
-            
+            st.divider()
+            st.markdown(f"<h3 style='text-align:center;'>Selecciona una ciudad:</h3>", unsafe_allow_html=True)
             st.write("")
             # Saco la pagina
             # Creo la tabla
@@ -41,7 +43,7 @@ class Indice_UV(HydraHeadApp):
             nombres = ["Barcelona", "Bilbao","Granada","Madrid","Málaga","Sevilla","Valencia","Zaragoza"]
 
             # Crear un desplegable con st.multiselect
-            nombres_seleccionados = st.selectbox("Selecciona una provincia:", nombres)
+            nombres_seleccionados = st.selectbox("Selecciona:", nombres)
 
             # Mostrar los nombres seleccionados
             nombre_formateado = unidecode(nombres_seleccionados.lower())
