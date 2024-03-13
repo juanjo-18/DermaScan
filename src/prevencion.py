@@ -135,7 +135,7 @@ class Prevencion(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Visita a tu dermatólogo para favorecer la detección temprana de cualquier posible lesión.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Es el más indicado para proporcionarte consejos y tratamientos personalizados en base a tus necesidades.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Obligatorio especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
             st.divider()
 
             style_image5 = """
@@ -157,8 +157,8 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<h3 style='text-align:center;'>Estilo de vida saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Adopta un estilo de vida y hábitos saludables como una alimentación equilibrada, ejercicio regular y descanso adecuado.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Evita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos aumentan el riesgo de problemas cutáneos como el envejecimiento prematuro y el cáncer de piel.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés favorece la aparición de lesiones en la piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Evita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos provocan envejecimiento prematuro y el cáncer de piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Mantén un equilibrio entre el trabajo y el descanso, y formas de gestionar el estrés, ya que favorece la aparición de lesiones en la piel.</p>", unsafe_allow_html=True)
             st.divider()
 
             style_image6 = """
