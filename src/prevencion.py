@@ -40,6 +40,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Limita tu tiempo de exposición al sol, especialmente durante las horas pico de radiación solar.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Usa ropa protectora, sombreros de ala ancha y busca sombra para reducir la exposición directa al sol.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Aplicate protección solar como mínimo SPF30, cada hora.</p>", unsafe_allow_html=True)
+            st.divider()
 
             style_image1 = """
             display: flow;
@@ -62,6 +63,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Mantente bien hidratado bebiendo suficiente agua a lo largo del día, especialmente en climas cálidos o cuando haces ejercicio.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Incluye en tu dieta frutas y verduras con alto contenido de agua, como sandía, pepino y naranjas.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Evita el exceso de cafeína y alcohol, ya que pueden tener un efecto deshidratante en el cuerpo.</p>", unsafe_allow_html=True)
+            st.divider()
             
             style_image2 = """
             display: flow;
@@ -84,6 +86,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras y proteínas  para obtener los nutrientes necesarios para una piel saludable.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Los alimentos ricos en antioxidantes, como las bayas, el té verde y las nueces, pueden ayudar a proteger la piel del daño causado por los radicales libres.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Evita los alimentos procesados, altos en azúcares añadidos y grasas saturadas, ya que pueden contribuir a problemas cutáneos como el acné y la inflamación.</p>", unsafe_allow_html=True)
+            st.divider()
 
             style_image3 = """
             display: flow;
@@ -109,6 +112,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Usa protector solar incluso en días nublados o cuando estés bajo la sombra.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Elige un protector solar que ofrezca protección de amplio espectro contra los rayos UVA y UVB.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Protege tus labios con un bálsamo labial con SPF y usar gafas de sol con protección UV para proteger tus ojos del daño solar.</p>", unsafe_allow_html=True)
+            st.divider()
 
             style_image4 = """
             display: flow;
@@ -131,7 +135,8 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Programa revisiones periódicas con un dermatólogo para favorecer la detección temprana de cualquier posible lesión.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>El dermatólogo proporciona consejos personalizados de cuidado y protección además de tratamientos adecuados para tus necesidades individuales.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Visita al Dermatólogo especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
-            
+            st.divider()
+
             style_image5 = """
             display: flow;
             margin-left: auto;
@@ -153,7 +158,8 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>Adopta un estilo de vida saludable que incluya hábitos como una alimentación equilibrada, ejercicio regular y descanso adecuado para promover la salud general de tu piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>vita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos pueden afectar negativamente la salud de la piel y aumentar el riesgo de problemas cutáneos como el envejecimiento prematuro y el cáncer de piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés crónico puede contribuir a problemas cutáneos como el acné y la dermatitis.</p>", unsafe_allow_html=True)
-
+            st.divider()
+            
             style_image6 = """
             display: flow;
             margin-left: auto;
