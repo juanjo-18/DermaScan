@@ -157,7 +157,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<h3 style='text-align:center;'>Estilo de vida saludable </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center;'>Adopta un estilo de vida saludable como una alimentación equilibrada, ejercicio regular y descanso adecuado.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Evita el tabaquismo y el alcohol, ya que estos hábitos provocan envejecimiento prematuro y el cáncer de piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Evita el tabaquismo y el alcohol, provocan envejecimiento prematuro y cáncer de piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantén un equilibrio entre el trabajo y el descanso.</p>", unsafe_allow_html=True)
             st.divider()
 
