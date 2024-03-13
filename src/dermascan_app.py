@@ -50,10 +50,9 @@ class DermascanApp(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center; '>DermaScan es una aplicación revolucionaria que utiliza modelos de Inteligencia Artificial</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; '>Entrenamos nuestros modelos con imágenes de lesiones piel etiquetadas por Dermatólogos.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center; '>Nuestra aplicación es capaz de detectar la presencia de lesiones, determinar si son malignas o no y clasificarlas según su tipo. </p>", unsafe_allow_html=True)
-            
             
             st.divider()
+
             st.markdown(f"<h3 style='text-align:center;'>Sube o captura una imagen de tu piel</h3>", unsafe_allow_html=True)
 
             # Agregar un apartado para cargar una foto
@@ -176,3 +175,5 @@ class DermascanApp(HydraHeadApp):
                     st.error(f"Error al hacer la prediccion: {str(e)}")
 
             st.divider()
+
+            st.markdown(f"<p style='text-align:center; '>Nuestra aplicación es capaz de detectar la presencia de lesiones, determinar si son malignas o no y clasificarlas según su tipo. </p>", unsafe_allow_html=True)
