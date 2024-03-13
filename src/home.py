@@ -45,7 +45,7 @@ class Home(HydraHeadApp):
             st.markdown(page_bg_img, unsafe_allow_html=True)
             return
 
-        set_png_as_page_bg('imagenes/back_d.jpg')
+        set_png_as_page_bg('imagenes/back_d.png')
 
         with st.container():
             style_image1 = """
