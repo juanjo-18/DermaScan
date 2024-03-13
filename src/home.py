@@ -7,6 +7,7 @@ import tensorflow
 import keras
 import boto3
 import os
+import base64
 
 from keras.models import load_model
 from PIL import Image
@@ -35,7 +36,7 @@ class Home(HydraHeadApp):
             page_bg_img = '''
             <style>
             body {
-            background-image: url("data:imagenes/derma_back.jpg;base64,%s");
+            background-image: url("data:image/png;base64,%s");
             background-size: cover;
             }
             </style>
@@ -44,7 +45,7 @@ class Home(HydraHeadApp):
             st.markdown(page_bg_img, unsafe_allow_html=True)
             return
 
-        set_png_as_page_bg('derma_back.jpg')
+        set_png_as_page_bg('/images/derma_back.jpg')
 
         with st.container():
             style_image1 = """
