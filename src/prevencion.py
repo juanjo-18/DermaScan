@@ -165,6 +165,6 @@ class Prevencion(HydraHeadApp):
             justify-content: center;
             border-radius: 20%;
             """
-            st.markdown(f'<img src="./app/static/sport6_prev.jpg" height="600" style="{style_image6}">', unsafe_allow_html=True)
+            st.markdown(f'<img src="./app/static/depor6_prev.jpg" height="600" style="{style_image6}">', unsafe_allow_html=True)
 
         st.divider()
