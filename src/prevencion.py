@@ -84,8 +84,8 @@ class Prevencion(HydraHeadApp):
         # Sección: Prevención y cuidado de la piel
             st.markdown(f"<h3 style='text-align:center;'>Dieta Saludable </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras, proteínas y grasas saludables para obtener los nutrientes necesarios para una piel saludable.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Los alimentos ricos en antioxidantes, como las bayas, el té verde y las nueces, pueden ayudar a proteger la piel del daño causado por los radicales libres.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras, proteínas y grasas saludables.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Aumenta el consumo de alimentos ricos en antioxidantes, como las bayas, el té verde y las nueces.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Evita los alimentos procesados, altos en azúcares añadidos y grasas saturadas.</p>", unsafe_allow_html=True)
             st.divider()
 
