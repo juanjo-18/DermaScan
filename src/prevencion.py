@@ -39,7 +39,7 @@ class Prevencion(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Limita tu tiempo de exposición al sol, especialmente durante las horas pico de radiación solar.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Usa ropa protectora, sombreros de ala ancha y busca sombra para reducir la exposición directa al sol.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'></p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Aplicate protección solar como mínimo SPF30, cada hora.</p>", unsafe_allow_html=True)
 
             style_image1 = """
             display: flow;
@@ -60,7 +60,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<h3 style='text-align:center;'>Hidratación </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Mantente bien hidratado bebiendo suficiente agua a lo largo del día, especialmente en climas cálidos o cuando haces ejercicio.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Considera el consumo de frutas y verduras con alto contenido de agua, como sandía, pepino y naranjas, para ayudar a mantener la hidratación.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Incluye en tu dieta frutas y verduras con alto contenido de agua, como sandía, pepino y naranjas.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Evita el exceso de cafeína y alcohol, ya que pueden tener un efecto deshidratante en el cuerpo.</p>", unsafe_allow_html=True)
             
             style_image2 = """
@@ -81,7 +81,7 @@ class Prevencion(HydraHeadApp):
         # Sección: Prevención y cuidado de la piel
             st.markdown(f"<h3 style='text-align:center;'>Dieta Saludable </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>Prioriza una dieta rica en frutas, verduras, granos enteros y proteínas magras para obtener los nutrientes necesarios para una piel saludable.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras y proteínas  para obtener los nutrientes necesarios para una piel saludable.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Los alimentos ricos en antioxidantes, como las bayas, el té verde y las nueces, pueden ayudar a proteger la piel del daño causado por los radicales libres.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Evita los alimentos procesados, altos en azúcares añadidos y grasas saturadas, ya que pueden contribuir a problemas cutáneos como el acné y la inflamación.</p>", unsafe_allow_html=True)
 
@@ -129,8 +129,8 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<h3 style='text-align:center;'>Visita al dermatólogo </h3>", unsafe_allow_html=True)
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Programa revisiones periódicas con un dermatólogo para favorecer la detección temprana de cualquier posible lesión.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>El dermatólogo proporciona consejos personalizados sobre cómo cuidar y proteger tu piel, así como recomendaciones específicas de productos y tratamientos adecuados para tus necesidades individuales.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>No subestimes la importancia de consultar regularmente a un dermatólogo, especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>El dermatólogo proporciona consejos personalizados de cuidado y protección además de tratamientos adecuados para tus necesidades individuales.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Visita al Dermatólogo especialmente si tienes antecedentes de problemas cutáneos, exposición solar frecuente o cambios en la apariencia de lunares o manchas en la piel.</p>", unsafe_allow_html=True)
             
             style_image5 = """
             display: flow;
