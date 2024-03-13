@@ -63,7 +63,7 @@ class Prevencion(HydraHeadApp):
             st.divider()
             st.markdown(f"<p style='text-align:center; font-size:none; color:none;'>Mantente bien hidratado bebiendo suficiente agua a lo largo del día, especialmente en climas cálidos o cuando haces ejercicio.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Incluye en tu dieta frutas y verduras con alto contenido de agua, como sandía, pepino y naranjas.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Evita el exceso de cafeína y alcohol, ya que pueden tener un efecto deshidratante en el cuerpo.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Evita el tabaco, el exceso de cafeína y  el alcohol</p>", unsafe_allow_html=True)
             st.divider()
             
             style_image2 = """
@@ -84,9 +84,9 @@ class Prevencion(HydraHeadApp):
         # Sección: Prevención y cuidado de la piel
             st.markdown(f"<h3 style='text-align:center;'>Dieta Saludable </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras y proteínas  para obtener los nutrientes necesarios para una piel saludable.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras, proteínas y grasas saludables para obtener los nutrientes necesarios para una piel saludable.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Los alimentos ricos en antioxidantes, como las bayas, el té verde y las nueces, pueden ayudar a proteger la piel del daño causado por los radicales libres.</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Evita los alimentos procesados, altos en azúcares añadidos y grasas saturadas, ya que pueden contribuir a problemas cutáneos como el acné y la inflamación.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Evita los alimentos procesados, altos en azúcares añadidos y grasas saturadas.</p>", unsafe_allow_html=True)
             st.divider()
 
             style_image3 = """
