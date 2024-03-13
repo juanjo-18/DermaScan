@@ -26,28 +26,6 @@ class Prevencion(HydraHeadApp):
 
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
-
-        @st.cache(allow_output_mutation=True)
-        def get_base64_of_bin_file(bin_file):
-            with open(bin_file, 'rb') as f:
-                data = f.read()
-            return base64.b64encode(data).decode()
-
-        def set_png_as_page_bg(png_file):
-            bin_str = get_base64_of_bin_file(png_file)
-            page_bg_img = '''
-            <style>
-            body {
-            background-image: url("data:image/png;base64,%s");
-            background-size: cover;
-            }
-            </style>
-            ''' % bin_str
-            
-            st.markdown(page_bg_img, unsafe_allow_html=True)
-            return
-
-        set_png_as_page_bg('imagenes/back_d.png')
         
         st.markdown(f"<h1 style='text-align:center;'> Cuidado y Prevención: Tu piel siempre saludable </h2>", unsafe_allow_html=True)
         st.markdown(f"<p style='text-align:center;'> ¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! Aquí encontrarás una completa guía para mantener tu piel saludable y protegida en todo momento. Desde consejos y recomendaciones para protegerte del sol y mantener una piel saludable. Descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.</p>", unsafe_allow_html=True)
