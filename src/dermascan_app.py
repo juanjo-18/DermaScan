@@ -43,8 +43,8 @@ class DermascanApp(HydraHeadApp):
         
         calificacion = 0
         # Set the layout to two columns
-        col5, col6,col7 = st.columns([6,1,3])
-        with col5:
+        col5, col6,col7 = st.columns([2,6,2])
+        with col6:
             st.markdown(f"<h1 style='text-align:center;'>¡Bienvenido a DermaScan App!</h1>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align:center;'>Tu Aliada en la Lucha Contra el Cáncer de Piel</h2>", unsafe_allow_html=True)
             st.divider()
@@ -174,6 +174,3 @@ class DermascanApp(HydraHeadApp):
                             
                 except Exception as e:
                     st.error(f"Error al hacer la prediccion: {str(e)}")
-
-
-        
