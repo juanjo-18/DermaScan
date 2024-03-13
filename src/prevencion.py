@@ -29,7 +29,7 @@ class Prevencion(HydraHeadApp):
         
         st.markdown(f"<h1 style='text-align:center;'> Cuidado y Prevención: Tu piel siempre saludable </h1>", unsafe_allow_html=True)
         st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! </h2>", unsafe_allow_html=True)
-        st.markdown(f"<h3 style='text-align:center; margin-left:20%; margin-right:20%'>  Aquí encontrarás una sencilla guía para mantener tu piel saludable y protegida en todo momento. Desde consejos y recomendaciones para protegerte del sol y mantener una piel saludable. Descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.</h3>", unsafe_allow_html=True)
+        st.markdown(f"<p style='text-align:center; margin-left:20%; margin-right:20%'>  Aquí encontrarás una sencilla guía para mantener tu piel saludable y protegida en todo momento.</p>", unsafe_allow_html=True)
         st.divider()
 
         col1, col2, col3, col4, col5, col6, col7= st.columns([0.5, 2.5, 0.5, 2.5, 0.5, 2.5, 0.5])
