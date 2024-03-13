@@ -108,7 +108,7 @@ class Home(HydraHeadApp):
             
             st.markdown(f"<h3 style='text-align:center;'> Conoce el Impacto del Sol en tu Piel</h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV en Málaga y previsión para los próximos días. </p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Información en tiempo real del índice UV por provincias y previsión para los próximos días. </p>", unsafe_allow_html=True)
             
             style_image4 = """
             display: flow;
