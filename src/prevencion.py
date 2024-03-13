@@ -84,7 +84,7 @@ class Prevencion(HydraHeadApp):
         # Sección: Prevención y cuidado de la piel
             st.markdown(f"<h3 style='text-align:center;'>Dieta Saludable </h3>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras, proteínas y grasas saludables.</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center;'>Intenta mantener una dieta equilibrada de frutas, verduras, proteínas y grasas saludables ya que mejora la salud de la piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Aumenta el consumo de alimentos ricos en antioxidantes, como el té verde y las nueces.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Evita los alimentos procesados, altos en azúcares y grasas saturadas.</p>", unsafe_allow_html=True)
             st.divider()
