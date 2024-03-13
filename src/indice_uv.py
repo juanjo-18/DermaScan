@@ -118,7 +118,8 @@ class Indice_UV(HydraHeadApp):
             with col1:
                 st.empty()
             with col2:
-                st.image("imagenes/imagen_radiacion_uva.png", use_column_width=True)
+                st.empty()
+                #st.image("imagenes/imagen_radiacion_uva.png", use_column_width=True)
                 #st.markdown(f'<img src="./app/static/imagenes/imagen_radiacion_uva.png" height="" style="{style_image2}">', unsafe_allow_html=True)
             with col3:
                 st.empty()
