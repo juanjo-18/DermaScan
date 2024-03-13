@@ -125,4 +125,4 @@ class Indice_UV(HydraHeadApp):
                 st.empty()
 
         
-      
+        st.divider()

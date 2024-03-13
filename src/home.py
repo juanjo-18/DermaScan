@@ -149,3 +149,5 @@ class Home(HydraHeadApp):
             #st.image("imagenes/us.jpg", use_column_width=True)
             st.markdown(f"<p style='text-align:center;'>DermaScan surge de nuestra pasión por la tecnología y del desafío que supone la detección temprana del cáncer de piel. </p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>¡Únete a nosotros en la integración de la IA y la salud digital!</p>", unsafe_allow_html=True)
+
+    st.divider()

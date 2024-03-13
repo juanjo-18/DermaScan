@@ -17,6 +17,24 @@ from hydralit import HydraApp
 from hydralit import HydraHeadApp
 
 
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer  
+from string import punctuation
+# text preprocessing modules
+from nltk.tokenize import word_tokenize
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+import re  # regular expressio
+import warnings
+nltk.download('wordnet')
+nltk.download('stopwords')
+warnings.filterwarnings("ignore")
+
+np.random.seed(123)
+ 
+stop_words = stopwords.words("spanish")
+
+
 
 class About_US(HydraHeadApp):
 
@@ -54,14 +72,14 @@ class About_US(HydraHeadApp):
                 <button type="submit">Enviar</button>
             </form>
             """
-            col1, col2, col3, col4 = st.columns([2, 3, 3, 2])
+            col1, col2, col3, col4, col5 = st.columns([1, 3, 2, 3, 1])
 
 
             with col2:
-                st.markdown(f"<h3 style='text-align:center;'>Contáctanos!</h3>", unsafe_allow_html=True)
+                st.markdown(f"<h2 style='text-align:center;'>Contáctanos!</h2>", unsafe_allow_html=True)
                 st.markdown(contact_form, unsafe_allow_html=True)
                 
-            with col3:
+            with col4:
                 # COLUMNA DE RATINGS (20%)
        
                 @st.cache_data
@@ -254,3 +272,5 @@ class About_US(HydraHeadApp):
                         st.write("Tu calificacion a sido de: ",calificacion)
                         guardar_puntuacion_en_s3(texto_calificacion, calificacion)
                 mostrar_datos_desde_s3()
+
+        st.divider()

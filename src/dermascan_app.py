@@ -174,3 +174,5 @@ class DermascanApp(HydraHeadApp):
                             
                 except Exception as e:
                     st.error(f"Error al hacer la prediccion: {str(e)}")
+
+            st.divider()
