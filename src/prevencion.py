@@ -38,7 +38,7 @@ class Prevencion(HydraHeadApp):
             page_bg_img = '''
             <style>
             body {
-            background-image: url("data:image/jpg;base64,%s");
+            background-image: url("data:image/png;base64,%s");
             background-size: cover;
             }
             </style>
@@ -47,7 +47,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(page_bg_img, unsafe_allow_html=True)
             return
 
-        set_png_as_page_bg('imagenes/derma_back.jpg')
+        set_png_as_page_bg('imagenes/back_d.jpg')
         
         st.markdown(f"<h1 style='text-align:center;'> Cuidado y Prevención: Tu piel siempre saludable </h2>", unsafe_allow_html=True)
         st.markdown(f"<p style='text-align:center;'> ¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! Aquí encontrarás una completa guía para mantener tu piel saludable y protegida en todo momento. Desde consejos y recomendaciones para protegerte del sol y mantener una piel saludable. Descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.</p>", unsafe_allow_html=True)
