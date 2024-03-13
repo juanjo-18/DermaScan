@@ -27,8 +27,9 @@ class Prevencion(HydraHeadApp):
 # PEGAMOS NUESTRO CODIGO DE PAGINA 
     def run(self):
         
-        st.markdown(f"<h1 style='text-align:center;'> Cuidado y Prevención: Tu piel siempre saludable </h2>", unsafe_allow_html=True)
-        st.markdown(f"<p style='text-align:center;'> ¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! Aquí encontrarás una completa guía para mantener tu piel saludable y protegida en todo momento. Desde consejos y recomendaciones para protegerte del sol y mantener una piel saludable. Descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.</p>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='text-align:center;'> Cuidado y Prevención: Tu piel siempre saludable </h1>", unsafe_allow_html=True)
+        st.markdown(f"<h2 style='text-align:center;'> ¡Bienvenido a nuestra sección de Prevención y Cuidado de la Piel! </h2>", unsafe_allow_html=True)
+        st.markdown(f"<h3 style='text-align:center; margin-left:20%; margin-right:20%'>  Aquí encontrarás una sencilla guía para mantener tu piel saludable y protegida en todo momento. Desde consejos y recomendaciones para protegerte del sol y mantener una piel saludable. Descubre cómo adoptar prácticas de cuidado de la piel que promuevan la salud a largo plazo.</h3>", unsafe_allow_html=True)
         st.divider()
 
         col1, col2, col3, col4, col5, col6, col7= st.columns([0.5, 2.5, 0.5, 2.5, 0.5, 2.5, 0.5])
@@ -159,7 +160,7 @@ class Prevencion(HydraHeadApp):
             st.markdown(f"<p style='text-align:center;'>vita el tabaquismo y reduce el consumo de alcohol, ya que estos hábitos pueden afectar negativamente la salud de la piel y aumentar el riesgo de problemas cutáneos como el envejecimiento prematuro y el cáncer de piel.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center;'>Mantén un equilibrio entre el trabajo y el descanso, y encuentra formas de gestionar el estrés, ya que el estrés crónico puede contribuir a problemas cutáneos como el acné y la dermatitis.</p>", unsafe_allow_html=True)
             st.divider()
-            
+
             style_image6 = """
             display: flow;
             margin-left: auto;
