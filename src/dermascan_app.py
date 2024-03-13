@@ -48,10 +48,10 @@ class DermascanApp(HydraHeadApp):
             st.markdown(f"<h1 style='text-align:center;'>¡Bienvenido a DermaScan App!</h1>", unsafe_allow_html=True)
             st.markdown(f"<h2 style='text-align:center;'>Tu Aliada en la Lucha Contra el Cáncer de Piel</h2>", unsafe_allow_html=True)
             st.divider()
-            st.markdown(f"<p style='text-align:center; '>Nos situamos en la vanguardia de la tecnología del cuidado de la piel desarrollado una aplicación revolucionaria que utiliza modelos de Inteligencia Artificial</p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center; '>Entrenamos nuestros modelos con miles de imágenes de piel, tanto sana como afectada pos algún tipo de lesión. En total hemos entrenado 6 modelos clasificadores con casi 100.000 imágenes</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; '>DermaScan es una aplicación revolucionaria que utiliza modelos de Inteligencia Artificial</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='text-align:center; '>Entrenamos nuestros modelos con imágenes de lesiones piel etiquetadas por Dermatólogos.</p>", unsafe_allow_html=True)
             st.markdown(f"<p style='text-align:center; '>Nuestra aplicación es capaz de detectar la presencia de lesiones, determinar si son malignas o no y clasificarlas según su tipo. </p>", unsafe_allow_html=True)
-            st.markdown(f"<p style='text-align:center;'>Con DermaScan App, puedes realizar evaluaciones rápidas y precisas de tu piel desde la comodidad de tu hogar, ayudando a detectar tempranamente posibles signos de cáncer de piel y promoviendo una piel más saludable y segura.</p>", unsafe_allow_html=True)
+            
             
             st.divider()
             st.markdown(f"<h3 style='text-align:center;'>Sube o captura una imagen de tu piel</h3>", unsafe_allow_html=True)
